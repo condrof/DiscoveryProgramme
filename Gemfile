@@ -8,6 +8,10 @@ gem 'rails', '3.2.6'
 gem 'pg'
 gem 'rb-readline'
 gem 'thin'
+gem 'devise'
+gem 'cancan'
+gem 'activeadmin'
+gem 'twitter-bootstrap-rails'
 
 
 # Gems used only for assets and not required
