@@ -1,0 +1,2 @@
+module HaftingsHelper
+end

@@ -1,0 +1,2 @@
+class LinkagesController < ApplicationController
+end

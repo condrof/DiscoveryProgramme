@@ -1,0 +1,2 @@
+class CrossSectionsController < ApplicationController
+end
