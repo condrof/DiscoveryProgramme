@@ -1,4 +1,6 @@
 <h1>ButtShapes#index</h1>
-<% @butt_shapes.each do |butt| %>
-	<% butt.code %>
+<% if !@butt_shapes.nil? %>
+	<% @butt_shapes.each do |butt| %>
+		<% butt.code %>
+	<% end %>
 <% end %>

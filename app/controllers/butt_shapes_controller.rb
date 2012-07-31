@@ -1,6 +1,6 @@
 class ButtShapesController < ApplicationController
-  load_and_authorize_resource
   def index
+    @butt_shapes = ButtShape.all
   end
 
   def show

@@ -1,8 +1,9 @@
 class ContextsController < ApplicationController
-  load_and_authorize_resource
   def index
+    @contexts = Context.all
   end
 
   def show
+    @context = Context.find(params[:id])
   end
 end
