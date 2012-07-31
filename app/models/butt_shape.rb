@@ -1,4 +1,4 @@
-class Butt_Shape < ActiveRecord::Base
+class ButtShape < ActiveRecord::Base
   # attr_accessible :title, :body
   attr_accessible :code, :description
   belongs_to :axe_master

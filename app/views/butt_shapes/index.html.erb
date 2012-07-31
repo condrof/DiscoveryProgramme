@@ -1,2 +1,4 @@
 <h1>ButtShapes#index</h1>
-<p>Find me in app/views/butt_shapes/index.html.erb</p>
+<% @butt_shapes.each do |butt| %>
+	<% butt.code %>
+<% end %>
