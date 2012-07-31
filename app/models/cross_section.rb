@@ -1,4 +1,4 @@
-class Cross_Section < ActiveRecord::Base
+class CrossSection < ActiveRecord::Base
   # attr_accessible :title, :body
   attr_accessible :code, :description
 

@@ -1,4 +1,4 @@
-class Face_Shape < ActiveRecord::Base
+class FaceShape < ActiveRecord::Base
   # attr_accessible :title, :body
   attr_accessible :code, :description
 

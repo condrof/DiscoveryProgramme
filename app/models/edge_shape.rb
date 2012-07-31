@@ -1,4 +1,4 @@
-class Edge_Shape < ActiveRecord::Base
+class EdgeShape < ActiveRecord::Base
   # attr_accessible :title, :body
   attr_accessible :code, :description
   

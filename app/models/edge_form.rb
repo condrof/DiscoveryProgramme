@@ -1,4 +1,4 @@
-class Edge_Form < ActiveRecord::Base
+class EdgeForm < ActiveRecord::Base
   # attr_accessible :title, :body
   attr_accessible :code, :description
 
