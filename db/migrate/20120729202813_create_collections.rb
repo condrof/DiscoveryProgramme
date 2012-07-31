@@ -7,7 +7,7 @@ class CreateCollections < ActiveRecord::Migration
       t.string :address3
       t.string :county
       t.string :country
-      t.string :details
+      t.text :details
 
       t.timestamps
     end

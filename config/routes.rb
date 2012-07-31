@@ -1,5 +1,9 @@
 DiscoveryProgramme::Application.routes.draw do
 
+  get "cross_sections/index"
+
+  get "cross_sections/show"
+
   get "bibliographies/index"
 
   get "bibliographies/show"

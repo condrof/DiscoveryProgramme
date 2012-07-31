@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20120729205150) do
     t.string   "micro_id"
     t.string   "specific_gravity"
     t.string   "petrology"
-    t.string   "comments"
+    t.text     "comments"
     t.boolean  "drawn"
     t.boolean  "archival_complete"
     t.boolean  "object_comp"
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20120729205150) do
     t.string   "feature_context_details"
     t.string   "associated_artifacts"
     t.string   "associated_features"
+    t.string   "dating_information"
     t.string   "use_wear_id"
     t.string   "deliberate_breaking"
     t.string   "re_use_id"
@@ -119,21 +120,21 @@ ActiveRecord::Schema.define(:version => 20120729205150) do
     t.string   "publication"
     t.string   "where_published"
     t.string   "published_reference_in_year"
-    t.string   "link_key"
+    t.string   "linkage_id"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
   end
 
   create_table "blade_profiles", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "butt_shapes", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -145,58 +146,58 @@ ActiveRecord::Schema.define(:version => 20120729205150) do
     t.string   "address3"
     t.string   "county"
     t.string   "country"
-    t.string   "details"
+    t.text     "details"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
 
   create_table "contexts", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "cross_sections", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "edge_forms", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "edge_shapes", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "face_shapes", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "haftings", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "linkages", :force => true do |t|
     t.string   "sequence_no"
-    t.string   "link_key"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "bibliography_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "macros", :force => true do |t|
@@ -208,28 +209,28 @@ ActiveRecord::Schema.define(:version => 20120729205150) do
 
   create_table "prime_treatments", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "profiles", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "re_uses", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
 
   create_table "use_wears", :force => true do |t|
     t.string   "code"
-    t.string   "description"
+    t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

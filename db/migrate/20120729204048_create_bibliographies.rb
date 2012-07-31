@@ -8,7 +8,7 @@ class CreateBibliographies < ActiveRecord::Migration
       t.string :publication
       t.string :where_published
       t.string :published_reference_in_year
-      t.string :link_key
+      t.string :linkage_id
 
       t.timestamps
     end

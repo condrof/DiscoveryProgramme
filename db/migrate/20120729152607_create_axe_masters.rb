@@ -47,7 +47,7 @@ class CreateAxeMasters < ActiveRecord::Migration
       t.string :micro_id
       t.string :specific_gravity
       t.string :petrology
-      t.string :comments
+      t.text :comments
       t.boolean :drawn
       t.boolean :archival_complete
       t.boolean :object_comp
@@ -66,6 +66,7 @@ class CreateAxeMasters < ActiveRecord::Migration
       t.string :feature_context_details
       t.string :associated_artifacts
       t.string :associated_features
+      t.string :dating_information
       t.string :use_wear_id
       t.string :deliberate_breaking
       t.string :re_use_id
