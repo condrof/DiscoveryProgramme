@@ -12,6 +12,7 @@ gem 'devise'
 gem 'cancan'
 gem 'activeadmin'
 gem 'twitter-bootstrap-rails'
+gem 'simple_form'
 
 
 # Gems used only for assets and not required

@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :butt_shape do
+    code "MyString"
+    description "MyString"
   end
 end

@@ -134,207 +134,207 @@ BladeProfile.create!(
 :code => "BP11" ,
 :description => "Unknown"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU01" ,
 :description => "Irregular"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU02" ,
 :description => "Damaged/Unknown"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU03" ,
 :description => "Double facetted"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU04" ,
 :description => "Flat:flat"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU05" ,
 :description => "Flat:pointed"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU06" ,
 :description => "Flat:rounded"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU07" ,
 :description => "Oblique"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU08" ,
 :description => "Pointed"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU09" ,
 :description => "Rounded:flat"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU10" ,
 :description => "Rounded:pointed"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU11" ,
 :description => "Rounded:rounded"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU12" ,
 :description => "Sloped"  )
 
-Butt_Shape.create!(
+ButtShape.create!(
 :code => "BU13" ,
 :description => "Flat: Oblique"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS01" ,
 :description => "Full oval"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS02" ,
 :description => "Full oval, flattened sides"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS03" ,
 :description => "Full oval, flat sides"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS04" ,
 :description => "Full oval, faceted sides"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS05" ,
 :description => "Oval"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS06" ,
 :description => "Oval, flattened sides"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS07" ,
 :description => "Oval, flat sides"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS08" ,
 :description => "Oval, faceted sides"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS09" ,
 :description => "Narrow oval"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS10" ,
 :description => "Narrow oval, flattened sides"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS11" ,
 :description => "Narrow oval, flat sides"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS12" ,
 :description => "Narrow oval, faceted sides"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS13" ,
 :description => "Pointed oval"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS14" ,
 :description => "Narrow pointed oval"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS15" ,
 :description => "Irregular oval"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS16" ,
 :description => "Plano-convex"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS17" ,
 :description => "Flattened faces"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS18" ,
 :description => "Sub-rectangular"  )
 
-Cross_Section.create!(
+CrossSection.create!(
 :code => "CS19" ,
 :description => "Unknown"  )
 
-Edge_Form.create!(
+EdgeForm.create!(
 :code => "EF01" ,
 :description => "Straight"  )
 
-Edge_Form.create!(
+EdgeForm.create!(
 :code => "EF02" ,
 :description => "C-shaped"  )
 
-Edge_Form.create!(
+EdgeForm.create!(
 :code => "EF03" ,
 :description => "S-shaped"  )
 
-Edge_Form.create!(
+EdgeForm.create!(
 :code => "EF04" ,
 :description => "Unknown/missing"  )
 
-Edge_Shape.create!(
+EdgeShape.create!(
 :code => "ES01" ,
 :description => "Flat"  )
 
-Edge_Shape.create!(
+EdgeShape.create!(
 :code => "ES02" ,
 :description => "Gently curved:symmetrical"  )
 
-Edge_Shape.create!(
+EdgeShape.create!(
 :code => "ES03" ,
 :description => "Gently curved:asymmetrical"  )
 
-Edge_Shape.create!(
+EdgeShape.create!(
 :code => "ES04" ,
 :description => "Curved:asymmetrical"  )
 
-Edge_Shape.create!(
+EdgeShape.create!(
 :code => "ES05" ,
 :description => "Curved:symmetrical"  )
 
-Edge_Shape.create!(
+EdgeShape.create!(
 :code => "ES06" ,
 :description => "Gently curved:markedly asymmtrical"  )
 
-Edge_Shape.create!(
+EdgeShape.create!(
 :code => "ES07" ,
 :description => "Curved:markedly asymmtrical"  )
 
-Edge_Shape.create!(
+EdgeShape.create!(
 :code => "ES08" ,
 :description => "Convex"  )
 
-Edge_Shape.create!(
+EdgeShape.create!(
 :code => "ES09" ,
 :description => "Unknown/Damaged"  )
 
-Face_Shape.create!(
+FaceShape.create!(
 :code => "FS01" ,
 :description => "Ovate symmetrical"  )
 
-Face_Shape.create!(
+FaceShape.create!(
 :code => "FS02" ,
 :description => "Asymmetrical"  )
 
-Face_Shape.create!(
+FaceShape.create!(
 :code => "FS03" ,
 :description => "Straight splayed sides"  )
 
-Face_Shape.create!(
+FaceShape.create!(
 :code => "FS04" ,
 :description => "Straight sided parallel"  )
 
-Face_Shape.create!(
+FaceShape.create!(
 :code => "FS05" ,
 :description => "Oblique butt"  )
 
-Face_Shape.create!(
+FaceShape.create!(
 :code => "FS06" ,
 :description => "Any other"  )
 
@@ -450,19 +450,19 @@ Hafting.create!(
 :code => "HA28" ,
 :description => "Other"  )
 
-Prime_Treatment.create!(
+PrimeTreatment.create!(
 :code => "PT01" ,
 :description => "Flaked"  )
 
-Prime_Treatment.create!(
+PrimeTreatment.create!(
 :code => "PT02" ,
 :description => "Pecked"  )
 
-Prime_Treatment.create!(
+PrimeTreatment.create!(
 :code => "PT03" ,
 :description => "Cleaved"  )
 
-Prime_Treatment.create!(
+PrimeTreatment.create!(
 :code => "PT04" ,
 :description => "Unknown"  )
 
@@ -494,67 +494,67 @@ Profile.create!(
 :code => "P 07" ,
 :description => "Unknown"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU01" ,
 :description => "None"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU02" ,
 :description => "Re-flaking (unground)"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU03" ,
 :description => "Re-grinding"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU04" ,
 :description => "Evidence from junction with faces"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU05" ,
 :description => "Evidence from junctions with sides"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU06" ,
 :description => "Other"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU07" ,
 :description => "Re-pecking"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU08" ,
 :description => "Re-polishing"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW01" ,
 :description => "No Evidence"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW02" ,
 :description => "Minor abrasion edge/blade"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW03" ,
 :description => "Minor chipping on edge"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW04" ,
 :description => "Some chipping on edge"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW05" ,
 :description => "Heavy chipping on edge"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW06" ,
 :description => "Edge broken beyond use"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW07" ,
 :description => "Edge missing"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW09" ,
 :description => "Other"  )
 

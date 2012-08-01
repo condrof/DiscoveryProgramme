@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120729205150) do
+ActiveRecord::Schema.define(:version => 20120801180931) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20120729205150) do
     t.string   "townland"
     t.string   "area"
     t.string   "county"
-    t.string   "discovery_circumstances"
+    t.text     "discovery_circumstances"
     t.string   "context_id"
     t.string   "from_year"
     t.string   "to_year"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(:version => 20120729205150) do
     t.boolean  "faces_polished"
     t.boolean  "butt_polished"
     t.string   "hafting_id"
-    t.string   "description"
+    t.text     "description"
     t.string   "macro_id"
     t.string   "micro_id"
     t.string   "specific_gravity"
@@ -98,14 +98,14 @@ ActiveRecord::Schema.define(:version => 20120729205150) do
     t.string   "use_wear_id"
     t.string   "deliberate_breaking"
     t.string   "re_use_id"
-    t.string   "edge_form"
+    t.string   "edge_form_id"
     t.string   "mineral_identification_method"
     t.string   "chemical_composition_method"
     t.string   "object_status"
-    t.string   "incomplete_description"
-    t.string   "roughout_description"
-    t.string   "incomplete_details"
-    t.string   "roughout_details"
+    t.text     "incomplete_description"
+    t.text     "roughout_description"
+    t.text     "incomplete_details"
+    t.text     "roughout_details"
     t.string   "minature"
     t.string   "user_id"
     t.datetime "created_at",                    :null => false

@@ -8,7 +8,7 @@ class CreateAxeMasters < ActiveRecord::Migration
       t.string :townland
       t.string :area
       t.string :county
-      t.string :discovery_circumstances
+      t.text :discovery_circumstances
       t.string :context_id
       t.string :from_year
       t.string :to_year
@@ -42,7 +42,7 @@ class CreateAxeMasters < ActiveRecord::Migration
       t.boolean :faces_polished
       t.boolean :butt_polished
       t.string :hafting_id
-      t.string :description
+      t.text :description
       t.string :macro_id
       t.string :micro_id
       t.string :specific_gravity
@@ -70,14 +70,14 @@ class CreateAxeMasters < ActiveRecord::Migration
       t.string :use_wear_id
       t.string :deliberate_breaking
       t.string :re_use_id
-      t.string :edge_form
+      t.string :edge_form_id
       t.string :mineral_identification_method
       t.string :chemical_composition_method
       t.string :object_status
-      t.string :incomplete_description
-      t.string :roughout_description
-      t.string :incomplete_details
-      t.string :roughout_details
+      t.text :incomplete_description
+      t.text :roughout_description
+      t.text :incomplete_details
+      t.text :roughout_details
       t.string :minature
       t.string :user_id
 

@@ -20,6 +20,7 @@
       <a class="brand" href="/">DiscoveryProgramme</a>
       <div class="nav-collapse">
         <ul class="nav pull-right">
+        		<li><%= link_to "New Axe", new_axe_master_path %></li>
         	<% if !current_user %>
           		<li><%= link_to "Register", new_user_registration_path %></li>
           		<li><%= link_to "Sign in", new_user_session_path %></li>
@@ -37,12 +38,11 @@
 </div>
 	
     <div class="container">
-    	<% if !notice.nil? %>
-       		<p class="notice"><%= notice %></p>
-       	<% end %>
-       	<% if !alert.nil? %>
-       		<p class="alert"><%= alert %></p>
-       	<% end %>
+	  <% flash.each do |name, msg| %>
+	    <div class="alert alert-<%= name == :notice ? "success" : "error" %>">
+	      <%= msg  %>
+	    </div>
+	  <% end %>
       <%= yield %>
     </div>
 
