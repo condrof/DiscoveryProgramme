@@ -1,6 +1,6 @@
 class Context < ActiveRecord::Base
   # attr_accessible :title, :body
-  belongs_to :axe_master
+  has_many :axe_masters, :foreign_key => "context_id", :primary_key => "code"
   
   attr_accessible :code, :description
 

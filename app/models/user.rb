@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :address, :institution, :phone, :purpose_of_use
   # attr_accessible :title, :body
   
+  has_many :axe_masters, :foreign_key => "user_id", :primary_key => "id"
+  
   after_initialize :default_values
 
   

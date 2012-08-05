@@ -1,5 +1,5 @@
 class UseWear < ActiveRecord::Base
   # attr_accessible :title, :body
   attr_accessible :code, :description
-  belongs_to :axe_master
+  has_many :axe_masters, :foreign_key => "use_wear_id", :primary_key => "code"
 end

@@ -1,4 +1,5 @@
 ActiveAdmin::Dashboards.build do
+  
   section "Confirm Users" do
     ul do
       User.find_by_confirmed("false" || nil) do |user|
@@ -8,6 +9,21 @@ ActiveAdmin::Dashboards.build do
           li "All current users have been confirmed"
         end
       end
+    end
+  end
+  
+  section "Confirm Axe Records" do
+    ul do
+      @axes=AxeMaster.find(:all, :conditions => { :confirmed => "false" })
+      if !@axes.nil?
+        @axes.each do |axe|
+        #AxeMaster.find_by_confirmed("false" || nil) do |axe|
+          li link_to "Confirm record from #{axe.user}", confirm_record_admin_axe_master_path(axe) 
+        end
+      else
+          li "All current records have been confirmed"
+      end
+     #end
     end
   end
 

@@ -17,6 +17,13 @@ class AxeMaster < ActiveRecord::Base
   has_one :re_use, :foreign_key => :code, :primary_key => :re_use_id
   has_one :edge_form, :foreign_key => :code, :primary_key => :edge_form_id
   has_one :collection, :foreign_key => :collection_title, :primary_key => :collection_title
+  has_one :user, :foreign_key => "id", :primary_key => "user_id"
   
+  after_initialize :default_values
 
+  
+private
+    def default_values
+      self.confirmed ||= "false"
+    end
 end
