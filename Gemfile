@@ -13,6 +13,7 @@ gem 'cancan'
 gem 'activeadmin'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
+gem 'ransack'
 
 
 # Gems used only for assets and not required

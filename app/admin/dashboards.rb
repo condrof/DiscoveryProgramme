@@ -18,7 +18,7 @@ ActiveAdmin::Dashboards.build do
       if !@axes.nil?
         @axes.each do |axe|
         #AxeMaster.find_by_confirmed("false" || nil) do |axe|
-          li link_to "Confirm record from #{axe.user}", confirm_record_admin_axe_master_path(axe) 
+          li link_to "Confirm record from #{axe.user.try(:email)}", confirm_record_admin_axe_master_path(axe) 
         end
       else
           li "All current records have been confirmed"

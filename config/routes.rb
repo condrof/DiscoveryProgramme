@@ -75,7 +75,10 @@ DiscoveryProgramme::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :users
-  resources :users, :contexts, :axe_masters, :bibliographies
+  resources :users, :contexts, :bibliographies, :butt_shapes
+  resources :axe_masters do
+    collection { post :search, to: 'axe_masters#index' }
+  end
 
   get "pages/home"
 

@@ -1,33 +1,21 @@
 <h2>Sign up</h2>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, :html => { :class => 'form-horizontal' }, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
-  
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-  
-  <div><%= f.label :address %><br />
-  <%= f.text_field :address %></div>
-  
-  <div><%= f.label :institution %><br />
-  <%= f.text_field :institution %></div>
-  
-  <div><%= f.label :phone %><br />
-  <%= f.text_field :phone %></div>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :address %>
+  <%= f.input :institution %>
+  <%= f.input :phone %>
+  <%= f.input :purpose_of_use %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
 
-  <div><%= f.label :purpose_of_use %><br />
-  <%= f.text_field :purpose_of_use %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
+    <div class="form-actions">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to 'Cancel', root_path, :class => 'btn' %>
+    </div>
+ <% end %>
 
 <%= render "devise/shared/links" %>
