@@ -1,5 +1,5 @@
 <%= simple_form_for @axe_master, :html => { :class => 'form-horizontal' } do |f| %>
-	<%= f.input :seq_no %>
+	<%= f.hidden_field :seq_no, :value => AxeMaster.last.seq_no.succ! %>
 	<%= f.hidden_field :user_id, :value => current_user.id %>
 	<%= f.input :museam_ref %>
 	<%= f.input :townland %>

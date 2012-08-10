@@ -1,4 +1,6 @@
 ActiveAdmin.register AxeMaster do
+    actions :all, :except => [:new, :edit]
+
     member_action :confirm_record, :method => :get do
     axe = AxeMaster.find(params[:id])
     axe.toggle!(:confirmed)
@@ -15,6 +17,7 @@ ActiveAdmin.register AxeMaster do
     column :confirmed
     column :current_location
     column :comments
+    default_actions
     
   end
 end

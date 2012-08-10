@@ -1,2 +1,38 @@
-<h1>EdgeShapes#index</h1>
-<p>Find me in app/views/edge_shapes/index.html.erb</p>
+<%- model_class = EdgeShape -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:code) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @edge_shapes.each do |edge_shape| %>
+      <tr>
+        <td><%= link_to edge_shape.id, edge_shape_path(edge_shape) %></td>
+        <td><%= edge_shape.code %></td>
+        <td><%= edge_shape.description %></td>
+        <td><%=l edge_shape.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_edge_shape_path(edge_shape), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      edge_shape_path(edge_shape),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_edge_shape_path,
+            :class => 'btn btn-primary' %>

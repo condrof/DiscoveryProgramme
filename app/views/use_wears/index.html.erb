@@ -1,2 +1,38 @@
-<h1>UseWears#index</h1>
-<p>Find me in app/views/use_wears/index.html.erb</p>
+<%- model_class = UseWear -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:code) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @use_wears.each do |use_wear| %>
+      <tr>
+        <td><%= link_to use_wear.id, use_wear_path(use_wear) %></td>
+        <td><%= use_wear.code %></td>
+        <td><%= use_wear.description %></td>
+        <td><%=l use_wear.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_use_wear_path(use_wear), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      use_wear_path(use_wear),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_use_wear_path,
+            :class => 'btn btn-primary' %>
