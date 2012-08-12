@@ -4,14 +4,15 @@ describe CrossSectionsController do
 
   describe "GET 'index'" do
     it "returns http success" do
-      get 'index'
+      visit cross_sections_path
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      @cross_section=FactoryGirl.create(:cross_section)
+      visit cross_section_path(@cross_section)
       response.should be_success
     end
   end

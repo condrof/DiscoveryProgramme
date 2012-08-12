@@ -1,7 +1,5 @@
 <%= simple_form_for @axe_master, :html => { :class => 'form-horizontal' } do |f| %>
-	<%= f.hidden_field :seq_no, :value => AxeMaster.last.seq_no.succ! %>
-	<%= f.hidden_field :user_id, :value => current_user.id %>
-	<%= f.input :museam_ref %>
+ 	<%= f.input :museam_ref %>
 	<%= f.input :townland %>
 	<%= f.input :area %>
 	<%= f.input :county %>
@@ -79,7 +77,7 @@
 	<%= f.input :incomplete_details %>
 	<%= f.input :roughout_details %>	
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= f.button :submit, "Submit Record", :class => 'btn-primary', :id => "Create" %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 axe_masters_path, :class => 'btn' %>
   </div>

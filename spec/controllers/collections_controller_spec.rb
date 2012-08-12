@@ -4,14 +4,15 @@ describe CollectionsController do
 
   describe "GET 'index'" do
     it "returns http success" do
-      get 'index'
+      visit collections_path
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      @collection = FactoryGirl.create(:collection)
+      visit collection_path(@collection)
       response.should be_success
     end
   end

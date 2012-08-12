@@ -231,7 +231,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   cancan
-  capybara
+  capybara (~> 1.1.2)
   coffee-rails (~> 3.2.1)
   devise
   factory_girl_rails

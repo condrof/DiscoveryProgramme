@@ -20,7 +20,7 @@ class CrossSectionsController < ApplicationController
     @cross_section = CrossSection.new(params[:cross_section])
     if @cross_section.save
       flash[:success] = "Your record has been created"
-      redirect_to cross_section_path
+      redirect_to cross_sections_path
     else
       flash[:error] = "Record did not save"
       redirect_to :back
@@ -32,14 +32,14 @@ class CrossSectionsController < ApplicationController
 
     if @cross_section.update_attributes(params[:cross_section])
       flash[:notice] = "Record was successfully updated."
-      redirect_to CrossSection_path(@cross_section)
+      redirect_to cross_section_path(@cross_section)
     end
   end
   
   def destroy
     @cross_section.destroy
     flash[:alert] = "CrossSection deleted!"
-    redirect_to CrossSections_path
+    redirect_to cross_sections_path
   end
 
 end

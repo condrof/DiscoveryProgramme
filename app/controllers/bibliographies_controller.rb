@@ -20,7 +20,7 @@ class BibliographiesController < ApplicationController
     @bibliography = Bibliography.new(params[:bibliography])
     if @bibliography.save
       flash[:success] = "Your record has been created"
-      redirect_to bibliography_path
+      redirect_to bibliographys_path
     else
       flash[:error] = "Record did not save"
       redirect_to :back

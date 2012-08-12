@@ -20,7 +20,7 @@ class EdgeFormsController < ApplicationController
     @edge_form = EdgeForm.new(params[:edge_form])
     if @edge_form.save
       flash[:success] = "Your record has been created"
-      redirect_to edge_form_path
+      redirect_to edge_forms_path
     else
       flash[:error] = "Record did not save"
       redirect_to :back
@@ -39,7 +39,7 @@ class EdgeFormsController < ApplicationController
   def destroy
     @edge_form.destroy
     flash[:alert] = "EdgeForm deleted!"
-    redirect_to edge_form_path
+    redirect_to edge_forms_path
   end
 
 end

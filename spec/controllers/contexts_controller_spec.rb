@@ -4,14 +4,15 @@ describe ContextsController do
 
   describe "GET 'index'" do
     it "returns http success" do
-      get 'index'
+      visit contexts_path
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      @context=FactoryGirl.create(:context)
+      visit context_path(@context)
       response.should be_success
     end
   end

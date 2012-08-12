@@ -12,13 +12,18 @@ class AxeMastersController < ApplicationController
   end
 
   def new
-    @axe_master = AxeMaster.new
+    if signed_in?
+      @axe_master = current_user.axe_masters.build
+    else
+      flash[:notice] = "You must be signed in to continue"
+      redirect_to root_path
+    end
   end
-
+   
   def create
-    @axe_master = AxeMaster.new(params[:axe_master])
+    @axe_master = current_user.axe_masters.build(params[:axe_master], :seq_no => AxeMaster.last.seq_no.succ! || "1")
     if @axe_master.save
-      flash[:success] = "Your record has been submited for approval.."
+      flash[:success] = "Your record has been submited for approval."
       redirect_to axe_masters_path
     else
       flash[:error] = "Record did not save"

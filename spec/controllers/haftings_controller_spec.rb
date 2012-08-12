@@ -4,14 +4,15 @@ describe HaftingsController do
 
   describe "GET 'index'" do
     it "returns http success" do
-      get 'index'
+      visit haftings_path
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      @hafting = FactoryGirl.create(:hafting)
+      visit hafting_path(@hafting)
       response.should be_success
     end
   end

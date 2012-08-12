@@ -4,14 +4,15 @@ describe EdgeShapesController do
 
   describe "GET 'index'" do
     it "returns http success" do
-      get 'index'
+      visit edge_shapes_path
       response.should be_success
     end
   end
 
   describe "GET 'show'" do
     it "returns http success" do
-      get 'show'
+      @edge_shape = FactoryGirl.create(:edge_shape)
+      visit edge_shape_path(@edge_shape)
       response.should be_success
     end
   end

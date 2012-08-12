@@ -11,4 +11,5 @@ FactoryGirl.define do
     researcher "false"
     confirmed "true"
   end
+
 end

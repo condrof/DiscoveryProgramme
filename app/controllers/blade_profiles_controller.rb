@@ -21,7 +21,7 @@ class BladeProfilesController < ApplicationController
     @blade_profile = BladeProfile.new(params[:blade_profile])
     if BladeProfile.save
       flash[:success] = "Your record has been created"
-      redirect_to blade_profile_path
+      redirect_to blade_profiles_path
     else
       flash[:error] = "Record did not save"
       redirect_to :back

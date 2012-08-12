@@ -20,7 +20,7 @@ class ContextsController < ApplicationController
     @context = Context.new(params[:context])
     if @context.save
       flash[:success] = "Your record has been created"
-      redirect_to context_path
+      redirect_to contexts_path
     else
       flash[:error] = "Record did not save"
       redirect_to :back
