@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -15,8 +14,7 @@
   <tbody>
     <% @re_uses.each do |re_use| %>
       <tr>
-        <td><%= link_to re_use.id, re_use_path(re_use) %></td>
-        <td><%= re_use.code %></td>
+        <td><%= link_to re_use.code, re_use_path(re_use) %></td>
         <td><%= re_use.description %></td>
         <td><%=l re_use.created_at %></td>
         <td>

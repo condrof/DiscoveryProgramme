@@ -38,7 +38,7 @@ class ProfilesController < ApplicationController
 
   def destroy
     @profile.destroy
-    flash[:alert] = "Prime Treatment deleted!"
+    flash[:alert] = "Profile deleted!"
     redirect_to profiles_path
   end
 

@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -15,8 +14,7 @@
   <tbody>
     <% @cross_sections.each do |cross_section| %>
       <tr>
-        <td><%= link_to cross_section.id, cross_section_path(cross_section) %></td>
-        <td><%= cross_section.code %></td>
+        <td><%= link_to cross_section.code, cross_section_path(cross_section) %></td>
         <td><%= cross_section.description %></td>
         <td><%=l cross_section.created_at %></td>
         <td>

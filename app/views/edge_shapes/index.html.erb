@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -15,8 +14,7 @@
   <tbody>
     <% @edge_shapes.each do |edge_shape| %>
       <tr>
-        <td><%= link_to edge_shape.id, edge_shape_path(edge_shape) %></td>
-        <td><%= edge_shape.code %></td>
+        <td><%= link_to edge_shape.code, edge_shape_path(edge_shape) %></td>
         <td><%= edge_shape.description %></td>
         <td><%=l edge_shape.created_at %></td>
         <td>

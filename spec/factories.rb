@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  sequence(:email) { |n| "foo#{n}@example.com" }
+  sequence :email do |n| "foo#{n}@example.com" end
   sequence(:name) { |n| "user#{n}"}
 
   factory :user do
@@ -11,5 +11,24 @@ FactoryGirl.define do
     researcher "false"
     confirmed "true"
   end
-
+  
+  factory :researcher, :parent => :user do
+    name
+    email
+    password "secret"
+    password_confirmation "secret"
+    admin "false"
+    researcher "true"
+    confirmed "true"
+  end
+  
+  factory :admin, :parent => :user do
+    name
+    email
+    password "secret"
+    password_confirmation "secret"
+    admin "true"
+    researcher "false"
+    confirmed "true"
+  end
 end

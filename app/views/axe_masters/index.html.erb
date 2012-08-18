@@ -32,9 +32,11 @@
 				<td><%= axe_master.area %></td>
 				<td><%= axe_master.county %></td>
 				<td><%= axe_master.discovery_circumstances %></td>
-				<% if can? :update, AxeMaster %>
+				<% if can? :update, axe_master %>
 					<td> <%= link_to t('.edit', :default => t("helpers.links.edit")),
 					edit_axe_master_path(axe_master), :class => 'btn btn-mini' %>
+				<% end %>
+				<% if can? :destroy, axe_master %>
 					<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
 					axe_master_path(axe_master),
 					:method => :delete,
@@ -47,6 +49,8 @@
 	</tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-new_axe_master_path,
-:class => 'btn btn-primary' %>
+<% if can? :create, AxeMaster %>
+	<%= link_to t('.new', :default => t("helpers.links.new")),
+	new_axe_master_path,
+	:class => 'btn btn-primary' %>
+<% end %>

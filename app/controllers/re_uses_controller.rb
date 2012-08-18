@@ -38,7 +38,7 @@ class ReUsesController < ApplicationController
 
   def destroy
     @re_use.destroy
-    flash[:alert] = "Prime Treatment deleted!"
+    flash[:alert] = "Re use deleted!"
     redirect_to re_uses_path
   end
 

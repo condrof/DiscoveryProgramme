@@ -38,7 +38,7 @@ class UseWearsController < ApplicationController
 
   def destroy
     @use_wear.destroy
-    flash[:alert] = "Prime Treatment deleted!"
+    flash[:alert] = "Use wear deleted!"
     redirect_to use_wears_path
   end
 

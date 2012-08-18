@@ -1,3 +1,11 @@
-Context errors
-
 Linkages controller and build
+
+image uploader
+
+CSV export
+
+last few tests
+
+CanCan tests
+
+check seq_no

@@ -16,7 +16,7 @@ RSpec.configure do |config|
   # config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
-
+  config.include Devise::TestHelpers, :type => :controller
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -36,3 +36,8 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+
+def login(user)
+  post_via_redirect user_session_path, 'user[email]' => user.email, 'user[password]' => user.password
+end
+

@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -15,8 +14,7 @@
   <tbody>
     <% @haftings.each do |hafting| %>
       <tr>
-        <td><%= link_to hafting.id, hafting_path(hafting) %></td>
-        <td><%= hafting.code %></td>
+        <td><%= link_to hafting.code, hafting_path(hafting) %></td>
         <td><%= hafting.description %></td>
         <td><%=l hafting.created_at %></td>
         <td>
