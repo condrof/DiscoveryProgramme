@@ -6,9 +6,20 @@ class AxeMastersController < ApplicationController
     @axe_masters = @q.result(:distinct => true)  #.page(params[:page]).per(40)
     @q.build_condition if @q.conditions.empty?
     @q.build_sort if @q.sorts.empty?
+    
+    respond_to do |format|
+      format.html
+      format.csv { send_data @axe_masters.to_csv(col_sep: "," ) }
+      format.xml { render :xml => @axe_masters.to_xml }
+    end
   end
 
   def show
+     respond_to do |format|
+      format.html
+      format.csv { send_data @axe_master.to_csv }
+      format.xml { send_data @axe_master.to_xml }
+    end
   end
 
   def new
@@ -21,7 +32,7 @@ class AxeMastersController < ApplicationController
   end
    
   def create
-    @axe_master = current_user.axe_masters.build(params[:axe_master], :seq_no => AxeMaster.last.seq_no.succ! || "1")
+    @axe_master = current_user.axe_masters.build(params[:axe_master])
     if @axe_master.save
       flash[:success] = "Your record has been submited for approval."
       redirect_to axe_masters_path
@@ -47,6 +58,11 @@ class AxeMastersController < ApplicationController
   end
   
   def search
+    respond_to do |format|
+      #format.html
+      format.csv { send_data @axe_masters.to_csv(col_sep: "," ) }
+      format.xml { render :xml => @axe_masters.to_xml }
+    end
     index
     render :index
   end
