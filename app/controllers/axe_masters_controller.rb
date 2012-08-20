@@ -1,23 +1,32 @@
 class AxeMastersController < ApplicationController
-  load_and_authorize_resource
+  authorize_resource
   
   def index
     @q = AxeMaster.ransack(params[:q])
     @axe_masters = @q.result(:distinct => true)  #.page(params[:page]).per(40)
-    @q.build_condition if @q.conditions.empty?
-    @q.build_sort if @q.sorts.empty?
-    
-    respond_to do |format|
-      format.html
-      format.csv { send_data @axe_masters.to_csv(col_sep: "," ) }
-      format.xml { render :xml => @axe_masters.to_xml }
+  
+    if params[:search].eql?("html")
+       respond_to do |format|
+        format.html {
+          @q.build_condition if @q.conditions.empty?
+          @q.build_sort if @q.sorts.empty?        
+        }
+        end
+    elsif params[:search].eql?("xml")
+      #format.csv { send_data @axe_masters.to_csv(col_sep: "," ) }
+      respond_to do |format|
+        format.html {  
+          send_data @axe_masters.to_xml 
+          }
+      end
     end
   end
 
   def show
+    @axe_master = AxeMaster.find(params[:id])
      respond_to do |format|
       format.html
-      format.csv { send_data @axe_master.to_csv }
+      format.csv { send_data @axe_master.to_csv(col_sep: "," ) }
       format.xml { send_data @axe_master.to_xml }
     end
   end
@@ -43,9 +52,9 @@ class AxeMastersController < ApplicationController
   end
 
   def update
-    @axe = AxeMaster.find(params[:id])
+    @axe_master = AxeMaster.find(params[:id])
 
-    if @axe.update_attributes(params[:axe_master])
+    if @axe_master.update_attributes(params[:axe_master])
       flash[:notice] = "Record was successfully updated."
       redirect_to axe_master_path(@axe)
     end
@@ -58,12 +67,8 @@ class AxeMastersController < ApplicationController
   end
   
   def search
-    respond_to do |format|
-      #format.html
-      format.csv { send_data @axe_masters.to_csv(col_sep: "," ) }
-      format.xml { render :xml => @axe_masters.to_xml }
-    end
     index
     render :index
   end
 end
+

@@ -1,4 +1,4 @@
-<%= search_form_for @q, :html => { :class => 'form-horizontal' }, url: search_axe_masters_path(), method: :post do |f| %>
+<%= search_form_for @q, :html => { :class => 'form-horizontal' }, url: search_axe_masters_path, method: :post do |f| %>
   <%= f.condition_fields do |c| %>
     <%= render "condition_fields", f: c %>
   <% end %>
@@ -15,7 +15,14 @@
     <% end %>
   </div>
   <div class="form-actions">
-    <%= f.button :search, :class => 'btn-primary' %>
+    <%= f.button :search, :class => 'btn-primary', :name => "search", :id => "search", :value => "html" %>
+    <%= f.button :xml, :class => 'btn-primary', :name => "search", :id => "search", :value => "xml" %>
   </div>
+<% end %>
+
+<%= params[:search] %>
+<%= search_form_for @q, :html => { :class => 'form-horizontal' }, url: search_axe_masters_path(format: "xml"), method: :post do |f| %>
+	<%= f.text_field :q, :value => params[:q] %>
+	<%= f.button :csv %>
 <% end %>
 

@@ -5,8 +5,7 @@
 	<h1><%= t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
 
-<%= link_to "XML", search_axe_masters_path(format: "xml"), method: :post, :method => :get, :q => @q %>
-<%= params.inspect %>
+<%= link_to "XML", search_axe_masters_path(format "xml") %>
 <table class="table table-striped">
 	<thead>
 		<tr>

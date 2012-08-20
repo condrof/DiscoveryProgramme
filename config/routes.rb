@@ -7,82 +7,11 @@ DiscoveryProgramme::Application.routes.draw do
   
   resources :users, :bibliographies, :blade_profiles, :butt_shapes, :collections, :contexts, :cross_sections, :edge_forms, :edge_shapes, :face_shapes, :haftings, :macros, :pages, :prime_treatments, :profiles, :re_uses, :use_wears
   resources :axe_masters do
-    collection { post :search, to: 'axe_masters#index' }
+    collection { post :search, to: 'axe_masters#index'
+       get :search, to: 'axe_masters#index' }
   end
-
-  get "pages/home"
-
-  get "cross_sections/index"
-
-  get "cross_sections/show"
-
-  get "bibliographies/index"
-
-  get "bibliographies/show"
-
-  get "collections/index"
-
-  get "collections/show"
-
-  get "macros/index"
-
-  get "macros/show"
-
-  get "edge_forms/index"
-
-  get "edge_forms/show"
-
-  get "re_uses/index"
-
-  get "re_uses/show"
-
-  get "use_wears/index"
-
-  get "use_wears/show"
-
-  get "haftings/index"
-
-  get "haftings/show"
-
-  get "prime_treatments/index"
-
-  get "prime_treatments/show"
-
-  get "butt_shapes/index"
-
-  get "butt_shapes/show"
-
-  get "blade_profiles/index"
-
-  get "blade_profiles/show"
-
-  get "profiles/index"
-
-  get "profiles/show"
-
-  get "edge_shapes/index"
-
-  get "edge_shapes/show"
-
-  get "axe_masters/index"
-
-  get "axe_masters/show"
-
-  get "face_shapes/index"
-
-  get "face_shapes/show"
-
-  get "contexts/index"
-
-  get "contexts/show"
-
-  get "axe_master/index"
-
-  get "axe_master/show"
-
-  get "users/index"
-
-  get "users/show"
+  
+  get "axe_masters/search"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
