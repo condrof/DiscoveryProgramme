@@ -1,23 +1,29 @@
 class AxeMastersController < ApplicationController
-  authorize_resource
+  load_and_authorize_resource
   
   def index
     @q = AxeMaster.ransack(params[:q])
-    @axe_masters = @q.result(:distinct => true)  #.page(params[:page]).per(40)
+    @axes = @q.result(:distinct => true)  #.page(params[:page]).per(40)
+    @axe_masters = []
+    @axes.each do |axe| 
+      if axe.confirmed
+        @axe_masters << axe
+      end
+    end
+    @q.build_condition if @q.conditions.empty?
+    @q.build_sort if @q.sorts.empty?   
   
-    if params[:search].eql?("html")
-       respond_to do |format|
-        format.html {
-          @q.build_condition if @q.conditions.empty?
-          @q.build_sort if @q.sorts.empty?        
-        }
-        end
-    elsif params[:search].eql?("xml")
-      #format.csv { send_data @axe_masters.to_csv(col_sep: "," ) }
-      respond_to do |format|
-        format.html {  
-          send_data @axe_masters.to_xml 
-          }
+    if params[:search].eql?("xml")
+      if current_user.admin || current_user.researcher
+        send_data @axe_masters.to_xml, :filename => "axe.xml"       
+      else
+        send_data @axe_masters.to_xml(:except => [:comments, :current_location]), :filename => "axe.xml" 
+      end
+    elsif params[:search].eql?("csv")
+      if current_user.admin || current_user.researcher
+        send_data @axe_masters.to_comma, :style => :researcher, :col_sep => ',', :filename => "axe.csv" 
+      else
+        send_data @axe_masters.to_comma, :filename => "axe.csv"
       end
     end
   end
@@ -42,6 +48,7 @@ class AxeMastersController < ApplicationController
    
   def create
     @axe_master = current_user.axe_masters.build(params[:axe_master])
+    @axe_master[:seq_no] = AxeMaster.last.seq_no.succ!
     if @axe_master.save
       flash[:success] = "Your record has been submited for approval."
       redirect_to axe_masters_path

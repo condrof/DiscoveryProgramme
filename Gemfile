@@ -15,6 +15,7 @@ gem 'twitter-bootstrap-rails'
 gem 'simple_form'
 gem 'ransack'
 gem 'carrierwave'
+gem "comma", "~> 3.0"
 
 
 

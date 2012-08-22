@@ -713,12 +713,114 @@ describe "ViewRecords" do
   end
   
   describe "Axe Masters" do
-  end
-  
-  describe "Bibliography" do
+    before(:each) do
+      @user = FactoryGirl.create(:admin)
+      @axe_master = FactoryGirl.create(:axe_master, :seq_no => "CA001")
+      visit new_user_session_path
+      fill_in "Email", :with => @user.email
+      fill_in "Password", :with => @user.password
+      click_button "Sign in"
+    end    
+    
+    it "should all confirmed users to create records" do
+      visit new_axe_master_path
+      fill_in :townland, :with => "portlaoise"
+      fill_in :area, :with => "laois"
+      click_button "Submit Record"
+      page.should have_content(" Your record has been submited for approval.")
+    end
+    
+    it "should not allow unconfirmed user to create records" do
+      visit destroy_user_session_path(@user)
+      @user = FactoryGirl.create(:user, :confirmed => "false")
+      visit new_axe_master_path
+      page.should have_content("You are not authorized to access this page.")
+    end
+      
   end
   
   describe "collections" do
+    before(:each) do
+      @user = FactoryGirl.create(:admin)
+      @collection = FactoryGirl.create(:collection, :collection_title => "Anketell", :details => "Something")
+      visit new_user_session_path
+      fill_in "Email", :with => @user.email
+      fill_in "Password", :with => @user.password
+      click_button "Sign in"
+    end
+    
+    it "should display all records on index page" do
+      visit collections_path
+      page.should have_content(@collection.collection_title)   
+      page.should have_content(@collection.details) 
+    end
+    
+    it "should go to show page on click code" do
+      visit collections_path
+      click_link "#{@collection.collection_title}"
+      page.should have_content("Collection")
+    end
+    
+    it "should delete the record" do
+      visit collections_path
+      old=Collection.count
+      click_link "Destroy"
+      page.should have_content("Collection deleted!")
+      Collection.count.should equal(old-1)
+    end
+    
+    it "should update the record" do
+      visit collections_path
+      click_link "Edit"  
+      fill_in :description, :with => "updated text"
+      click_button "Update Collection"
+      page.should have_content("updated text")   
+      page.should have_content("Record was successfully updated.") 
+    end
+    
+    it "should delete the record" do
+      visit collection_path(Collection.first)
+      old=Collection.count
+      click_link "Destroy"
+      page.should have_content("Collection deleted!")
+      Collection.count.should equal(old-1)
+    end
+    
+    it "should update the record" do
+      visit collection_path(Collection.first)
+      click_link "Edit"  
+      fill_in :description, :with => "updated text"
+      click_button "Update Collection"
+      page.should have_content("updated text")   
+      page.should have_content("Record was successfully updated.") 
+    end
+    
+    it "should reject non-admins and researchers" do
+      visit destroy_user_session_path(@user)
+      visit collections_path
+      page.should have_content("You are not authorized to access this page.")
+    end
+    
+    it "should reject non-admins and researchers" do
+      visit destroy_user_session_path(@user)
+      visit collections_path
+      page.should have_content("You are not authorized to access this page.")
+    end
+    
+    it "should reject registered users" do
+      visit destroy_user_session_path(@user)
+      @user2 = FactoryGirl.create(:user)
+      visit new_user_session_path
+      fill_in "Email", :with => @user2.email
+      fill_in "Password", :with => @user2.password
+      click_button "Sign in"
+      visit collections_path
+      page.should have_content("You are not authorized to access this page.")
+    end
+  end
+  
+  
+  describe "Bibliography" do
   end
 end
 

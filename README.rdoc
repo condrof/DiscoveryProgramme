@@ -1,11 +1,11 @@
 Linkages controller and build
 
-image uploader
-
-CSV export
-
 last few tests
 
 CanCan tests
 
 check seq_no
+copy from axe_masters to rest
+
+all views,
+axe_master form

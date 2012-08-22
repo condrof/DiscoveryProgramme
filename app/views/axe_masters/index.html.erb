@@ -5,15 +5,15 @@
 	<h1><%= t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
 
-<%= link_to "XML", search_axe_masters_path(format: "xml"), method: :post, :method => :get, :q => @q %>
-<%= params.inspect %>
 <table class="table table-striped">
 	<thead>
 		<tr>
 			<th><%= sort_link @q, :name, "Seq No" %></th>
 			<th><%= sort_link @q, :name, "museam_ref" %></th>
 			<th><%= sort_link @q, :name, "collections_id" %></th>
-			<th><%= sort_link @q, :name, "current_location" %></th>
+			<% if current_user && (current_user.admin || current_user.researcher) %>
+				<th><%= sort_link @q, :name, "current_location" %></th>
+			<% end %>
 			<th><%= sort_link @q, :name, "townland" %></th>
 			<th><%= sort_link @q, :name, "area" %></th>
 			<th><%= sort_link @q, :name, "county" %></th>
@@ -30,7 +30,9 @@
 				<td><%= link_to axe_master.seq_no, axe_master_path(axe_master) %></td>
 				<td><%= axe_master.museam_ref %></td>
 				<td><%= axe_master.collections_id %></td>
-				<td><%= axe_master.current_location %></td>
+				<% if current_user && (current_user.admin || current_user.researcher) %>
+					<td><%= axe_master.current_location %></td>
+				<% end %>
 				<td><%= axe_master.townland %></td>
 				<td><%= axe_master.area %></td>
 				<td><%= axe_master.county %></td>
