@@ -59,7 +59,6 @@ class CreateAxeMasters < ActiveRecord::Migration
       t.string :parish
       t.string :hoard
       t.string :new_museam_ref
-      t.string :pict
       t.string :catalogue_ref
       t.string :site_type
       t.string :secure_context

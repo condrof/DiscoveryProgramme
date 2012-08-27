@@ -1,0 +1,12 @@
+<%= simple_form_for @picture, :html => { :class => 'form-horizontal well' } do |f| %>
+  <%= f.label :image %>
+  <%= f.file_field :image %><br /><br />
+  <%= f.input :description %>
+  <%= f.input :document_name %>
+  <%= f.input :document_type %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                pictures_path, :class => 'btn' %>
+  </div>
+<% end %>

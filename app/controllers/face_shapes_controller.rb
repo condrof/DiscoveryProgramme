@@ -19,6 +19,7 @@ class FaceShapesController < ApplicationController
   
   def create
     @face_shape = FaceShape.new(params[:face_shape])
+    @face_shape[:code] = FaceShape.order("code desc").first.code.succ!
     if @face_shape.save
       flash[:success] = "Your record has been created"
       redirect_to face_shapes_path

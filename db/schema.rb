@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120819110846) do
+ActiveRecord::Schema.define(:version => 20120827183532) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(:version => 20120819110846) do
     t.string   "parish"
     t.string   "hoard"
     t.string   "new_museam_ref"
-    t.string   "pict"
     t.string   "catalogue_ref"
     t.string   "site_type"
     t.string   "secure_context"
@@ -111,7 +110,6 @@ ActiveRecord::Schema.define(:version => 20120819110846) do
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
     t.boolean  "confirmed"
-    t.string   "image"
   end
 
   create_table "bibliographies", :force => true do |t|
@@ -209,6 +207,16 @@ ActiveRecord::Schema.define(:version => 20120819110846) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "pictures", :force => true do |t|
+    t.string   "seq_no"
+    t.string   "description"
+    t.string   "document_name"
+    t.string   "document_type"
+    t.string   "image"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "prime_treatments", :force => true do |t|
     t.string   "code"
     t.text     "description"
@@ -228,6 +236,18 @@ ActiveRecord::Schema.define(:version => 20120819110846) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "stray_axes", :force => true do |t|
+    t.string   "townland"
+    t.string   "county"
+    t.string   "comment"
+    t.string   "contact"
+    t.string   "followed_up"
+    t.string   "museum_ref"
+    t.string   "current_location"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "use_wears", :force => true do |t|

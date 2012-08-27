@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :re_use do
+    code "MyString"
+    description "MyString"
   end
 end

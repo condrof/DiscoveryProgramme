@@ -41,6 +41,8 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_bibliography_path,
-            :class => 'btn btn-primary' %>
+<% if can? :create, Bibliography %>
+	<%= link_to t('.new', :default => t("helpers.links.new")),
+	            new_bibliography_path,
+	            :class => 'btn btn-primary' %>
+<% end %>	       

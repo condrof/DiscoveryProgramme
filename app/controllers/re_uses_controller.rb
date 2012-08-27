@@ -18,6 +18,7 @@ class ReUsesController < ApplicationController
 
   def create
     @re_use = ReUse.new(params[:re_use])
+    @re_use[:code] = ReUse.order("code desc").first.code.succ!
     if @re_use.save
       flash[:success] = "Your record has been created"
       redirect_to re_uses_path

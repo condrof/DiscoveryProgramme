@@ -1,18 +1,10 @@
-Linkages controller and build
+1) can have multiple pictures
 
-last few tests
+2) Test Bibliography, Linkage, AxeMaster and pictures
 
-CanCan tests
+3) all views,
+axe_master form - group columns in field sets
 
-check seq_no
-copy from axe_masters to rest
+4) museum references
 
-all views,
-axe_master form
-
-museum references
-
-stray axes
-validations
-
-paginate search returns
+5) add indexes

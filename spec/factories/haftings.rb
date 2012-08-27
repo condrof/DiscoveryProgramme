@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :hafting do
+    code "MyString"
+    description "MyString"
   end
 end

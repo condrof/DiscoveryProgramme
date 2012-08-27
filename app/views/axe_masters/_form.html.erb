@@ -1,14 +1,17 @@
 <%= simple_form_for @axe_master, :html => { :class => 'form-horizontal well',:multipart => true } do |f| %>
-	<%= f.hidden_field :seq_no, :value => (AxeMaster.order("seq_no desc").first.seq_no.to_i + 1) %>
-	<%= f.label :image %>
-	<%= f.file_field :image %><br /><br />
-	<%= f.input :townland %>
-	<%= f.input :area %>
-	<%= f.input :county %>
-	<%= f.input :collections_id, :as => :select, :collection => Hash[Collection.all.map{|b| [b.collection_title,b.id]}]  %>
-	<%= f.input :current_location %>
-	<%= f.input :discovery_circumstances %>
-	<%= f.input :context_id %>
+	<fieldset>
+	  <legend>Area</legend>
+		<%= f.input :townland %>
+		<%= f.input :area %>
+		<%= f.input :county %>
+	</fieldset>
+	<fieldset>
+		<legend>Another</legend>	
+		<%= f.input :collections_id, :as => :select, :collection => Hash[Collection.all.map{|b| [b.collection_title,b.id]}]  %>
+		<%= f.input :current_location %>
+		<%= f.input :discovery_circumstances %>
+		<%= f.input :context_id %>
+	</fieldset>
 	<%= f.input :from_year %>
 	<%= f.input :to_year %>
 	<%= f.input :map_reference %>
@@ -59,7 +62,6 @@
 	<%= f.input :parish %>
 	<%= f.input :hoard %>
 	<%= f.input :new_museam_ref %>
-	<%= f.input :pict %>
 	<%= f.input :catalogue_ref %>
 	<%= f.input :site_type %>
 	<%= f.input :secure_context %>

@@ -10,7 +10,10 @@ class Ability
            can :manage, :all
          else
            if user.confirmed? 
-             can [:create, :read], AxeMaster
+             can :create, AxeMaster
+             can :read, AxeMaster do |axe|
+               axe.confirmed
+             end
              can :update, AxeMaster do |axe|
                axe.try(:user) == user 
              end
@@ -18,10 +21,16 @@ class Ability
                tryuser == user
              end
            end
-           can :read, AxeMaster
+           can :read, AxeMaster do |axe|
+             axe.confirmed
+           end
+           can :read, :create, Bibliography
          end 
        else 
-         can :read, AxeMaster
+         can :read, AxeMaster do |axe|
+           axe.confirmed
+         end
+         can :read, Bibliography
        end
     #
     # The first argument to `can` is the action you are giving the user permission to do.

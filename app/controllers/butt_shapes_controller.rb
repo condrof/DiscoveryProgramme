@@ -18,6 +18,7 @@ class ButtShapesController < ApplicationController
   
   def create
     @butt_shape = ButtShape.new(params[:butt_shape])
+    @butt_shape[:code] = ButtShape.order("code desc").first.code.succ!
     if @butt_shape.save
       flash[:success] = "Your record has been created"
       redirect_to butt_shapes_path

@@ -16,8 +16,8 @@ class User < ActiveRecord::Base
   
 private
     def default_values
-      self.admin ||= "false"
-      self.researcher ||= "false"
-      self.confirmed ||= "false"
+      self.admin ||= false
+      self.researcher ||= false
+      self.confirmed ||= false
     end
 end

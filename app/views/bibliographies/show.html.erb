@@ -2,29 +2,32 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
-
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:author) %>:</strong></dt>
-  <dd><%= @bibliography.author %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:year) %>:</strong></dt>
-  <dd><%= @bibliography.year %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-  <dd><%= @bibliography.title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:book_title) %>:</strong></dt>
-  <dd><%= @bibliography.book_title %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:publication) %>:</strong></dt>
-  <dd><%= @bibliography.publication %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:where_published) %>:</strong></dt>
-  <dd><%= @bibliography.where_published %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:published_reference_in_year) %>:</strong></dt>
-  <dd><%= @bibliography.published_reference_in_year %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:linkage_id) %>:</strong></dt>
-  <dd><%= @bibliography.linkage_id %></dd>
-</dl>
+	
+	<div class = "well">
+	<dl class="dl-horizontal">
+	  <dt><strong><%= model_class.human_attribute_name(:author) %>:</strong></dt>
+	  <dd><%= @bibliography.author %></dd>
+	  <dt><strong><%= model_class.human_attribute_name(:year) %>:</strong></dt>
+	  <dd><%= @bibliography.year %></dd>
+	  <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
+	  <dd><%= @bibliography.title %></dd>
+	  <dt><strong><%= model_class.human_attribute_name(:book_title) %>:</strong></dt>
+	  <dd><%= @bibliography.book_title %></dd>
+	  <dt><strong><%= model_class.human_attribute_name(:publication) %>:</strong></dt>
+	  <dd><%= @bibliography.publication %></dd>
+	  <dt><strong><%= model_class.human_attribute_name(:where_published) %>:</strong></dt>
+	  <dd><%= @bibliography.where_published %></dd>
+	  <dt><strong><%= model_class.human_attribute_name(:published_reference_in_year) %>:</strong></dt>
+	  <dd><%= @bibliography.published_reference_in_year %></dd>
+	  <dt><strong><%= model_class.human_attribute_name(:linkage_id) %>:</strong></dt>
+	  <dd><%= @bibliography.linkage_id %></dd>
+	</dl>
+</div>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               bibliographies_path, :class => 'btn'  %>
+<% if can? :update, Bibliography %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_bibliography_path(@bibliography), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
@@ -32,4 +35,5 @@
               :method => 'delete',
               :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
               :class => 'btn btn-danger' %>
+<% end %>        
 </div>

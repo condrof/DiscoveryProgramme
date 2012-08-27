@@ -1,8 +1,9 @@
+# encoding: utf-8
+
 time = Time.now
 
 puts time
 
-# encoding: utf-8
 
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
@@ -15706,7 +15707,6 @@ Face only drawn." ,
  :parish => "" ,
  :hoard => "" ,
  :new_museam_ref => "" ,
- :pict => "" ,
  :catalogue_ref => "" ,
  :site_type => "" ,
  :secure_context => "" ,
@@ -15787,7 +15787,6 @@ AxeMaster.create!(
  :parish => "" ,
  :hoard => "" ,
  :new_museam_ref => "" ,
- :pict => "" ,
  :catalogue_ref => "" ,
  :site_type => "" ,
  :secure_context => "" ,
@@ -15872,7 +15871,6 @@ Plan, Profile and Cross Section drawn." ,
  :parish => "" ,
  :hoard => "" ,
  :new_museam_ref => "" ,
- :pict => "" ,
  :catalogue_ref => "" ,
  :site_type => "" ,
  :secure_context => "" ,
@@ -15943,8 +15941,6 @@ AxeMaster.create!(
  :petrology => "" ,
  :comments => "River Braid near Aghafatten.
 D'Evelyn Collection.
-
-
 This is in the NMI Index as coming from Egypt. EB." ,
  :drawn => "False" ,
  :archival_complete => "" ,
@@ -15957,7 +15953,6 @@ This is in the NMI Index as coming from Egypt. EB." ,
  :parish => "" ,
  :hoard => "" ,
  :new_museam_ref => "" ,
- :pict => "" ,
  :catalogue_ref => "" ,
  :site_type => "" ,
  :secure_context => "" ,

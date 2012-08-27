@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :profile do
+    code "MyString"
+    description "MyString"
   end
 end

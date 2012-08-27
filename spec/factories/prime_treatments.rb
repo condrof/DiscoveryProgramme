@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :prime_treatment do
+    code "MyString"
+    description "MyString"
   end
 end

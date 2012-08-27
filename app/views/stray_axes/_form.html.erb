@@ -1,0 +1,14 @@
+<%= simple_form_for @stray_axe, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :townland %>
+  <%= f.input :county %>
+  <%= f.input :comment %>
+  <%= f.input :contact %>
+  <%= f.input :followed_up %>
+  <%= f.input :museum_ref %>
+  <%= f.input :current_location %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                stray_axes_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -31,6 +31,8 @@ class AxeMastersController < ApplicationController
 
   def show
     @axe_master = AxeMaster.find(params[:id])
+    @linkage = Linkage.new
+
      respond_to do |format|
       format.html
       format.csv { send_data @axe_master.to_csv(col_sep: "," ) }

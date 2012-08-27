@@ -1,18 +1,18 @@
 DiscoveryProgramme::Application.routes.draw do
-
+  
   ActiveAdmin.routes(self)
 
   devise_for :users
   root :to => 'pages#home'
   
-  resources :users, :bibliographies, :blade_profiles, :butt_shapes, :collections, :contexts, :cross_sections, :edge_forms, :edge_shapes, :face_shapes, :haftings, :macros, :pages, :prime_treatments, :profiles, :re_uses, :use_wears
+  resources :users, :bibliographies, :blade_profiles, :butt_shapes, :collections, :contexts, :cross_sections, :edge_forms, :edge_shapes, :face_shapes, :haftings, :macros, :pages, :prime_treatments, :profiles, :re_uses, :use_wears, :stray_axes
+  resources :linkages
   resources :axe_masters do
     collection { post :search, to: 'axe_masters#index'
        get :search, to: 'axe_masters#index' }
   end
 
   get "axe_masters/search"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -62,10 +62,11 @@ DiscoveryProgramme::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+  # root :to => 'welcome#index'
 
-# See how all your routes lay out with "rake routes"
+  # See how all your routes lay out with "rake routes"
 
-# This is a legacy wild controller route that's not recommended for RESTful applications.
-# Note: This route will make all actions in every controller accessible via GET requests.
-# match ':controller(/:action(/:id))(.:format)'
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  # match ':controller(/:action(/:id))(.:format)'
 end

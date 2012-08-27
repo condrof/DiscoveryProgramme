@@ -18,6 +18,8 @@ class EdgeFormsController < ApplicationController
   
   def create
     @edge_form = EdgeForm.new(params[:edge_form])
+    @edge_form[:code] = EdgeForm.order("code desc").first.code.succ!
+
     if @edge_form.save
       flash[:success] = "Your record has been created"
       redirect_to edge_forms_path

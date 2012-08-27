@@ -18,6 +18,7 @@ class ProfilesController < ApplicationController
 
   def create
     @profile = Profile.new(params[:profile])
+    @profile[:code] = Profile.order("code desc").first.code.succ!
     if @profile.save
       flash[:success] = "Your record has been created"
       redirect_to profiles_path

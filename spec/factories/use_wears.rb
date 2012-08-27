@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :use_wear do
+    code "MyString"
+    description "MyString"
   end
 end

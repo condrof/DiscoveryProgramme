@@ -18,6 +18,7 @@ class CrossSectionsController < ApplicationController
   
   def create
     @cross_section = CrossSection.new(params[:cross_section])
+    @cross_section[:code] = CrossSection.order("code desc").first.code.succ!
     if @cross_section.save
       flash[:success] = "Your record has been created"
       redirect_to cross_sections_path

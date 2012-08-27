@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :edge_form do
+    code "MyString"
+    description "MyString"
   end
 end

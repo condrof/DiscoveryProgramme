@@ -16,6 +16,7 @@ class PrimeTreatmentsController < ApplicationController
 
   def create
     @prime_treatment = PrimeTreatment.new(params[:prime_treatment])
+    @prime_treatment[:code] = PrimeTreatment.order("code desc").first.code.succ!
     if @prime_treatment.save
       flash[:success] = "Your record has been created"
       redirect_to prime_treatments_path

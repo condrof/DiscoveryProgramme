@@ -2,5 +2,6 @@
 
 FactoryGirl.define do
   factory :macro do
+    macro_id "MyString"
   end
 end

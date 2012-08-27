@@ -18,6 +18,7 @@ class UseWearsController < ApplicationController
 
   def create
     @use_wear = UseWear.new(params[:use_wear])
+    @use_wear[:code] = UseWear.order("code desc").first.code.succ!
     if @use_wear.save
       flash[:success] = "Your record has been created"
       redirect_to use_wears_path

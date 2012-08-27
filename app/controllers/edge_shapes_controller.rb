@@ -19,6 +19,7 @@ class EdgeShapesController < ApplicationController
   
   def create
     @edge_shape = EdgeShape.new(params[:edge_shape])
+    @edge_shape[:code] = EdgeShape.order("code desc").first.code.succ!
     if @edge_shape.save
       flash[:success] = "Your record has been created"
       redirect_to edge_shapes_path

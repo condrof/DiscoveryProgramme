@@ -19,6 +19,7 @@ class HaftingsController < ApplicationController
   
   def create
     @hafting = Hafting.new(params[:hafting])
+    @hafting[:code] = Hafting.order("code desc").first.code.succ!
     if @hafting.save
       flash[:success] = "Your record has been created"
       redirect_to haftings_path
