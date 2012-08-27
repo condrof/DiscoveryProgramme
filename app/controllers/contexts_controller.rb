@@ -18,6 +18,7 @@ class ContextsController < ApplicationController
   
   def create
     @context = Context.new(params[:context])
+    @context[:code] = Context.order("code desc").first.code.succ!
     if @context.save
       flash[:success] = "Your record has been created"
       redirect_to contexts_path

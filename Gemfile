@@ -16,7 +16,7 @@ gem 'simple_form'
 gem 'ransack'
 gem 'carrierwave'
 gem "comma", "~> 3.0"
-
+gem 'kaminari'
 
 
 # Gems used only for assets and not required
@@ -27,6 +27,7 @@ group :assets do
   
   gem "rspec-rails", :group => [:test, :development]
 group :test do
+  gem 'simplecov', :require => false, :group => :test
   gem "factory_girl_rails"
   gem 'capybara', "~> 1.1.2" 
   gem "guard-rspec"

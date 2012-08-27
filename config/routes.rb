@@ -10,7 +10,7 @@ DiscoveryProgramme::Application.routes.draw do
     collection { post :search, to: 'axe_masters#index'
        get :search, to: 'axe_masters#index' }
   end
-  
+
   get "axe_masters/search"
 
   # The priority is based upon order of creation:

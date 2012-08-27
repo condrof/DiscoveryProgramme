@@ -10,6 +10,7 @@ class AxeMastersController < ApplicationController
         @axe_masters << axe
       end
     end
+    @axe_masters_show = Kaminari.paginate_array(@axe_masters).page(params[:page]).per(1)
     @q.build_condition if @q.conditions.empty?
     @q.build_sort if @q.sorts.empty?   
   
@@ -23,7 +24,7 @@ class AxeMastersController < ApplicationController
       if current_user.admin || current_user.researcher
         send_data @axe_masters.to_comma, :style => :researcher, :col_sep => ',', :filename => "axe.csv" 
       else
-        send_data @axe_masters.to_comma, :filename => "axe.csv"
+        send_data @axe_masters.to_comma, :col_sep => ',', :filename => "axe.csv"
       end
     end
   end

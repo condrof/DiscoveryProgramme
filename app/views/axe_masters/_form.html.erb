@@ -1,6 +1,7 @@
-<%= simple_form_for @axe_master, :html => { :class => 'form-horizontal',:multipart => true } do |f| %>
+<%= simple_form_for @axe_master, :html => { :class => 'form-horizontal well',:multipart => true } do |f| %>
 	<%= f.hidden_field :seq_no, :value => (AxeMaster.order("seq_no desc").first.seq_no.to_i + 1) %>
-	<%= f.file_field :image %>
+	<%= f.label :image %>
+	<%= f.file_field :image %><br /><br />
 	<%= f.input :townland %>
 	<%= f.input :area %>
 	<%= f.input :county %>

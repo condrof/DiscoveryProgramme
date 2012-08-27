@@ -1,4 +1,4 @@
-<%= search_form_for @q, :html => { :class => 'form-horizontal' }, url: search_axe_masters_path, method: :post do |f| %>
+<%= search_form_for @q, :html => { :class => 'well form-search' }, url: search_axe_masters_path, method: :post do |f| %>
   <%= f.condition_fields do |c| %>
     <%= render "condition_fields", f: c %>
   <% end %>

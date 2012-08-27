@@ -5,6 +5,9 @@
 	<h1><%= t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
 
+<div class="pagination">
+	<%= paginate @axe_masters_show %>
+</div>
 <table class="table table-striped">
 	<thead>
 		<tr>
@@ -24,7 +27,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @axe_masters.each do |axe_master| %>
+		<% @axe_masters_show.each do |axe_master| %>
 		<tr>
 			<% if axe_master.confirmed %>
 				<td><%= link_to axe_master.seq_no, axe_master_path(axe_master) %></td>
@@ -53,6 +56,9 @@
 		<% end %>
 	</tbody>
 </table>
+<div class="pagination pagination-centered">
+	<%= paginate @axe_masters_show %>
+</div>
 
 <% if can? :create, AxeMaster %>
 	<%= link_to t('.new', :default => t("helpers.links.new")),

@@ -9,3 +9,10 @@ copy from axe_masters to rest
 
 all views,
 axe_master form
+
+museum references
+
+stray axes
+validations
+
+paginate search returns
