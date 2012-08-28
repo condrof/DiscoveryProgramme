@@ -1,9 +1,12 @@
 2) Test Bibliography, Linkage, AxeMaster and pictures
 
-3) all views,
+3) non-standard-views
+	axe-master show page
 
 4) add indexes
 
 5) Minerals, chemical composition
 
-6) seed the database
+6) front page and users show page
+
+7) seed the database

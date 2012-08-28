@@ -5,5 +5,5 @@ class CrossSection < ActiveRecord::Base
   has_many :axe_masters, :foreign_key => "cross_section_id", :primary_key => "code"
   
   validates :code, :uniqueness => true, :presence => true
-
+  validates :description, :uniqueness => true, :presence => true
 end

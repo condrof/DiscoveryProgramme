@@ -19,7 +19,7 @@ class BladeProfilesController < ApplicationController
   
   def create
     @blade_profile = BladeProfile.new(params[:blade_profile])
-    #@blade_profile[:code] = BladeProfile.order("code desc").first.code.succ!
+    @blade_profile[:code] = BladeProfile.order("code desc").first.code.succ!
 
     if @blade_profile.save
       flash[:success] = "Your record has been created"

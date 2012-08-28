@@ -24,6 +24,15 @@ describe "ViewRecords" do
       BladeProfile.last.code.should eq("CA002")
     end
     
+    it "should not create a record with no description" do
+      visit blade_profiles_path
+      old = BladeProfile.count
+      click_link "New"
+      click_button "Create Blade profile"
+      page.should have_content("Record did not save") 
+      BladeProfile.count.should be(old)    
+    end
+    
     it "should go to show page on click code" do
       visit blade_profiles_path
       click_link "#{@blade_profile.code}"
@@ -84,7 +93,15 @@ describe "ViewRecords" do
       page.should have_content( "Your record has been created")
       ButtShape.last.code.should eq("BU002")
     end
-    
+    it "should not create a record with no description" do
+      visit butt_shapes_path
+      old = ButtShape.count
+      click_link "New"
+      click_button "Create Butt shape"
+      page.should have_content("Record did not save") 
+      ButtShape.count.should be(old)    
+    end
+        
     it "should go to show page on click code" do
       visit butt_shapes_path
       click_link "#{@butt_shape.code}"
@@ -138,6 +155,15 @@ describe "ViewRecords" do
       click_button "Create Context"
       page.should have_content( "Your record has been created")
       Context.last.code.should.eql?("CD002")
+    end
+    
+    it "should not create a record with no description" do
+      visit contexts_path
+      old = Context.count
+      click_link "New"
+      click_button "Create Context"
+      page.should have_content("Record did not save") 
+      Context.count.should be(old)    
     end
     
     it "should display all records on index page" do
@@ -201,6 +227,15 @@ describe "ViewRecords" do
       CrossSection.last.code.should eq("CS002")
     end
     
+    it "should not create a record with no description" do
+      visit cross_sections_path
+      old = CrossSection.count
+      click_link "New"
+      click_button "Create Cross section"
+      page.should have_content("Record did not save") 
+      CrossSection.count.should be(old)    
+    end
+    
     it "should display all records on index page" do
       visit cross_sections_path
       page.should have_content(@cross_section.code)   
@@ -262,6 +297,15 @@ describe "ViewRecords" do
       EdgeForm.last.code.should eq("EF02")
     end
     
+    it "should not create a record with no description" do
+      visit edge_forms_path
+      old = EdgeForm.count
+      click_link "New"
+      click_button "Create Edge form"
+      page.should have_content("Record did not save") 
+      EdgeForm.count.should be(old)    
+    end
+    
     it "should display all records on index page" do
       visit edge_forms_path
       page.should have_content(@edge_form.code)   
@@ -321,6 +365,15 @@ describe "ViewRecords" do
       click_button "Create Edge shape"
       page.should have_content( "Your record has been created")
       EdgeShape.last.code.should eq("ES02")
+    end
+    
+    it "should not create a record with no description" do
+      visit edge_shapes_path
+      old = EdgeShape.count
+      click_link "New"
+      click_button "Create Edge shape"
+      page.should have_content("Record did not save") 
+      EdgeShape.count.should be(old)    
     end
     
     it "should display all records on index page" do
@@ -390,6 +443,15 @@ describe "ViewRecords" do
       FaceShape.last.code.should eq("FS002")
     end
     
+    it "should not create a record with no description" do
+      visit face_shapes_path
+      old = FaceShape.count
+      click_link "New"
+      click_button "Create Face shape"
+      page.should have_content("Record did not save") 
+      FaceShape.count.should be(old)    
+    end
+    
     it "should go to show page on click code" do
       visit face_shapes_path
       click_link "#{@face_shape.code}"
@@ -443,6 +505,15 @@ describe "ViewRecords" do
       click_button "Create Hafting"
       page.should have_content( "Your record has been created")
       Hafting.last.code.should eq("HA02")
+    end
+    
+    it "should not create a record with no description" do
+      visit haftings_path
+      old = Hafting.count
+      click_link "New"
+      click_button "Create Hafting"
+      page.should have_content("Record did not save") 
+      Hafting.count.should be(old)    
     end
     
     it "should display all records on index page" do
@@ -507,6 +578,15 @@ describe "ViewRecords" do
       PrimeTreatment.last.code.should eq("PT02")
     end
     
+    it "should not create a record with no description" do
+      visit prime_treatments_path
+      old = PrimeTreatment.count
+      click_link "New"
+      click_button "Create Prime treatment"
+      page.should have_content("Record did not save") 
+      PrimeTreatment.count.should be(old)    
+    end
+    
     it "should display all records on index page" do
       visit prime_treatments_path
       page.should have_content(@prime_treatment.code)   
@@ -566,6 +646,15 @@ describe "ViewRecords" do
       click_button "Create Profile"
       page.should have_content( "Your record has been created")
       Profile.last.code.should eq("P 02")
+    end
+    
+    it "should not create a record with no description" do
+      visit profiles_path
+      old = Profile.count
+      click_link "New"
+      click_button "Create Profile"
+      page.should have_content("Record did not save") 
+      Profile.count.should be(old)    
     end
     
     it "should display all records on index page" do
@@ -629,6 +718,15 @@ describe "ViewRecords" do
       ReUse.last.code.should.eql?("RU02")
     end
     
+    it "should not create a record with no description" do
+      visit re_uses_path
+      old = ReUse.count
+      click_link "New"
+      click_button "Create Re use"
+      page.should have_content("Record did not save") 
+      ReUse.count.should be(old)    
+    end
+    
     it "should display all records on index page" do
       visit re_uses_path
       page.should have_content(@re_use.code)   
@@ -688,6 +786,15 @@ describe "ViewRecords" do
       click_button "Create Use wear"
       page.should have_content( "Your record has been created")
       UseWear.last.code.should eq("UW02")
+    end
+    
+    it "should not create a record with no description" do
+      visit use_wears_path
+      old = UseWear.count
+      click_link "New"
+      click_button "Create Use wear"
+      page.should have_content("Record did not save") 
+      UseWear.count.should be(old)    
     end
     
     it "should display all records on index page" do

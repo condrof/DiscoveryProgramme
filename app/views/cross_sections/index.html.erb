@@ -7,7 +7,6 @@
     <tr>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +15,6 @@
       <tr>
         <td><%= link_to cross_section.code, cross_section_path(cross_section) %></td>
         <td><%= cross_section.description %></td>
-        <td><%=l cross_section.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_cross_section_path(cross_section), :class => 'btn btn-mini' %>

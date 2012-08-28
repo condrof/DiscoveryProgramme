@@ -4,5 +4,5 @@ class UseWear < ActiveRecord::Base
   has_many :axe_masters, :foreign_key => "use_wear_id", :primary_key => "code"
   
   validates :code, :uniqueness => true, :presence => true
-
+  validates :description, :uniqueness => true, :presence => true
 end

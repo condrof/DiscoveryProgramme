@@ -7,7 +7,6 @@
     <tr>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +15,6 @@
       <tr>
         <td><%= link_to use_wear.code, use_wear_path(use_wear) %></td>
         <td><%= use_wear.description %></td>
-        <td><%=l use_wear.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_use_wear_path(use_wear), :class => 'btn btn-mini' %>

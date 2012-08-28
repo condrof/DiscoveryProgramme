@@ -1,5 +1,4 @@
 <%= simple_form_for @blade_profile, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= f.hidden_field :code, :value => BladeProfile.last.code.succ! %>
   <%= f.input :description %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
