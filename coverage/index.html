@@ -23,14 +23,14 @@
       <img src="./assets/0.5.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-08-27T21:26:49+01:00">2012-08-27T21:26:49+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-08-28T15:33:27+01:00">2012-08-28T15:33:27+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">78.12%</span></span>
+    (<span class="covered_percent"><span class="red">77.9%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -41,9 +41,9 @@
   <a name="AllFiles"></a>
   <div>
     <b>121</b> files in total.
-    <b>1321</b> relevant lines. 
-    <span class="green"><b>1032</b> lines covered</span> and
-    <span class="red"><b>289</b> lines missed </span>
+    <b>1326</b> relevant lines. 
+    <span class="green"><b>1033</b> lines covered</span> and
+    <span class="red"><b>293</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -211,12 +211,12 @@
       
       <tr>
         <td class="strong"><a href="#ba069d685b9e039ea7a0dd55999eae4bdc3c508a" class="src_link" title="app/controllers/linkages_controller.rb">app/controllers/linkages_controller.rb</a></td>
-        <td class="red strong">25.0 %</td>
+        <td class="red strong">23.08 %</td>
+        <td>19</td>
         <td>13</td>
-        <td>8</td>
-        <td>2</td>
-        <td>6</td>
-        <td>0.3</td>
+        <td>3</td>
+        <td>10</td>
+        <td>0.2</td>
       </tr>
       
       <tr>
@@ -5716,11 +5716,11 @@
         <div class="source_table" id="ba069d685b9e039ea7a0dd55999eae4bdc3c508a">
   <div class="header">
     <h3>app/controllers/linkages_controller.rb</h3>
-    <h4><span class="red">25.0 %</span> covered</h4>
+    <h4><span class="red">23.08 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <b>13</b> relevant lines. 
+      <span class="green"><b>3</b> lines covered</span> and
+      <span class="red"><b>10</b> lines missed.</span>
     </div>
   </div>
   
@@ -5739,67 +5739,103 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
-          
-          
-          <code class="ruby">    #@axe_master = AxeMaster.find(params[:linkage][:axe_master])</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="4">
+        <li class="missed" data-hits="0" data-linenumber="3">
           
           
           <code class="ruby">    @relationship = Linkage.new(params[:linkage])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="5">
+        <li class="missed" data-hits="0" data-linenumber="4">
           
           
           <code class="ruby">    if @relationship.save!</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="6">
+        <li class="missed" data-hits="0" data-linenumber="5">
           
           
           <code class="ruby">      flash[:alert] = &quot;Bibliography added to Axe record&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="7">
+        <li class="missed" data-hits="0" data-linenumber="6">
           
           
           <code class="ruby">      redirect_to :back</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="9">
+        <li class="missed" data-hits="0" data-linenumber="8">
           
           
           <code class="ruby">      flash[:alert] = &quot;Bibliography was not added to Axe Record&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="10">
+        <li class="missed" data-hits="0" data-linenumber="9">
           
           
           <code class="ruby">      redirect_to :back</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def destroy</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="14">
+          
+          
+          <code class="ruby">    @linkage=Linkage.find(params[:id])</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="15">
+          
+          
+          <code class="ruby">    @linkage.destroy</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="16">
+          
+          
+          <code class="ruby">    flash[:alert] = &quot;Reference deleted from Axe Record&quot;</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
+          
+          
+          <code class="ruby">    redirect_to :back    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
@@ -15978,7 +16014,7 @@
         <li class="covered" data-hits="1" data-linenumber="168">
           <span class="hits">1</span>
           
-          <code class="ruby">   config.default_input_size = 30</code>
+          <code class="ruby">   config.default_input_size = 60</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="169">
@@ -20748,7 +20784,7 @@
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">        click_button &quot;Sign in&quot;</code>
+          <code class="ruby">        click_button &quot;Sign In&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
@@ -20808,7 +20844,7 @@
         <li class="covered" data-hits="1" data-linenumber="29">
           <span class="hits">1</span>
           
-          <code class="ruby">        click_button &quot;Sign in&quot;</code>
+          <code class="ruby">        click_button &quot;Sign In&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="30">
@@ -20868,7 +20904,7 @@
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">        click_button &quot;Sign in&quot;</code>
+          <code class="ruby">        click_button &quot;Sign In&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="40">
@@ -20994,7 +21030,7 @@
         <li class="covered" data-hits="1" data-linenumber="60">
           <span class="hits">1</span>
           
-          <code class="ruby">        click_button &quot;Sign in&quot;</code>
+          <code class="ruby">        click_button &quot;Sign In&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="61">
@@ -21078,7 +21114,7 @@
         <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
-          <code class="ruby">        click_button &quot;Sign in&quot;</code>
+          <code class="ruby">        click_button &quot;Sign In&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="75">
@@ -21132,13 +21168,13 @@
         <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
-          <code class="ruby">    describe &quot;user sign in&quot; do</code>
+          <code class="ruby">    describe &quot;user Sign In&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="84">
           <span class="hits">1</span>
           
-          <code class="ruby">      it &quot;allows users to sign in after they have registered&quot; do</code>
+          <code class="ruby">      it &quot;allows users to Sign In after they have registered&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="85">
@@ -21168,7 +21204,7 @@
         <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
-          <code class="ruby">        click_button &quot;Sign in&quot;</code>
+          <code class="ruby">        click_button &quot;Sign In&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="90">
@@ -21198,7 +21234,7 @@
         <li class="covered" data-hits="1" data-linenumber="94">
           <span class="hits">1</span>
           
-          <code class="ruby">    describe &quot;user admin sign in&quot; do </code>
+          <code class="ruby">    describe &quot;user admin Sign In&quot; do </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="95">
@@ -21240,7 +21276,7 @@
         <li class="covered" data-hits="1" data-linenumber="101">
           <span class="hits">1</span>
           
-          <code class="ruby">        click_button &quot;Sign in&quot; </code>
+          <code class="ruby">        click_button &quot;Sign In&quot; </code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="102">

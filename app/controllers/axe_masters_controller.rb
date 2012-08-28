@@ -32,6 +32,7 @@ class AxeMastersController < ApplicationController
   def show
     @axe_master = AxeMaster.find(params[:id])
     @linkage = Linkage.new
+    @picture = Picture.new
 
      respond_to do |format|
       format.html

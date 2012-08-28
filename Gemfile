@@ -32,6 +32,7 @@ group :test do
   gem "factory_girl_rails"
   gem 'capybara', "~> 1.1.2" 
   gem "guard-rspec"
+  gem "launchy"
 end
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

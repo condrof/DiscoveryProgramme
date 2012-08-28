@@ -1,85 +1,119 @@
 <%= simple_form_for @axe_master, :html => { :class => 'form-horizontal well',:multipart => true } do |f| %>
 	<fieldset>
-	  <legend>Area</legend>
+	  <legend>Archival Data</legend>
 		<%= f.input :townland %>
+		<%= f.input :barony %>
+		<%= f.input :parish %>
 		<%= f.input :area %>
 		<%= f.input :county %>
+	    <%= f.input :context_id, :as => :select, :collection => Hash[::Context.all.collect{|b| [b.description,b.id]}] %>
+	   	<%= f.input :site_type %>
+		<%= f.input :discovery_circumstances, :class => 'text_block' %>
+		<%= f.input :museam_ref %>	
+	</fieldset>
+	
+	<% if can? :destroy, AxeMaster %>
+		<fieldset>
+			<legend>Admin Inputs</legend>
+			<%= f.input :collections_id, :as => :select, :collection => Hash[Collection.all.map{|b| [b.collection_title,b.id]}]  %>
+			<%= f.input :current_location %>
+		</fieldset>
+	<% end %>
+	
+	<fieldset>
+		<legend>Petrology</legend>	
+		<%= f.input :macro_id, :as => :select, :collection => Hash[Macro.all.map{|b| [b.description,b.code]}] %>
+		<%= f.input :micro_id %>
+		<%= f.input :description %>
+	</fieldset>
+	
+	<fieldset>
+		<legend>Dimensions</legend>
+		<%= f.input :length %>
+		<%= f.input :width %>
+		<%= f.input :thickness %>
+		<%= f.input :weight %>		
+	</fieldset>
+	
+	<fieldset>
+		<legend>Physical Characteristics</legend>
+		<%= f.input :object_type %>
+		<%= f.input :minature %>
+		<%= f.input :hafting_id, :as => :select, :collection => Hash[Hafting.all.map{|b| [b.description,b.code]}] %>
+		<%= f.input :object_status %>
+		<%= f.input :incomplete_description %>
+		<%= f.input :roughout_description %>
+		<%= f.input :incomplete_details %>
+		<%= f.input :roughout_details %>
 	</fieldset>
 	<fieldset>
-		<legend>Another</legend>	
-		<%= f.input :collections_id, :as => :select, :collection => Hash[Collection.all.map{|b| [b.collection_title,b.id]}]  %>
-		<%= f.input :current_location %>
-		<%= f.input :discovery_circumstances %>
-		<%= f.input :context_id %>
+		<legend>Treatments</legend>
+		<%= f.input :prime_treatment_id, :as => :select, :collection => Hash[PrimeTreatment.all.map{|b| [b.description,b.code]}] %>
+		<%= f.input :facet_1_right, :as => :radio_buttons %>
+		<%= f.input :facet_2_right, :as => :radio_buttons %>
+		<%= f.input :facet_1_left, :as => :radio_buttons %>
+		<%= f.input :facet_2_left, :as => :radio_buttons %>
+		<%= f.input :blade_ground, :as => :radio_buttons %>
+		<%= f.input :sides_ground, :as => :radio_buttons %>
+		<%= f.input :faces_ground, :as => :radio_buttons %>
+		<%= f.input :butt_ground, :as => :radio_buttons %>
+		<%= f.input :blade_polished, :as => :radio_buttons %>
+		<%= f.input :sides_polished, :as => :radio_buttons %>
+		<%= f.input :faces_polished, :as => :radio_buttons %>
+		<%= f.input :butt_polished, :as => :radio_buttons %>
 	</fieldset>
-	<%= f.input :from_year %>
-	<%= f.input :to_year %>
-	<%= f.input :map_reference %>
-	<%= f.input :temp_map_reference %>
-	<%= f.input :NGR_x_axis %>
-	<%= f.input :NGR_y_axis %>
-	<%= f.input :ordinance_datum %>
-	<%= f.input :object_type %>
-	<%= f.input :object_type %>
-	<%= f.input :length %>
-	<%= f.input :width %>
-	<%= f.input :thickness %>
-	<%= f.input :weight %>
-	<%= f.input :face_shape_id, :as => :select, :collection => Hash[FaceShape.all.map{|b| [b.description,b.code]}] %>
-	<%= f.input :cross_section_id, :as => :select, :collection => Hash[CrossSection.all.map{|b| [b.description,b.code]}] %>
-	<%= f.input :edge_shape_id, :as => :select, :collection => Hash[EdgeShape.all.map{|b| [b.description,b.code]}]%>
-	<%= f.input :profile_id, :as => :select, :collection => Hash[Profile.all.map{|b| [b.description,b.code]}] %>	
-	<%= f.input :blade_profile_id, :as => :select, :collection => Hash[BladeProfile.all.map{|b| [b.description,b.code]}] %>
-	<%= f.input :butt_shape_id, :as => :select, :collection => Hash[ButtShape.all.map{|b| [b.description,b.code]}] %>
-	<%= f.input :facet_1_right, :as => :radio_buttons %>
-	<%= f.input :facet_2_right, :as => :radio_buttons %>
-	<%= f.input :facet_1_left, :as => :radio_buttons %>
-	<%= f.input :facet_2_left, :as => :radio_buttons %>
-	<%= f.input :prime_treatment_id, :as => :select, :collection => Hash[PrimeTreatment.all.map{|b| [b.description,b.code]}] %>
-	<%= f.input :blade_ground, :as => :radio_buttons %>
-	<%= f.input :sides_ground, :as => :radio_buttons %>
-	<%= f.input :faces_ground, :as => :radio_buttons %>
-	<%= f.input :butt_ground, :as => :radio_buttons %>
-	<%= f.input :blade_polished, :as => :radio_buttons %>
-	<%= f.input :sides_polished, :as => :radio_buttons %>
-	<%= f.input :faces_polished, :as => :radio_buttons %>
-	<%= f.input :butt_polished, :as => :radio_buttons %>
-	<%= f.input :hafting_id, :as => :select, :collection => Hash[Hafting.all.map{|b| [b.description,b.code]}] %>
-	<%= f.input :description %>
-	<%= f.input :macro_id, :as => :select, :collection => Hash[Macro.all.map{|b| [b.description,b.code]}] %>
-	<%= f.input :micro_id %>
-	<%= f.input :specific_gravity %>
-	<%= f.input :petrology %>
-	<%= f.input :comments %>
-	<%= f.input :drawn, :as => :radio_buttons %>
-	<%= f.input :archival_complete, :as => :radio_buttons %>
-	<%= f.input :object_comp, :as => :radio_buttons %>
-	<%= f.input :petrology_comp, :as => :radio_buttons %>
-	<%= f.input :mapping_comp, :as => :radio_buttons %>
-	<%= f.input :photographed, :as => :radio_buttons %>
-	<%= f.input :axe_cored, :as => :radio_buttons %>
-	<%= f.input :barony %>
-	<%= f.input :parish %>
-	<%= f.input :hoard %>
-	<%= f.input :new_museam_ref %>
-	<%= f.input :catalogue_ref %>
-	<%= f.input :site_type %>
-	<%= f.input :secure_context %>
-	<%= f.input :feature_context_details %>
-	<%= f.input :associated_artifacts %>
-	<%= f.input :associated_features %>
-	<%= f.input :dating_information %>
-	<%= f.input :use_wear_id, :as => :select, :collection => Hash[UseWear.all.map{|b| [b.description,b.code]}]  %>
-	<%= f.input :deliberate_breaking %>
-	<%= f.input :re_use_id, :as => :select, :collection => Hash[ReUse.all.map{|b| [b.description,b.code]}] %>
-	<%= f.input :edge_form_id, :as => :select, :collection => Hash[EdgeForm.all.map{|b| [b.description,b.code]}] %>	
-	<%= f.input :mineral_identification_method %>	
-	<%= f.input :chemical_composition_method %>
-	<%= f.input :object_status %>
-	<%= f.input :incomplete_description %>
-	<%= f.input :roughout_description %>
-	<%= f.input :incomplete_details %>
-	<%= f.input :roughout_details %>	
+
+	<fieldset>
+		<legend>Descriptive</legend>	  
+		<%= f.input :face_shape_id, :as => :select, :collection => Hash[FaceShape.all.map{|b| [b.description,b.code]}] %>
+		<%= f.input :cross_section_id, :as => :select, :collection => Hash[CrossSection.all.map{|b| [b.description,b.code]}] %>
+		<%= f.input :edge_shape_id, :as => :select, :collection => Hash[EdgeShape.all.map{|b| [b.description,b.code]}]%>
+		<%= f.input :profile_id, :as => :select, :collection => Hash[Profile.all.map{|b| [b.description,b.code]}] %>	
+		<%= f.input :blade_profile_id, :as => :select, :collection => Hash[BladeProfile.all.map{|b| [b.description,b.code]}] %>
+		<%= f.input :butt_shape_id, :as => :select, :collection => Hash[ButtShape.all.map{|b| [b.description,b.code]}] %>
+		<%= f.input :use_wear_id, :as => :select, :collection => Hash[UseWear.all.map{|b| [b.description,b.code]}]  %>
+		<%= f.input :deliberate_breaking %>
+		<%= f.input :re_use_id, :as => :select, :collection => Hash[ReUse.all.map{|b| [b.description,b.code]}] %>
+		<%= f.input :edge_form_id, :as => :select, :collection => Hash[EdgeForm.all.map{|b| [b.description,b.code]}] %>		  		    			
+	</fieldset>
+	
+	<fieldset>
+		<legend>Date and Location</legend>
+		<%= f.input :from_year %>
+		<%= f.input :to_year %>
+		<%= f.input :map_reference %>
+		<%= f.input :temp_map_reference %>
+		<%= f.input :NGR_x_axis %>
+		<%= f.input :NGR_y_axis %>
+		<%= f.input :ordinance_datum %>
+	</fieldset>
+
+	<fieldset>
+		<legend>Misc</legend>
+		<%= f.input :specific_gravity %>
+		<%= f.input :petrology %>
+		<%= f.input :comments %>
+		<%= f.input :drawn, :as => :radio_buttons %>
+		<%= f.input :archival_complete, :as => :radio_buttons %>
+		<%= f.input :object_comp, :as => :radio_buttons %>
+		<%= f.input :petrology_comp, :as => :radio_buttons %>
+		<%= f.input :mapping_comp, :as => :radio_buttons %>
+		<%= f.input :photographed, :as => :radio_buttons %>
+		<%= f.input :axe_cored, :as => :radio_buttons %>
+	
+		<%= f.input :hoard %>
+		<%= f.input :new_museam_ref %>
+		<%= f.input :catalogue_ref %>
+		<%= f.input :secure_context %>
+		<%= f.input :feature_context_details %>
+		<%= f.input :associated_artifacts %>
+		<%= f.input :associated_features %>
+		<%= f.input :dating_information %>
+		<%= f.input :mineral_identification_method %>	
+		<%= f.input :chemical_composition_method %>		
+	</fieldset>
+
+
   <div class="form-actions">
     <%= f.button :submit, "Submit Record", :class => 'btn-primary', :id => "Create" %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

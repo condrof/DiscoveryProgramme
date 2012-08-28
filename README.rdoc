@@ -1,10 +1,9 @@
-1) can have multiple pictures
-
 2) Test Bibliography, Linkage, AxeMaster and pictures
 
 3) all views,
-axe_master form - group columns in field sets
 
-4) museum references
+4) add indexes
 
-5) add indexes
+5) Minerals, chemical composition
+
+6) seed the database

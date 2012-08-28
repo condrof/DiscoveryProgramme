@@ -894,7 +894,7 @@ describe "ViewRecords" do
       visit new_user_session_path
       fill_in "Email", :with => @user2.email
       fill_in "Password", :with => @user2.password
-      click_button "Sign in"
+      click_button "Sign In"
       visit collections_path
       page.should have_content("You are not authorized to access this page.")
     end

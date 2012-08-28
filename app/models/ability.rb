@@ -17,9 +17,17 @@ class Ability
              can :update, AxeMaster do |axe|
                axe.try(:user) == user 
              end
+             can :create, Picture
+             can :read, Picture do |pic|
+               pic.confirmed
+             end
+             can :update, Picture do |pic|
+               pic.try(:user_id) == user.id 
+             end
              can [:read, :update, :destroy], User do |tryuser|
                tryuser == user
              end
+             can :read, Bibliography
            end
            can :read, AxeMaster do |axe|
              axe.confirmed

@@ -10,13 +10,6 @@
  */
 
 
-.body {
-  margin-top: 70px;
-  width:90%;
-  max-width:1000px;
-  margin-left:auto;
-  margin-right:auto;
-}
 
 article,
 aside,
@@ -84,6 +77,7 @@ textarea {
   margin: 0;
   font-size: 100%;
   vertical-align: middle;
+  height:40px;
 }
 button,
 input {
@@ -603,15 +597,16 @@ dd {
 }
 .dl-horizontal dt {
   float: left;
-  width: 120px;
+  width: 300px;
   clear: left;
   text-align: right;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  padding-right:20px;
 }
 .dl-horizontal dd {
-  margin-left: 130px;
+  margin-left: 320px;
 }
 hr {
   margin: 20px 0;
@@ -881,7 +876,6 @@ input[type="file"] {
   line-height: 30px;
 }
 select {
-  width: 220px;
   border: 1px solid #bbb;
   background-color: #ffffff;
 }
@@ -1440,6 +1434,7 @@ legend + .control-group {
   width: 140px;
   padding-top: 5px;
   text-align: right;
+  padding-right: 20px;
 }
 .form-horizontal .controls {
   *display: inline-block;
@@ -5055,4 +5050,17 @@ i[class^="icon-"] {
 }
 .affix {
   position: fixed;
+}
+
+.body {
+  margin-top: 70px;
+  width:90%;
+  max-width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+textarea {
+  width: 210px;
+  height: 40px;
 }

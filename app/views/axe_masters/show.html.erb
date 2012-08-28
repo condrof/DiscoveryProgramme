@@ -3,25 +3,80 @@
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
-<div class = "form-horizontal well">
-	<% if can? :update, @axe_master %>
-		<%= "Add this record to a Bibliography" %>
-		<%= simple_form_for @linkage do |f| %>
-			<%= f.hidden_field :sequence_no, :value => @axe_master.seq_no %>
-			<%= f.input :bibliography_id %>
-		<%= f.button :submit, :class => 'btn btn-primary' %>
-		<% end %>
-	<% end %>
-</div>
+<% if can? :update, @axe_master %>
+	<div class = "form-horizontal well">
+		<fieldset>
+			<legend>Add a bibliography to this record</legend>
+			<%= simple_form_for @linkage do |f| %>
+				<%= f.hidden_field :sequence_no, :value => @axe_master.seq_no %>
+				<%= f.input :bibliography_id, :hint => "Use bibliography link_key" %>
+			<div class = "form-actions">
+				<%= f.button :submit, :class => 'btn btn-primary' %>
+			</div>
+			<% end %>
+		</fieldset>
+<%= link_to "To see a list of all bibliographies, click here", bibliographies_path, :target => '_blank' %>
+	</div>
+	
+	<div class = "form-horizontal well">
+		<fieldset>
+			<legend>Add a picture to this record</legend>
+			<%= simple_form_for @picture, :html => {:multipart => true} do |f| %>
+			  <%= f.hidden_field :seq_no, :value => @axe_master.seq_no %>
+			  <%= f.hidden_field :user_id, :value => current_user.id %>
+			  <%= f.input :document_name %>
+			  <%= f.input :description %>
+			  <%= f.input :document_type %>
+			  <%= f.label :image %>
+			  <%= f.file_field :image %> <br />
+			<div class = "form-actions">
+			  <%= f.button :submit, :class => "btn btn-primary" %>
+			</div
+			<% end %>
+			
+		</fieldset>
+	</div>
+<% end %>
 
-<%= @axe_master.linkages %>
+<% if !@axe_master.bibliographies %>
+	<div class="form-horizontal well">
+		<table class="table ">
+			<thead>
+				<tr>
+					<th>Author</th>
+					<th>Year</th>
+					<th>Title</th>
+					<th>Book Title</th>
+					<th>Publication</th>
+					<th>Link Key</th>
+				</tr>
+			</thead>
+			<tbody>	
+				<% @axe_master.bibliographies.each do |bibliography| %>
+				<tr>
+					<td><%= bibliography.author %></td>
+					<td><%= bibliography.year %></td>
+					<td><%= bibliography.title %></td>
+					<td><%= bibliography.book_title %></td>
+					<td><%= bibliography.publication %></td>
+					<td><%= bibliography.linkage_id %></td>
+					<% if can? :destroy, AxeMaster %>
+						<% @l = @axe_master.linkages.find(:all, :conditions => {:bibliography_id => bibliography.linkage_id} )%>
+						<td><%= link_to "Delete", linkage_path(@l), method: :delete, :confirm => "Are you sure?", class: "btn btn-primary"  %></td>	
+					<% end %>
+				</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+<% end %>
 
 <% if current_user && (current_user.researcher || current_user.admin) && !@axe_master.confirmed %>
 	<div class = "pull-right">
 		<%= link_to "Confirm Axe Record", confirm_record_admin_axe_master_path(@axe_master), :class => 'btn' %>
 	</div>
 <% end %>
-<% if current_user %>
+<% if current_user && current_user.confirmed %>
 	<div class = "pull-left">
 		Export: <%= link_to "CSV", axe_master_path(@axe_master, format: "csv") %> | <%= link_to "XML", axe_master_path(@axe_master, format: "xml") %>
 	</div>
@@ -30,6 +85,17 @@
 <br /><br />
 <div class ="well">
 	<dl class="dl-horizontal">
+		<% if @axe_master.pictures %>
+			<fieldset>
+				<legend>Images</legend>
+				<% @axe_master.pictures.each do |pic| %>
+					<% if pic.confirmed %>
+					  <dt><strong><%= pic.document_type %>:</strong></dt>
+					  <dd><%= link_to pic.description, picture_path(pic) %></dd>
+				  	<% end %>	
+				<% end %><fieldset>
+			</fieldset>
+		<% end %>
 	  <dt><strong><%= model_class.human_attribute_name(:seq_no) %>:</strong></dt>
 	  <dd><%= @axe_master.seq_no %></dd>
 	  <dt><strong><%= model_class.human_attribute_name(:museam_ref) %>:</strong></dt>
@@ -185,9 +251,7 @@
 	  <dt><strong><%= model_class.human_attribute_name(:minature) %>:</strong></dt>
 	  <dd><%= @axe_master.minature %></dd>
 	  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-	  <dd><%= @axe_master.user_id %></dd>
-	  <dt><strong><%= model_class.human_attribute_name(:confirmed) %>:</strong></dt>
-	  <dd><%= @axe_master.confirmed %></dd>
+	  <dd><%= @axe_master.user.try(:name) %></dd>
 	</dl>
 </div>
 <div class="form-actions">

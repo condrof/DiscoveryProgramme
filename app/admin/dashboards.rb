@@ -26,6 +26,20 @@ ActiveAdmin::Dashboards.build do
      #end
     end
   end
+  
+  section "Confirm Pictures" do
+    ul do
+      @pics=Picture.find(:all, :conditions => { :confirmed => "false" })
+      if !@pics.nil?
+        @pics.each do |pic|
+          li link_to "New picture for #{pic.axe_master.seq_no}", picture_path(pic) 
+        end
+      else
+          li "All current pictures have been confirmed"
+      end
+     #end
+    end
+  end
 
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just

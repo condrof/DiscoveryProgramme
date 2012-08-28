@@ -6,7 +6,7 @@ DiscoveryProgramme::Application.routes.draw do
   root :to => 'pages#home'
   
   resources :users, :bibliographies, :blade_profiles, :butt_shapes, :collections, :contexts, :cross_sections, :edge_forms, :edge_shapes, :face_shapes, :haftings, :macros, :pages, :prime_treatments, :profiles, :re_uses, :use_wears, :stray_axes
-  resources :linkages
+  resources :linkages, :pictures
   resources :axe_masters do
     collection { post :search, to: 'axe_masters#index'
        get :search, to: 'axe_masters#index' }

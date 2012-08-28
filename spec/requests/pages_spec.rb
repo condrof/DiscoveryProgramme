@@ -16,7 +16,7 @@ ActiveSupport::Deprecation.silence do
         visit new_user_session_path
         fill_in "Email", :with => user.email
         fill_in "Password", :with => user.password
-        click_button "Sign in"
+        click_button "Sign In"
         visit "/admin"
         page.should have_content("This area is restricted to administrators only.")
       end
@@ -26,7 +26,7 @@ ActiveSupport::Deprecation.silence do
         visit user_session_path
         fill_in "Email", :with => user.email
         fill_in "Password", :with => user.password
-        click_button "Sign in"
+        click_button "Sign In"
         visit "/admin"
         page.should have_content("Dashboard")
       end
@@ -36,7 +36,7 @@ ActiveSupport::Deprecation.silence do
         visit new_user_session_path
         fill_in "Email", :with => user.email
         fill_in "Password", :with => user.password
-        click_button "Sign in"
+        click_button "Sign In"
         visit "/admin"
         page.should have_content("Dashboard")     
       end
@@ -57,7 +57,7 @@ ActiveSupport::Deprecation.silence do
         visit new_user_session_path
         fill_in "Email",    :with => user.email
         fill_in "Password", :with => user.password
-        click_button "Sign in"
+        click_button "Sign In"
         visit edit_user_registration_path
         fill_in "Email", :with => "newemail@example.com"
         fill_in "Current password", :with => user.password
@@ -71,7 +71,7 @@ ActiveSupport::Deprecation.silence do
         visit new_user_session_path
         fill_in "Email",    :with => user.email
         fill_in "Password", :with => user.password
-        click_button "Sign in"
+        click_button "Sign In"
         visit edit_user_registration_path
         fill_in "Email", :with => "newemail@example.com"
         fill_in "Current password", :with => "wrong password"
@@ -80,25 +80,25 @@ ActiveSupport::Deprecation.silence do
       end
     end
     
-    describe "user sign in" do
-      it "allows users to sign in after they have registered" do
+    describe "user Sign In" do
+      it "allows users to Sign In after they have registered" do
         user = FactoryGirl.create(:user)
         visit new_user_session_path
         fill_in "Email",    :with => user.email
         fill_in "Password", :with => user.password
-        click_button "Sign in"
+        click_button "Sign In"
         page.should have_content("Signed in successfully")
       end
     end
     
-    describe "user admin sign in" do 
+    describe "user admin Sign In" do 
       
       it "should sign out successfully" do
         user = FactoryGirl.create(:user)
         visit new_user_session_path
         fill_in "Email",    :with => user.email
         fill_in "Password", :with => user.password
-        click_button "Sign in" 
+        click_button "Sign In" 
         visit destroy_user_session_path
         page.should have_content("Signed out successfully.")
       end
