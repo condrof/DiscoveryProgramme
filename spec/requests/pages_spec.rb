@@ -10,6 +10,13 @@ ActiveSupport::Deprecation.silence do
       end
     end
     
+    describe "GET /list" do
+      it "should be successful" do
+        get list_path
+        response.status.should be(200)
+      end
+    end
+    
     describe "admin dashboard access" do
       it "should not allow users" do
         user=FactoryGirl.create(:user)
@@ -48,8 +55,20 @@ ActiveSupport::Deprecation.silence do
         fill_in "Email",                 :with => "foo@example.com"
         fill_in "Password",              :with => "secret"
         fill_in "Password confirmation", :with => "secret"
+        fill_in "Institution",           :with => "NASA"
+        fill_in "Purpose of use",        :with => "Moon Rock"
+        fill_in "Name",                  :with => "Neil Armstrong"
         click_button "Sign up"
         page.should have_content("Welcome! You have signed up successfully.")
+      end
+      
+      it "does not allow users to register with invalid information" do
+        visit new_user_registration_path
+        fill_in "Email",                 :with => "foo@example.com"
+        fill_in "Password",              :with => "secret"
+        fill_in "Password confirmation", :with => "secret"
+        click_button "Sign up"
+        page.should_not have_content("Welcome! You have signed up successfully.")        
       end
       
       it "allows users to edit their information" do

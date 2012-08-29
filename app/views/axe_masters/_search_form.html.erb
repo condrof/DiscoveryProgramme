@@ -1,3 +1,4 @@
+<h2>Search Form</h2>
 <%= search_form_for @q, :html => { :class => 'well form-search' }, url: search_axe_masters_path, method: :post do |f| %>
   <%= f.condition_fields do |c| %>
     <%= render "condition_fields", f: c %>
@@ -16,6 +17,7 @@
   </div>
   <div class="form-actions">
     <%= f.button :search, :class => 'btn-primary', :name => "search", :id => "search", :value => "html" %>
+    <strong>Export to: </strong>
     <% if current_user && current_user.confirmed %>
     	<%= f.button :xml, :class => 'btn-info', :name => "search", :id => "search", :value => "xml" %>
    		<%= f.button :csv, :class => 'btn-info', :name => "search", :id => "search", :value => "csv" %>

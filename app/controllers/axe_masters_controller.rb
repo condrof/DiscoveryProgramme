@@ -10,7 +10,7 @@ class AxeMastersController < ApplicationController
         @axe_masters << axe
       end
     end
-    @axe_masters_show = Kaminari.paginate_array(@axe_masters).page(params[:page]).per(10)
+    @axe_masters_show = Kaminari.paginate_array(@axe_masters).page(params[:page]).per(20)
     @q.build_condition if @q.conditions.empty?
     @q.build_sort if @q.sorts.empty?   
   
@@ -22,9 +22,9 @@ class AxeMastersController < ApplicationController
       end
     elsif params[:search].eql?("csv")
       if current_user.admin || current_user.researcher
-        send_data @axe_masters.to_comma, :style => :researcher, :col_sep => ',', :filename => "axe.csv" 
+        send_data @axe_masters.to_comma, :style => :researcher, :col_sep => ',', :filename => "axe_search.csv" 
       else
-        send_data @axe_masters.to_comma, :col_sep => ',', :filename => "axe.csv"
+        send_data @axe_masters.to_comma, :col_sep => ',', :filename => "axe_search.csv"
       end
     end
   end
@@ -36,8 +36,20 @@ class AxeMastersController < ApplicationController
 
      respond_to do |format|
       format.html
-      format.csv { send_data @axe_master.to_csv(col_sep: "," ) }
-      format.xml { send_data @axe_master.to_xml }
+      format.csv { 
+        if current_user.admin || current_user.researcher
+          send_data @axe_master.to_comma, :style => :researcher, :col_sep => ',', :filename => "axe_search.csv" 
+        else
+          send_data @axe_master.to_comma, :col_sep => ',', :filename => "axe_search.csv"
+        end
+      }
+      format.xml { 
+        if current_user.admin || current_user.researcher
+          send_data @axe_master.to_xml, :filename => "axe.xml"       
+        else
+          send_data @axe_master.to_xml(:except => [:comments, :current_location]), :filename => "axe.xml" 
+        end
+      }
     end
   end
 
@@ -52,7 +64,7 @@ class AxeMastersController < ApplicationController
    
   def create
     @axe_master = current_user.axe_masters.build(params[:axe_master])
-    @axe_master[:seq_no] = AxeMaster.last.seq_no.succ!
+    @axe_master[:seq_no] = get_seq_no(AxeMaster.order("seq_no desc").first.seq_no.succ!)
     if @axe_master.save
       flash[:success] = "Your record has been submited for approval."
       redirect_to axe_masters_path
@@ -80,6 +92,16 @@ class AxeMastersController < ApplicationController
   def search
     index
     render :index
+  end
+  
+private
+  def get_seq_no(search)
+    @test = AxeMaster.find(:all, :conditions => {:seq_no => search})
+    if @test.empty?
+      return search
+    else
+      get_seq_no(search.succ)
+    end
   end
 end
 

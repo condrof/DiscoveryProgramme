@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120828152122) do
+ActiveRecord::Schema.define(:version => 20120828183715) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -112,6 +112,8 @@ ActiveRecord::Schema.define(:version => 20120828152122) do
     t.boolean  "confirmed"
   end
 
+  add_index "axe_masters", ["seq_no"], :name => "index_axe_masters_on_seq_no", :unique => true
+
   create_table "bibliographies", :force => true do |t|
     t.string   "author"
     t.string   "year"
@@ -137,6 +139,14 @@ ActiveRecord::Schema.define(:version => 20120828152122) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "chemical_compositions", :force => true do |t|
+    t.string   "seq_no"
+    t.string   "chemical"
+    t.string   "parts_per_million"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
   end
 
   create_table "collections", :force => true do |t|
@@ -207,6 +217,14 @@ ActiveRecord::Schema.define(:version => 20120828152122) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "minerals", :force => true do |t|
+    t.string   "seq_no"
+    t.string   "mineral"
+    t.string   "parts_per_million"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
   create_table "pictures", :force => true do |t|
     t.string   "seq_no"
     t.string   "description"
@@ -218,6 +236,8 @@ ActiveRecord::Schema.define(:version => 20120828152122) do
     t.boolean  "confirmed"
     t.string   "user_id"
   end
+
+  add_index "pictures", ["seq_no"], :name => "index_pictures_on_seq_no"
 
   create_table "prime_treatments", :force => true do |t|
     t.string   "code"

@@ -899,60 +899,7 @@ describe "ViewRecords" do
       page.should have_content("You are not authorized to access this page.")
     end  
   end
-  
-  describe "Axe Masters" do
-    before(:each) do
-      @user = FactoryGirl.create(:admin)
-      @axe_master = FactoryGirl.create(:axe_master, :seq_no => "CA001")
-      login(@user)
-    end    
-    
-    it "should all confirmed users to create records" do
-      visit new_axe_master_path
-      fill_in :townland, :with => "portlaoise"
-      fill_in :area, :with => "laois"
-      click_button "Submit Record"
-      page.should have_content(" Your record has been submited for approval.")
-    end
-    
-    it "should not allow unconfirmed user to create records" do
-      visit destroy_user_session_path(@user)
-      @user = FactoryGirl.create(:user, :confirmed => "false")
-      login(@user)
-      visit new_axe_master_path
-      page.should have_content("You are not authorized to access this page.")
-    end
-    
-    it "should not allow unregistered users to create records" do
-      visit destroy_user_session_path(@user)
-      visit new_axe_master_path
-      page.should have_content("You are not authorized to access this page.")
-    end
-    
-    it "should allow registered users to export results" do
-      visit destroy_user_session_path(@user)
-      @user = FactoryGirl.create(:user, :confirmed => "true")
-      login(@user)
-      visit axe_masters_path
-      page.should have_button("xml")      
-      page.should have_button("csv")      
-    end
-    
-    it "should allow unregistered users to export results" do
-      visit destroy_user_session_path(@user)
-      visit axe_masters_path
-      page.should_not have_button("xml")      
-      page.should_not have_button("csv")      
-    end
-
-    it "should allow unconfirmed users to export results" do
-      visit destroy_user_session_path(@user)
-      visit axe_masters_path
-      page.should_not have_button("xml")      
-      page.should_not have_button("csv")      
-    end      
-  end
-  
+ 
   describe "collections" do
     before(:each) do
       @user = FactoryGirl.create(:admin)
@@ -964,6 +911,25 @@ describe "ViewRecords" do
       visit collections_path
       page.should have_content(@collection.collection_title)   
       page.should have_content(@collection.details) 
+    end
+    
+    it "should create a record" do
+      visit collections_path
+      old = Collection.count
+      click_link "New"
+      fill_in "Collection title", :with => "sample collection"
+      click_button "Create Collection"
+      page.should have_content( "Your record has been created")
+      Collection.count.should be(old+1)
+    end
+    
+    it "should not create a record with no description" do
+      visit collections_path
+      old = Collection.count
+      click_link "New"
+      click_button "Create Collection"
+      page.should have_content("Record did not save") 
+      Collection.count.should be(old)    
     end
     
     it "should go to show page on click code" do
@@ -1006,13 +972,127 @@ describe "ViewRecords" do
       page.should have_content("You are not authorized to access this page.")
     end
   end
-  
+    
+  describe "Minerals" do
+    before(:each) do
+      @user = FactoryGirl.create(:admin)
+      @mineral = FactoryGirl.create(:mineral, :seq_no => "100", :parts_per_million => "0")
+      login(@user)
+    end
+    
+    it "should display all records on index page" do
+      visit minerals_path
+      page.should have_content(@mineral.seq_no)   
+      page.should have_content(@mineral.parts_per_million) 
+    end
+    
+    it "should create a record" do
+      visit minerals_path
+      click_link "New"
+      fill_in "Seq no", :with => "sample description"
+      click_button "Create Mineral"
+      page.should have_content( "Your record has been created")
+    end
+    
+    it "should go to show page on click code" do
+      visit minerals_path
+      click_link "#{@mineral.seq_no}"
+      page.should have_content("Mineral")
+    end
+    
+    it "should delete the record" do
+      visit mineral_path(Mineral.first)
+      old=Mineral.count
+      click_link "Destroy"
+      page.should have_content("Mineral deleted!")
+      Mineral.count.should equal(old-1)
+    end
+    
+    it "should update the record" do
+      visit mineral_path(Mineral.first)
+      click_link "Edit"  
+      fill_in :description, :with => "updated text"
+      click_button "Update Mineral"
+      page.should have_content("updated text")   
+      page.should have_content("Record was successfully updated.") 
+    end
+    
+    it "should reject non-registered users" do
+      visit destroy_user_session_path(@user)
+      visit minerals_path
+      page.should have_content("You are not authorized to access this page.")
+    end
+    
+    it "should reject registered users" do
+      visit destroy_user_session_path(@user)
+      @user2 = FactoryGirl.create(:user)
+      login(@user2)
+      visit minerals_path
+      page.should have_content("You are not authorized to access this page.")
+    end
+  end
+        
+  describe "Chemical Compositions" do
+    before(:each) do
+      @user = FactoryGirl.create(:admin)
+      @chemical_composition = FactoryGirl.create(:chemical_composition, :seq_no => "100", :parts_per_million => "0")
+      login(@user)
+    end
+    
+    it "should display all records on index page" do
+      visit chemical_compositions_path
+      page.should have_content(@chemical_composition.seq_no)   
+      page.should have_content(@chemical_composition.parts_per_million) 
+    end
+    
+    it "should create a record" do
+      visit chemical_compositions_path
+      click_link "New"
+      fill_in "Seq no", :with => "sample description"
+      click_button "Create Chemical composition"
+      page.should have_content( "Your record has been created")
+    end
+    
+    it "should go to show page on click code" do
+      visit chemical_compositions_path
+      click_link "#{@chemical_composition.seq_no}"
+      page.should have_content("Chemical composition")
+    end
+    
+    it "should delete the record" do
+      visit chemical_composition_path(ChemicalComposition.first)
+      old=ChemicalComposition.count
+      click_link "Destroy"
+      page.should have_content("Chemical composition deleted!")
+      ChemicalComposition.count.should equal(old-1)
+    end
+    
+    it "should update the record" do
+      visit chemical_composition_path(ChemicalComposition.first)
+      click_link "Edit"  
+      fill_in :description, :with => "updated text"
+      click_button "Update Chemical composition"
+      page.should have_content("updated text")   
+      page.should have_content("Record was successfully updated.") 
+    end
+    
+    it "should reject non-registered users" do
+      visit destroy_user_session_path(@user)
+      visit chemical_compositions_path
+      page.should have_content("You are not authorized to access this page.")
+    end
+    
+    it "should reject registered users" do
+      visit destroy_user_session_path(@user)
+      @user2 = FactoryGirl.create(:user)
+      login(@user2)
+      visit chemical_compositions_path
+      page.should have_content("You are not authorized to access this page.")
+    end
+  end   
   
   describe "Macros" do
     
-  end
-  
-  describe "Bibliography" do
   end
 end
 

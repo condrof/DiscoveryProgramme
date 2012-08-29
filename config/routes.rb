@@ -5,12 +5,14 @@ DiscoveryProgramme::Application.routes.draw do
   devise_for :users
   root :to => 'pages#home'
   
-  resources :users, :bibliographies, :blade_profiles, :butt_shapes, :collections, :contexts, :cross_sections, :edge_forms, :edge_shapes, :face_shapes, :haftings, :macros, :pages, :prime_treatments, :profiles, :re_uses, :use_wears, :stray_axes
-  resources :linkages, :pictures
+  resources :users, :bibliographies, :blade_profiles, :butt_shapes, :collections, :contexts, :cross_sections, :edge_forms, :edge_shapes, :face_shapes, :haftings, :macros, :prime_treatments, :profiles, :re_uses, :use_wears, :stray_axes
+  resources :linkages, :pictures, :minerals, :chemical_compositions
   resources :axe_masters do
     collection { post :search, to: 'axe_masters#index'
        get :search, to: 'axe_masters#index' }
   end
+  
+  match '/list' => 'pages#list'
 
   get "axe_masters/search"
   # The priority is based upon order of creation:

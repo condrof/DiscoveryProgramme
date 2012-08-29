@@ -1,2 +1,52 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th class="hidden-phone"><%= model_class.human_attribute_name(:confirmed) %></th>
+      <th class="hidden-phone"><%= model_class.human_attribute_name(:admin) %></th>
+      <th class="hidden-phone"><%= model_class.human_attribute_name(:researcher) %></th>
+      <th class="hidden-phone"><%= model_class.human_attribute_name(:address) %></th>
+      <th class="hidden-phone"><%= model_class.human_attribute_name(:institution) %></th>
+      <th class="hidden-phone"><%= model_class.human_attribute_name(:phone) %></th>
+      <th class="hidden-phone"><%= model_class.human_attribute_name(:purpose_of_use) %></th>
+      <% if can? :destroy, User %>
+      	<th class="hidden-phone"><%=t '.actions', :default => t("helpers.actions") %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.name, user_path(user) %></td>
+        <td><%= user.email %></td>
+        <td class="hidden-phone"><%= user.confirmed %></td>
+        <td class="hidden-phone"><%= user.admin %></td>
+        <td class="hidden-phone"><%= user.researcher %></td>
+        <td class="hidden-phone"><%= user.address %></td>
+        <td class="hidden-phone"><%= user.institution %></td>
+        <td class="hidden-phone"><%= user.phone %></td>
+        <td class="hidden-phone"><%= user.purpose_of_use %></td>
+        <% if can? :destroy, User%>
+	        <td class="hidden-phone">
+	          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+	                      edit_user_path(user), :class => 'btn btn-mini' %>
+	          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+	                      user_path(user),
+	                      :method => :delete,
+	                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+	                      :class => 'btn btn-mini btn-danger' %>
+	        </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_user_path,
+            :class => 'btn btn-primary' %>

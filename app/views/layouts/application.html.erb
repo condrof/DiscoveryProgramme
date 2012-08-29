@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DiscoveryProgramme</title>
+  <title>Irish Stone Axe Project</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %> 
@@ -18,9 +18,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="/">DiscoveryProgramme</a>
+      <a class="brand" href="/">Irish Stone Axe Project</a>
       <div class="nav-collapse">
         <ul class="nav pull-right">
+        		<li><%= link_to "Home", root_path %></li>
         		<li><%= link_to "Axe Master", axe_masters_path %></li>
         	<% if !current_user %>
           		<li><%= link_to "Register", new_user_registration_path %></li>
@@ -33,6 +34,7 @@
           		<li><%= link_to "Settings", edit_user_registration_path %></li>
           		<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
 	          	<% if current_user.admin || current_user.researcher %>
+	          		<li><%= link_to "Miscellaneous", list_path %></li>
 	          		<li><%= link_to "Admin Dashboard", admin_dashboard_path %></li>
 	          	<% end %>
           	<% end %>
@@ -49,6 +51,9 @@
 	    </div>
 	  <% end %>
       <%= yield %>
+    </div>
+    <div class="footer">
+    	
     </div>
 
 </body>

@@ -9,6 +9,6 @@ FactoryGirl.define do
     publication "MyString"
     where_published "MyString"
     published_reference_in_year "MyString"
-    link_key "MyString"
+    linkage_id "MyString"
   end
 end

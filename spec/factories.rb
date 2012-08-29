@@ -5,6 +5,8 @@ FactoryGirl.define do
   factory :user do
     name
     email
+    institution "UCD"
+    purpose_of_use "academic"
     password "secret"
     password_confirmation "secret"
     admin "false"
@@ -15,6 +17,8 @@ FactoryGirl.define do
   factory :researcher, :parent => :user do
     name
     email
+    institution "UCD"
+    purpose_of_use "academic"
     password "secret"
     password_confirmation "secret"
     admin "false"
@@ -25,6 +29,8 @@ FactoryGirl.define do
   factory :admin, :parent => :user do
     name
     email
+    institution "UCD"
+    purpose_of_use "academic"
     password "secret"
     password_confirmation "secret"
     admin "true"

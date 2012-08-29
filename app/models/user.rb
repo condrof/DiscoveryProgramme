@@ -11,6 +11,11 @@ class User < ActiveRecord::Base
   
   has_many :axe_masters, :foreign_key => "user_id", :primary_key => "id"
   
+  validates :email, :uniqueness => true, :presence => true
+  validates :name, :presence => true
+  validates :institution, :presence => true
+  validates :purpose_of_use, :presence => true
+  
   after_initialize :default_values
 
   

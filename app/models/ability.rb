@@ -32,7 +32,7 @@ class Ability
            can :read, AxeMaster do |axe|
              axe.confirmed
            end
-           can :read, :create, Bibliography
+           can :read, Bibliography
          end 
        else 
          can :read, AxeMaster do |axe|

@@ -15,9 +15,8 @@ ActiveAdmin::Dashboards.build do
   section "Confirm Axe Records" do
     ul do
       @axes=AxeMaster.find(:all, :conditions => { :confirmed => "false" })
-      if !@axes.nil?
+      if !@axes.empty?
         @axes.each do |axe|
-        #AxeMaster.find_by_confirmed("false" || nil) do |axe|
           li link_to "New axe record from #{axe.user.try(:email)}", axe_master_path(axe) 
         end
       else
@@ -30,14 +29,13 @@ ActiveAdmin::Dashboards.build do
   section "Confirm Pictures" do
     ul do
       @pics=Picture.find(:all, :conditions => { :confirmed => "false" })
-      if !@pics.nil?
+      if !@pics.empty?
         @pics.each do |pic|
           li link_to "New picture for #{pic.axe_master.seq_no}", picture_path(pic) 
         end
       else
           li "All current pictures have been confirmed"
       end
-     #end
     end
   end
 

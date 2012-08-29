@@ -1,0 +1,10 @@
+<%= simple_form_for @chemical_composition, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :seq_no %>
+  <%= f.input :chemical %>
+  <%= f.input :parts_per_million %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                chemical_compositions_path, :class => 'btn' %>
+  </div>
+<% end %>
