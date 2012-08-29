@@ -17,11 +17,13 @@
   </div>
   <div class="form-actions">
     <%= f.button :search, :class => 'btn-primary', :name => "search", :id => "search", :value => "html" %>
+    <div class="pull-right">
     <% if current_user && current_user.confirmed %>
-    <strong>Export to: </strong>
-    	<%= f.button :xml, :class => 'btn-info', :name => "search", :id => "search", :value => "xml" %>
-   		<%= f.button :csv, :class => 'btn-info', :name => "search", :id => "search", :value => "csv" %>
- 	<% end %>
+	    <strong>Export to: </strong>
+	    	<%= f.button :xml, :class => 'btn-info', :name => "search", :id => "search", :value => "xml" %>
+	   		<%= f.button :csv, :class => 'btn-info', :name => "search", :id => "search", :value => "csv" %>
+	 	<% end %>
+ 	</div>
   </div>
 <% end %>
 

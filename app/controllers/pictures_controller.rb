@@ -17,7 +17,7 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(params[:picture])
       if @picture.save
-        flash[:success] = "Picture successfully uploaded"
+        flash[:success] = "Picture successfully uploaded. Note: Picture must be confirmed by researcher before you can see it"
         redirect_to :back
       else
         flash[:alert] = "Error uploading picture"

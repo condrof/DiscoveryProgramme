@@ -27,7 +27,7 @@
 	
 	<div class = "form-horizontal well">
 		<fieldset>
-			<legend>Add a picture to this record</legend>
+			<legend>Add a document to this record</legend>
 			<%= simple_form_for @picture, :html => {:multipart => true} do |f| %>
 			  <%= f.hidden_field :seq_no, :value => @axe_master.seq_no %>
 			  <%= f.hidden_field :user_id, :value => current_user.id %>
