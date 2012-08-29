@@ -3,7 +3,7 @@ class CreateStrayAxes < ActiveRecord::Migration
     create_table :stray_axes do |t|
       t.string :townland
       t.string :county
-      t.string :comment
+      t.text :comment
       t.string :contact
       t.string :followed_up
       t.string :museum_ref

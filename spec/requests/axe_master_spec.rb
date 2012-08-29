@@ -38,18 +38,61 @@ require 'spec_helper'
       page.should have_button("csv")      
     end
     
-    it "should allow unregistered users to export results" do
+    it "should not allow unregistered users to export results" do
       visit destroy_user_session_path(@user)
       visit axe_masters_path
       page.should_not have_button("xml")      
       page.should_not have_button("csv")      
     end
 
-    it "should allow unconfirmed users to export results" do
+    it "should not allow unconfirmed users to export results" do
       visit destroy_user_session_path(@user)
       visit axe_masters_path
       page.should_not have_button("xml")      
       page.should_not have_button("csv")      
     end      
+    
+    
+    it "should allow admins/researchers to destroy record" do
+      
+    end
+    
+    it "should not allow non admins/researchers to destroy records" do
+      
+    end
+    
+    it "should allow admins/researchers to edit records" do
+      
+    end
+    
+    it "should not allow admins/researchers to edit records" do
+      
+    end
+    
+    it "should allow axe record owner to edit records" do
+      
+    end
+    
+    it "should allow admins to add photos to any page" do
+      
+    end
+    
+    it "should allow axe record owner to add photos to their record" do
+      
+    end
+    
+    it "should allow admins to add bibliography" do
+      
+    end
+    
+    it "should allow axe record owner to add bibliography" do
+      
+    end
+    
+    it "should not allow others to add photos or bibliography" do
+      
+    end
+    
+    
   end
  
