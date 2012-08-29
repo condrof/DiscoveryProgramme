@@ -9,6 +9,10 @@ class PicturesController < ApplicationController
     
   end
   
+  def edit
+    
+  end
+  
   
   def create
     @picture = Picture.new(params[:picture])
@@ -19,6 +23,13 @@ class PicturesController < ApplicationController
         flash[:alert] = "Error uploading picture"
         redirect_to :back
       end
+  end
+  
+  def update
+    if @picture.update_attributes(params[:picture])
+      flash[:notice] = "Record was successfully updated."
+      redirect_to axe_master_path(@picture.axe_master)
+    end
   end
   
   def destroy

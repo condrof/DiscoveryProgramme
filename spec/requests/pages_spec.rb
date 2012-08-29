@@ -78,11 +78,11 @@ ActiveSupport::Deprecation.silence do
         fill_in "Password", :with => user.password
         click_button "Sign In"
         visit edit_user_registration_path
-        fill_in "Email", :with => "newemail@example.com"
+        fill_in "Name", :with => "newname"
         fill_in "Current password", :with => user.password
         click_button "Update"
         page.should have_content("You updated your account successfully.")
-        user.email = "newemail@example.com"
+        user.name = "newname"
       end
       
       it "should not allows users to edit information with incorrect password" do
@@ -92,7 +92,7 @@ ActiveSupport::Deprecation.silence do
         fill_in "Password", :with => user.password
         click_button "Sign In"
         visit edit_user_registration_path
-        fill_in "Email", :with => "newemail@example.com"
+        fill_in "Name", :with => "new"
         fill_in "Current password", :with => "wrong password"
         click_button "Update"
         page.should have_content("Current password is invalid")
@@ -123,4 +123,38 @@ ActiveSupport::Deprecation.silence do
       end
     end  
   end
+  
+  describe "all admin pages should load" do
+    before(:each) do
+      @user = FactoryGirl.create(:admin)
+      @user2 = FactoryGirl.create(:user)
+      @axe_master = FactoryGirl.create(:axe_master)
+      login(@user)
+      (1..10).each do |i|
+        FactoryGirl.create(:picture, :seq_no => @axe_master.seq_no)
+      end
+    end    
+    
+    it "should load the dashboard" do
+      visit admin_dashboard_path
+      page.should have_content("Dashboard")
+    end
+    
+    it "should load the admin users" do
+      visit admin_users_path
+      page.should have_content("Users")    
+    end
+    
+    it "should load the admin pictures" do
+      visit admin_pictures_path
+      page.should have_content("Pictures")
+    end
+    
+    it "should load the admin axe_masters path" do
+      visit admin_axe_masters_path
+      page.should have_content("Axe Masters")
+    end
+  end
+  
+  
 end

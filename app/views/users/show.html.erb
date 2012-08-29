@@ -17,7 +17,7 @@
   <dt><strong><%= model_class.human_attribute_name(:purpose_of_use) %>:</strong></dt>
   <dd><%= @user.purpose_of_use %></dd>
   <dt><strong>Number of Axes submitted:</strong></dt>
-  <dd><%= @user.axe_masters.count %></dd>
+  <dd><%= @user.axe_masters.all.count %></dd>
   <% unless @user.axe_masters.empty? %>
   	<div class="well">
 	  	<dt><strong><%= "#{@user.name}'s records" %></strong></dt>

@@ -1091,8 +1091,63 @@ describe "ViewRecords" do
     end
   end   
   
-  describe "Macros" do
+ describe "Macros" do 
+    before(:each) do
+      @user = FactoryGirl.create(:admin)
+      @macro = FactoryGirl.create(:macro, :macro_id => "CA001", :total => "Something")
+      login(@user)
+    end
     
+    it "should display all records on index page" do
+      visit macros_path
+      page.should have_content(@macro.macro_id)   
+      page.should have_content(@macro.total) 
+    end
+    
+    it "should create a record" do
+      visit macros_path
+      click_link "New"
+      fill_in "Total", :with => "sample description"
+      click_button "Create Macro"
+      page.should have_content( "Your record has been created")
+    end
+        
+    it "should go to show page on click code" do
+      visit macros_path
+      click_link "#{@macro.macro_id}"
+      page.should have_content("Macro")
+    end
+    
+    it "should delete the record" do
+      visit macro_path(Macro.first)
+      old=Macro.count
+      click_link "Destroy"
+      page.should have_content("Macro deleted!")
+      Macro.count.should equal(old-1)
+    end
+    
+    it "should update the record" do
+      visit macro_path(Macro.first)
+      click_link "Edit"  
+      fill_in :total, :with => "updated text"
+      click_button "Update Macro"
+      page.should have_content("updated text")   
+      page.should have_content("Record was successfully updated.") 
+    end
+    
+    it "should reject non-registered users" do
+      visit destroy_user_session_path(@user)
+      visit macros_path
+      page.should have_content("You are not authorized to access this page.")
+    end
+    
+    it "should reject registered users" do
+      visit destroy_user_session_path(@user)
+      @user2 = FactoryGirl.create(:user)
+      login(@user2)
+      visit macros_path
+      page.should have_content("You are not authorized to access this page.")
+    end
   end
 end
 

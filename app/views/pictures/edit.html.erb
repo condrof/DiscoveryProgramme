@@ -1,0 +1,16 @@
+	<div class = "form-horizontal well">
+		<fieldset>
+			<legend>Edit picture</legend>
+			<%= simple_form_for @picture, :html => {:multipart => true} do |f| %>
+			  <%= f.input :document_name %>
+			  <%= f.input :description %>
+			  <%= f.input :document_type %>
+			  <%= f.label :image %>
+			  <%= f.file_field :image %> <br />
+			<div class = "form-actions">
+			  <%= f.button :submit, :class => "btn btn-primary" %>
+			</div
+			<% end %>
+			
+		</fieldset>
+	</div>

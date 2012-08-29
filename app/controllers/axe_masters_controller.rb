@@ -16,15 +16,15 @@ class AxeMastersController < ApplicationController
   
     if params[:search].eql?("xml")
       if current_user.admin || current_user.researcher
-        send_data @axe_masters.to_xml, :filename => "axe.xml"       
+        send_data @axe_masters.to_xml, :filename => "admin-axe.xml"       
       else
         send_data @axe_masters.to_xml(:except => [:comments, :current_location]), :filename => "axe.xml" 
       end
     elsif params[:search].eql?("csv")
       if current_user.admin || current_user.researcher
-        send_data @axe_masters.to_comma, :style => :researcher, :col_sep => ',', :filename => "axe_search.csv" 
+        send_data @axe_masters.to_comma, :style => :researcher, :col_sep => ',', :filename => "admin-axe.csv" 
       else
-        send_data @axe_masters.to_comma, :col_sep => ',', :filename => "axe_search.csv"
+        send_data @axe_masters.to_comma, :col_sep => ',', :filename => "axe.csv"
       end
     end
   end
@@ -38,19 +38,23 @@ class AxeMastersController < ApplicationController
       format.html
       format.csv { 
         if current_user.admin || current_user.researcher
-          send_data @axe_master.to_comma, :style => :researcher, :col_sep => ',', :filename => "axe_search.csv" 
+          send_data @axe_master.to_comma, :style => :researcher, :col_sep => ',', :filename => "admin-axe_search.csv" 
         else
           send_data @axe_master.to_comma, :col_sep => ',', :filename => "axe_search.csv"
         end
       }
       format.xml { 
         if current_user.admin || current_user.researcher
-          send_data @axe_master.to_xml, :filename => "axe.xml"       
+          send_data @axe_master.to_xml, :filename => "admin-axe.xml"       
         else
           send_data @axe_master.to_xml(:except => [:comments, :current_location]), :filename => "axe.xml" 
         end
       }
     end
+  end
+  
+  def edit
+    
   end
 
   def new
@@ -79,7 +83,7 @@ class AxeMastersController < ApplicationController
 
     if @axe_master.update_attributes(params[:axe_master])
       flash[:notice] = "Record was successfully updated."
-      redirect_to axe_master_path(@axe)
+      redirect_to axe_master_path(@axe_master)
     end
   end
   

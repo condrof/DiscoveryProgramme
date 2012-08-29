@@ -195,7 +195,7 @@ class AxeMaster < ActiveRecord::Base
   
 private
     def default_values
-      self.confirmed ||= "false"
+      self.confirmed ||= false
       #self.seq_no ||= AxeMaster.order("seq_no desc").first.seq_no.to_i + 1
     end
 end

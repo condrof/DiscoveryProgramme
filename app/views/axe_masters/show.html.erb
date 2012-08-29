@@ -16,7 +16,7 @@
 			<legend>Add a bibliography to this record</legend>
 			<%= simple_form_for @linkage do |f| %>
 				<%= f.hidden_field :sequence_no, :value => @axe_master.seq_no %>
-				<%= f.input :bibliography_id, :hint => "Use bibliography link_key" %>
+				<%= f.input :bibliography_id, :hint => "Use bibliography link_key", :id => "Bibliography", :name => "Bibliography" %>
 			<div class = "form-actions">
 				<%= f.button :submit, :class => 'btn btn-primary' %>
 			</div>
@@ -45,39 +45,6 @@
 	</div>
 <% end %>
 
-<% if !@axe_master.bibliographies %>
-	<div class="form-horizontal well">
-		<table class="table ">
-			<thead>
-				<tr>
-					<th>Author</th>
-					<th>Year</th>
-					<th>Title</th>
-					<th>Book Title</th>
-					<th>Publication</th>
-					<th>Link Key</th>
-				</tr>
-			</thead>
-			<tbody>	
-				<% @axe_master.bibliographies.each do |bibliography| %>
-				<tr>
-					<td><%= bibliography.author %></td>
-					<td><%= bibliography.year %></td>
-					<td><%= bibliography.title %></td>
-					<td><%= bibliography.book_title %></td>
-					<td><%= bibliography.publication %></td>
-					<td><%= bibliography.linkage_id %></td>
-					<% if can? :destroy, AxeMaster %>
-						<% @l = @axe_master.linkages.find(:all, :conditions => {:bibliography_id => bibliography.linkage_id} )%>
-						<td><%= link_to "Delete", linkage_path(@l), method: :delete, :confirm => "Are you sure?", class: "btn btn-primary"  %></td>	
-					<% end %>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
-	</div>
-<% end %>
-
 
 <% if current_user && current_user.confirmed %>
 	<div class = "pull-left">
@@ -87,6 +54,42 @@
 
 <br /><br />
 <div class ="well">
+
+	<% unless @axe_master.bibliographies.empty? %>
+		<fieldset>
+			<legend>Bibliography</legend>
+			<table class="table ">
+				<thead>
+					<tr>
+						<th class ="hidden-phone">Author</th>
+						<th class ="hidden-phone">Year</th>
+						<th>Title</th>
+						<th class ="hidden-phone">Book Title</th>
+						<th class ="hidden-phone">Publication</th>
+						<th>Link Key</th>
+					</tr>
+				</thead>
+				<tbody>	
+					<% @axe_master.bibliographies.each do |bibliography| %>
+					<tr>
+						<td class ="hidden-phone"><%= bibliography.author %></td>
+						<td class ="hidden-phone"><%= bibliography.year %></td>
+						<td><%= bibliography.title %></td>
+						<td class ="hidden-phone"><%= bibliography.book_title %></td>
+						<td class ="hidden-phone"><%= bibliography.publication %></td>
+						<td><%= bibliography.linkage_id %></td>
+						<% if can? :destroy, AxeMaster %>
+							<% @l = Linkage.find(:all, :conditions => {:bibliography_id => bibliography.linkage_id, :sequence_no => @axe_master.seq_no } )%>
+							<td><%= link_to "Delete", linkage_path(@l), method: :delete, :confirm => "Are you sure?", class: "btn btn-primary"  %></td>	
+						<% end %>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</fieldset>
+	<% end %>
+
+
 	<dl class="dl-horizontal">
 		<% unless @axe_master.pictures.empty? %>
 			<fieldset>

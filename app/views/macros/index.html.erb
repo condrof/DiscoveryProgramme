@@ -5,20 +5,16 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:macro_id) %></th>
       <th><%= model_class.human_attribute_name(:total) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @macros.each do |macro| %>
       <tr>
-        <td><%= link_to macro.id, macro_path(macro) %></td>
-        <td><%= macro.macro_id %></td>
+        <td><%= link_to macro.macro_id, macro_path(macro) %></td>
         <td><%= macro.total %></td>
-        <td><%=l macro.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_macro_path(macro), :class => 'btn btn-mini' %>

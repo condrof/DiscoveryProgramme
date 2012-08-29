@@ -14,7 +14,7 @@ ActiveAdmin.register Picture do
       column :document_type
       column :image
       column "Uploaded by" do |id|
-        user = User.find(id.user_id)
+        user = id.user_id ? User.find(id.user_id) : nil
         link_to user.name, user_path(user) if user
       end
       default_actions

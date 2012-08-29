@@ -3,4 +3,6 @@ class Linkage < ActiveRecord::Base
   
   belongs_to :bibliographies, :foreign_key => "bibliography_id", :primary_key => "linkage_id"
   belongs_to :axe_master, :foreign_key => "sequence_no", :primary_key => "seq_no"
+  
+  validates_uniqueness_of :sequence_no, :scope => :bibliography_id
 end

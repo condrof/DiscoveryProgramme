@@ -31,7 +31,7 @@ ActiveAdmin::Dashboards.build do
       @pics=Picture.find(:all, :conditions => { :confirmed => "false" })
       if !@pics.empty?
         @pics.each do |pic|
-          li link_to "New picture for #{pic.axe_master.seq_no}", picture_path(pic) 
+          li link_to "New picture for #{pic.axe_master}", picture_path(pic) 
         end
       else
           li "All current pictures have been confirmed"
