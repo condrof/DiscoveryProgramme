@@ -117,18 +117,18 @@ require 'spec_helper'
     end
     
     it "should find a valid seq_no" do
-      @axe=FactoryGirl.create(:axe_master, :seq_no => "434")
-      @axe2=FactoryGirl.create(:axe_master, :seq_no => "3")
+      @axe=FactoryGirl.create(:axe_master, :seq_no => 434)
+      @axe2=FactoryGirl.create(:axe_master, :seq_no => 3)
       visit new_axe_master_path
       fill_in :townland, :with => "portlaoise"
       fill_in :area, :with => "laois"
       click_button "Submit Record"
-      AxeMaster.last.seq_no.should eq("435") 
+      AxeMaster.last.seq_no.should eq(435) 
       visit new_axe_master_path
       fill_in :townland, :with => "portlaoise"
       fill_in :area, :with => "laois"
       click_button "Submit Record" 
-      AxeMaster.last.seq_no.should eq("436")           
+      AxeMaster.last.seq_no.should eq(436)           
     end
 
    
@@ -184,14 +184,14 @@ require 'spec_helper'
         
     it "should allow admins to add photos to any page" do
       visit axe_master_path(AxeMaster.first)
-      page.should have_content("Add a picture to this record")
+      page.should have_content("Add a document to this record")
     end
     
     it "should allow axe record owner to add photos to their record" do
       visit destroy_user_session_path(@user)
       login(@user2)
       visit axe_master_path(@axe_master2)
-      page.should have_content("Add a picture to this record")
+      page.should have_content("Add a document to this record")
     end
     
     it "should not allow registered users to upload photos" do

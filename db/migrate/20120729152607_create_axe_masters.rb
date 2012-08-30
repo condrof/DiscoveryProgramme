@@ -1,7 +1,7 @@
 class CreateAxeMasters < ActiveRecord::Migration
   def change
     create_table :axe_masters do |t|
-      t.string :seq_no, :null => :false
+      t.integer :seq_no, :null => :false
       t.string :museam_ref
       t.string :collections_id
       t.string :current_location

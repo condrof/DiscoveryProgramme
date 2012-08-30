@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20120829171743) do
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
 
   create_table "axe_masters", :force => true do |t|
-    t.string   "seq_no"
+    t.integer  "seq_no"
     t.string   "museam_ref"
     t.string   "collections_id"
     t.string   "current_location"
@@ -263,7 +263,7 @@ ActiveRecord::Schema.define(:version => 20120829171743) do
   create_table "stray_axes", :force => true do |t|
     t.string   "townland"
     t.string   "county"
-    t.string   "comment"
+    t.text     "comment"
     t.string   "contact"
     t.string   "followed_up"
     t.string   "museum_ref"
@@ -280,8 +280,8 @@ ActiveRecord::Schema.define(:version => 20120829171743) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                  :default => "",    :null => false
-    t.string   "encrypted_password",     :default => "",    :null => false
+    t.string   "email",                                     :null => false
+    t.string   "encrypted_password",                        :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

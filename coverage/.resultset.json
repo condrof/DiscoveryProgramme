@@ -1034,12 +1034,12 @@
         null,
         null,
         1,
-        10,
-        10,
-        10,
-        10,
+        20,
+        20,
+        20,
+        20,
         null,
-        10,
+        20,
         null,
         null,
         null
@@ -2187,8 +2187,8 @@
         1,
         5,
         5,
-        4,
-        4,
+        5,
+        5,
         null,
         0,
         0,
@@ -2204,8 +2204,8 @@
         null,
         1,
         1,
-        1,
-        1,
+        0,
+        0,
         null,
         null
       ],
@@ -2216,7 +2216,7 @@
         1,
         1,
         null,
-        1,
+        null,
         null
       ],
       "/home/fergal/Documents/rails/DiscoveryProgramme/app/controllers/macros_controller.rb": [
@@ -4835,6 +4835,6 @@
         null
       ]
     },
-    "timestamp": 1346256087
+    "timestamp": 1346367141
   }
 }

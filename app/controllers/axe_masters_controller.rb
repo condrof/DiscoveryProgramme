@@ -3,7 +3,7 @@ class AxeMastersController < ApplicationController
   
   def index
     @q = AxeMaster.ransack(params[:q])
-    @axes = @q.result(:distinct => true)  #.page(params[:page]).per(40)
+    @axes = @q.result(:distinct => true)
     @axe_masters = []
     @axes.each do |axe| 
       if axe.confirmed
@@ -68,7 +68,7 @@ class AxeMastersController < ApplicationController
    
   def create
     @axe_master = current_user.axe_masters.build(params[:axe_master])
-    @axe_master[:seq_no] = get_seq_no(AxeMaster.order("seq_no desc").first.seq_no.succ!)
+    @axe_master[:seq_no] = get_seq_no(AxeMaster.order("seq_no desc").first.seq_no+1)
     if @axe_master.save
       flash[:success] = "Your record has been submited for approval."
       redirect_to axe_masters_path
@@ -104,7 +104,7 @@ private
     if @test.empty?
       return search
     else
-      get_seq_no(search.succ)
+      get_seq_no(search+1)
     end
   end
 end

@@ -1,7 +1,4 @@
 module ApplicationHelper
-  def current_user?(user)
-    user == current_user
-  end
 
   def link_to_add_fields(name, f, type)
     new_object = f.object.send "build_#{type}"

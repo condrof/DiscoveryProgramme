@@ -13,3 +13,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore the seed file
+/db/seeds/*.rb
+/db/seeds/seeds.rb
+
+# Ignore file uploads
+/public/uploads/*

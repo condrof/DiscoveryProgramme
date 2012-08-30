@@ -24,15 +24,6 @@ class AxeMaster < ActiveRecord::Base
   
   after_initialize :default_values
 
-  def to_csv(options = {})
-    CSV.generate(options) do |csv|
-      csv << column_names
-      all.each do |axe|
-        csv << axe.attributes.values_at(*column_names)
-      end
-    end
-  end
-  
   comma :researcher do
     seq_no
     museam_ref

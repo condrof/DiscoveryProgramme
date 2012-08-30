@@ -1,19 +1,21 @@
 <h2>Search Form</h2>
 <%= search_form_for @q, :html => { :class => 'well form-search' }, url: search_axe_masters_path, method: :post do |f| %>
-  <%= f.condition_fields do |c| %>
-    <%= render "condition_fields", f: c %>
-  <% end %>
-  <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
-  <br />
+  <fieldset>
+	<legend>Condition fields</legend>
+	  <%= f.condition_fields do |c| %>
+		<%= render "condition_fields", f: c %>
+	  <% end %>
+	  <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+  </fieldset>
   <div class="field">
-    Sort: <br />
+  <fieldset>
+    <legend>Sorting</legend>
     <%= f.sort_fields do |s| %>
-      <%= s.sort_select %><br />
-      <%= s.sort_select %><br />
-      <%= s.sort_select %><br />
-      <%= s.sort_select %><br />
-      <%= s.sort_select %>
+      <%= render 'sort_fields', f: s %>
     <% end %>
+    <%= link_to_add_fields "Add Sort", f, :sort %>
+  </fieldset>
+    
   </div>
   <div class="form-actions">
     <%= f.button :search, :class => 'btn-primary', :name => "search", :id => "search", :value => "html" %>

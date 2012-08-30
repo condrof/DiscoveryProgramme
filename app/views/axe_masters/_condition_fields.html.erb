@@ -1,11 +1,13 @@
 <div class="field">
-	<%= f.attribute_fields do |a| %>
-	<%= a.attribute_select associations: [:seq_no] %>
-	<% end %>
-	<%= f.predicate_select %>
-	<%= f.value_fields do |v| %>
-	<%= v.text_field :value %>
-	<% end %>
-	<%= link_to "remove", '#', class: "remove_fields" %>
+	<div class="row-fluid">
+		<%= f.attribute_fields do |a| %>
+			<span class="span4"><%= a.attribute_select associations: [:seq_no] %></span>
+		<% end %>
+		<span class="span2"><%= f.predicate_select %></span>
+		<%= f.value_fields do |v| %>
+			<span class="span4"><%= v.text_field :value %></span>
+		<% end %>
+		<span class="span2"><%= link_to "remove", '#', class: "remove_fields" %></span>
+	</div>
 </div>
 
