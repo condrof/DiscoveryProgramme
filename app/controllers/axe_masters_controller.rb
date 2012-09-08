@@ -4,7 +4,7 @@ class AxeMastersController < ApplicationController
   
   def index
     @q = AxeMaster.ransack(params[:q])
-    @axes = @q.result(:distinct => true)
+    @axes = @q.result
     @axe_masters = []
     @axes.each do |axe| 
       if axe.confirmed
