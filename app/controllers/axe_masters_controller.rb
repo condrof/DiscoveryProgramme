@@ -69,7 +69,7 @@ class AxeMastersController < ApplicationController
    
   def create
     @axe_master = current_user.axe_masters.build(params[:axe_master])
-    @axe_master[:seq_no] = get_seq_no(AxeMaster.order("seq_no desc").first.seq_no.to_i+1)
+    @axe_master[:seq_no] = get_seq_no((AxeMaster.order("seq_no desc").first.seq_no).to_i+1)
     if @axe_master.save
       flash[:success] = "Your record has been submited for approval."
       redirect_to axe_masters_path
@@ -102,7 +102,7 @@ class AxeMastersController < ApplicationController
   
 private
   def get_seq_no(search)
-    @test = AxeMaster.find(:all, :conditions => {:seq_no => search})
+    @test = AxeMaster.find(:all, :conditions => {:seq_no => search.to_s})
     if @test.empty?
       return search.to_s
     else
