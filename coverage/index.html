@@ -23,7 +23,7 @@
       <img src="./assets/0.5.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-09-08T14:20:18+01:00">2012-09-08T14:20:18+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-09-08T15:21:26+01:00">2012-09-08T15:21:26+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -3238,7 +3238,7 @@
         <li class="covered" data-hits="3" data-linenumber="72">
           <span class="hits">3</span>
           
-          <code class="ruby">    @axe_master[:seq_no] = get_seq_no(AxeMaster.order(&quot;seq_no desc&quot;).first.seq_no+1)</code>
+          <code class="ruby">    @axe_master[:seq_no] = get_seq_no(AxeMaster.order(&quot;seq_no desc&quot;).first.seq_no.to_i+1)</code>
         </li>
       
         <li class="covered" data-hits="3" data-linenumber="73">
@@ -3448,7 +3448,7 @@
         <li class="covered" data-hits="3" data-linenumber="107">
           <span class="hits">3</span>
           
-          <code class="ruby">      return search</code>
+          <code class="ruby">      return search.to_s</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="108">
