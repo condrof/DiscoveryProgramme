@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829171743) do
+ActiveRecord::Schema.define(:version => 20120908111826) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -185,6 +185,14 @@ ActiveRecord::Schema.define(:version => 20120829171743) do
   create_table "edge_shapes", :force => true do |t|
     t.string   "code"
     t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "editables", :force => true do |t|
+    t.string   "heading"
+    t.string   "description"
+    t.text     "content"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

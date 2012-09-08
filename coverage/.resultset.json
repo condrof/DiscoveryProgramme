@@ -1009,6 +1009,10 @@
         1,
         null,
         1,
+        null,
+        1,
+        null,
+        1,
         79,
         null,
         null,
@@ -1029,9 +1033,6 @@
       ],
       "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/application_helper.rb": [
         1,
-        1,
-        0,
-        null,
         null,
         1,
         20,
@@ -1040,6 +1041,14 @@
         20,
         null,
         20,
+        null,
+        null,
+        1,
+        431,
+        431,
+        431,
+        431,
+        431,
         null,
         null,
         null
@@ -1260,15 +1269,6 @@
         0,
         0,
         0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        0,
-        0,
         0,
         0,
         0,
@@ -1426,7 +1426,7 @@
         null,
         1,
         1,
-        180,
+        248,
         null,
         null,
         null
@@ -1521,6 +1521,7 @@
         null,
         null,
         null,
+        1,
         1,
         1,
         1,
@@ -2187,8 +2188,8 @@
         1,
         5,
         5,
-        5,
-        5,
+        4,
+        4,
         null,
         0,
         0,
@@ -2204,8 +2205,8 @@
         null,
         1,
         1,
-        0,
-        0,
+        1,
+        1,
         null,
         null
       ],
@@ -2216,7 +2217,7 @@
         1,
         1,
         null,
-        null,
+        1,
         null
       ],
       "/home/fergal/Documents/rails/DiscoveryProgramme/app/controllers/macros_controller.rb": [
@@ -4835,6 +4836,6 @@
         null
       ]
     },
-    "timestamp": 1346367141
+    "timestamp": 1347102761
   }
 }

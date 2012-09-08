@@ -1,5 +1,6 @@
 class AxeMastersController < ApplicationController
   load_and_authorize_resource
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
   
   def index
     @q = AxeMaster.ransack(params[:q])
@@ -88,6 +89,7 @@ class AxeMastersController < ApplicationController
   end
   
   def destroy
+    @axe_master = AxeMaster.find(params[:id])
     @axe_master.destroy
     flash[:alert] = "Axe record deleted!"
     redirect_to axe_masters_path
@@ -106,6 +108,10 @@ private
     else
       get_seq_no(search+1)
     end
+  end
+  
+  def record_not_found
+    redirect_to axe_masters_path
   end
 end
 
