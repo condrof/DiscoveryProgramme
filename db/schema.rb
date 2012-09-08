@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120908111826) do
+ActiveRecord::Schema.define(:version => 20120908131455) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -212,7 +212,7 @@ ActiveRecord::Schema.define(:version => 20120908111826) do
   end
 
   create_table "linkages", :force => true do |t|
-    t.string   "sequence_no"
+    t.integer  "sequence_no"
     t.string   "bibliography_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false

@@ -900,6 +900,161 @@
         null,
         null
       ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/admin/editables.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/models/editable.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        79,
+        null,
+        null,
+        1,
+        7,
+        7,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        12,
+        12,
+        null,
+        null,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/application_helper.rb": [
+        1,
+        null,
+        1,
+        20,
+        20,
+        20,
+        20,
+        null,
+        20,
+        null,
+        null,
+        1,
+        431,
+        431,
+        431,
+        431,
+        431,
+        null,
+        null,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/axe_masters_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/bibliographies_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/blade_profiles_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/butt_shapes_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/chemical_composition_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/collections_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/contexts_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/cross_sections_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/edge_forms_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/edge_shapes_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/editables_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/face_shapes_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/haftings_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/linkages_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/macros_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/minerals_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/pages_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/pictures_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/prime_treatments_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/profiles_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/re_uses_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/stray_axes_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/use_wears_helper.rb": [
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
       "/home/fergal/Documents/rails/DiscoveryProgramme/app/admin/pictures.rb": [
         1,
         1,
@@ -1002,147 +1157,6 @@
         null,
         null,
         null,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        79,
-        null,
-        null,
-        1,
-        7,
-        7,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        12,
-        12,
-        null,
-        null,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/application_helper.rb": [
-        1,
-        null,
-        1,
-        20,
-        20,
-        20,
-        20,
-        null,
-        20,
-        null,
-        null,
-        1,
-        431,
-        431,
-        431,
-        431,
-        431,
-        null,
-        null,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/axe_masters_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/bibliographies_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/blade_profiles_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/butt_shapes_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/chemical_composition_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/collections_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/contexts_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/cross_sections_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/edge_forms_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/edge_shapes_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/face_shapes_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/haftings_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/linkages_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/macros_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/minerals_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/pages_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/pictures_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/prime_treatments_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/profiles_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/re_uses_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/stray_axes_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/use_wears_helper.rb": [
-        1,
-        null
-      ],
-      "/home/fergal/Documents/rails/DiscoveryProgramme/app/helpers/users_helper.rb": [
-        1,
         null
       ],
       "/home/fergal/Documents/rails/DiscoveryProgramme/app/admin/users.rb": [
@@ -1434,6 +1448,7 @@
       "/home/fergal/Documents/rails/DiscoveryProgramme/app/controllers/axe_masters_controller.rb": [
         1,
         1,
+        1,
         null,
         1,
         15,
@@ -1541,6 +1556,10 @@
         null,
         0,
         null,
+        null,
+        null,
+        1,
+        0,
         null,
         null,
         null
@@ -2061,6 +2080,10 @@
         1,
         null
       ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/app/controllers/editables_controller.rb": [
+        1,
+        null
+      ],
       "/home/fergal/Documents/rails/DiscoveryProgramme/app/controllers/face_shapes_controller.rb": [
         1,
         1,
@@ -2188,8 +2211,8 @@
         1,
         5,
         5,
-        4,
-        4,
+        5,
+        5,
         null,
         0,
         0,
@@ -2205,8 +2228,8 @@
         null,
         1,
         1,
-        1,
-        1,
+        0,
+        0,
         null,
         null
       ],
@@ -2217,7 +2240,7 @@
         1,
         1,
         null,
-        1,
+        null,
         null
       ],
       "/home/fergal/Documents/rails/DiscoveryProgramme/app/controllers/macros_controller.rb": [
@@ -2329,6 +2352,7 @@
       "/home/fergal/Documents/rails/DiscoveryProgramme/app/controllers/pages_controller.rb": [
         1,
         1,
+        290,
         null,
         null
       ],
@@ -2871,6 +2895,17 @@
       "/home/fergal/Documents/rails/DiscoveryProgramme/spec/factories/edge_shapes.rb": [
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/spec/factories/editables.rb": [
+        null,
+        null,
+        1,
         1,
         1,
         1,
@@ -4395,6 +4430,30 @@
       "/home/fergal/Documents/rails/DiscoveryProgramme/spec/requests/linkages_spec.rb": [
 
       ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/spec/helpers/editables_helper_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/spec/models/editable_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        null
+      ],
       "/home/fergal/Documents/rails/DiscoveryProgramme/spec/controllers/macros_controller_spec.rb": [
         1,
         null,
@@ -4672,6 +4731,13 @@
         null,
         null
       ],
+      "/home/fergal/Documents/rails/DiscoveryProgramme/spec/controllers/editables_controller_spec.rb": [
+        1,
+        null,
+        1,
+        null,
+        null
+      ],
       "/home/fergal/Documents/rails/DiscoveryProgramme/spec/controllers/linkages_controller_spec.rb": [
         1,
         null,
@@ -4836,6 +4902,6 @@
         null
       ]
     },
-    "timestamp": 1347102761
+    "timestamp": 1347110417
   }
 }
