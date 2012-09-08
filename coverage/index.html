@@ -23,7 +23,7 @@
       <img src="./assets/0.5.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2012-09-08T15:21:26+01:00">2012-09-08T15:21:26+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2012-09-08T15:34:54+01:00">2012-09-08T15:34:54+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -34,7 +34,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.85
+         5.82
        </span>
     </span> hits/line)
   </h2>
@@ -126,7 +126,7 @@
         <td>70</td>
         <td>56</td>
         <td>14</td>
-        <td>5.3</td>
+        <td>4.9</td>
       </tr>
       
       <tr>
@@ -366,7 +366,7 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>173.7</td>
+        <td>172.2</td>
       </tr>
       
       <tr>
@@ -616,7 +616,7 @@
         <td>26</td>
         <td>23</td>
         <td>3</td>
-        <td>116.5</td>
+        <td>116.1</td>
       </tr>
       
       <tr>
@@ -626,7 +626,7 @@
         <td>179</td>
         <td>104</td>
         <td>75</td>
-        <td>3.3</td>
+        <td>3.1</td>
       </tr>
       
       <tr>
@@ -846,7 +846,7 @@
         <td>14</td>
         <td>14</td>
         <td>0</td>
-        <td>286.9</td>
+        <td>286.2</td>
       </tr>
       
       <tr>
@@ -2839,38 +2839,38 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="6">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="14" data-linenumber="6">
+          <span class="hits">14</span>
           
           <code class="ruby">    @q = AxeMaster.ransack(params[:q])</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="7">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="14" data-linenumber="7">
+          <span class="hits">14</span>
           
           <code class="ruby">    @axes = @q.result</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="8">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="14" data-linenumber="8">
+          <span class="hits">14</span>
           
           <code class="ruby">    @axe_masters = []</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="9">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="14" data-linenumber="9">
+          <span class="hits">14</span>
           
           <code class="ruby">    @axes.each do |axe| </code>
         </li>
       
-        <li class="covered" data-hits="35" data-linenumber="10">
-          <span class="hits">35</span>
+        <li class="covered" data-hits="29" data-linenumber="10">
+          <span class="hits">29</span>
           
           <code class="ruby">      if axe.confirmed</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="11">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="13" data-linenumber="11">
+          <span class="hits">13</span>
           
           <code class="ruby">        @axe_masters &lt;&lt; axe</code>
         </li>
@@ -2887,20 +2887,20 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="14">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="14" data-linenumber="14">
+          <span class="hits">14</span>
           
           <code class="ruby">    @axe_masters_show = Kaminari.paginate_array(@axe_masters).page(params[:page]).per(20)</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="15">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="14" data-linenumber="15">
+          <span class="hits">14</span>
           
           <code class="ruby">    @q.build_condition if @q.conditions.empty?</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="16">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="14" data-linenumber="16">
+          <span class="hits">14</span>
           
           <code class="ruby">    @q.build_sort if @q.sorts.empty?   </code>
         </li>
@@ -2911,8 +2911,8 @@
           <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="18">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="14" data-linenumber="18">
+          <span class="hits">14</span>
           
           <code class="ruby">    if params[:search].eql?(&quot;xml&quot;)</code>
         </li>
@@ -2947,8 +2947,8 @@
           <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="24">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="12" data-linenumber="24">
+          <span class="hits">12</span>
           
           <code class="ruby">    elsif params[:search].eql?(&quot;csv&quot;)</code>
         </li>
@@ -3175,14 +3175,14 @@
           <code class="ruby">  def new</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="62">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="62">
+          <span class="hits">2</span>
           
           <code class="ruby">    if signed_in?</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="63">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="63">
+          <span class="hits">2</span>
           
           <code class="ruby">      @axe_master = current_user.axe_masters.build</code>
         </li>
@@ -3229,32 +3229,32 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="71">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="71">
+          <span class="hits">2</span>
           
           <code class="ruby">    @axe_master = current_user.axe_masters.build(params[:axe_master])</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="72">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="72">
+          <span class="hits">2</span>
           
           <code class="ruby">    @axe_master[:seq_no] = get_seq_no(AxeMaster.order(&quot;seq_no desc&quot;).first.seq_no.to_i+1)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="73">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="73">
+          <span class="hits">2</span>
           
           <code class="ruby">    if @axe_master.save</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="74">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="74">
+          <span class="hits">2</span>
           
           <code class="ruby">      flash[:success] = &quot;Your record has been submited for approval.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="75">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="75">
+          <span class="hits">2</span>
           
           <code class="ruby">      redirect_to axe_masters_path</code>
         </li>
@@ -3433,20 +3433,20 @@
           <code class="ruby">  def get_seq_no(search)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="105">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="105">
+          <span class="hits">2</span>
           
           <code class="ruby">    @test = AxeMaster.find(:all, :conditions =&gt; {:seq_no =&gt; search})</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="106">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="106">
+          <span class="hits">2</span>
           
           <code class="ruby">    if @test.empty?</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="107">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="107">
+          <span class="hits">2</span>
           
           <code class="ruby">      return search.to_s</code>
         </li>
@@ -9355,26 +9355,26 @@
           <code class="ruby">  def link_to_add_fields(name, f, type)</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="4">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="18" data-linenumber="4">
+          <span class="hits">18</span>
           
           <code class="ruby">    new_object = f.object.send &quot;build_#{type}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="5">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="18" data-linenumber="5">
+          <span class="hits">18</span>
           
           <code class="ruby">    id = &quot;new_#{type}&quot;</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="6">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="18" data-linenumber="6">
+          <span class="hits">18</span>
           
           <code class="ruby">    fields = f.send(&quot;#{type}_fields&quot;, new_object, child_index: id) do |builder|</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="7">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="18" data-linenumber="7">
+          <span class="hits">18</span>
           
           <code class="ruby">      render(type.to_s + &quot;_fields&quot;, f: builder)</code>
         </li>
@@ -9385,8 +9385,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="20" data-linenumber="9">
-          <span class="hits">20</span>
+        <li class="covered" data-hits="18" data-linenumber="9">
+          <span class="hits">18</span>
           
           <code class="ruby">    link_to(name, '#', class: &quot;add_fields&quot;, data: {id: id, fields: fields.gsub(&quot;\n&quot;, &quot;&quot;)})</code>
         </li>
@@ -9409,32 +9409,32 @@
           <code class="ruby">  def layout_count</code>
         </li>
       
-        <li class="covered" data-hits="431" data-linenumber="13">
-          <span class="hits">431</span>
+        <li class="covered" data-hits="429" data-linenumber="13">
+          <span class="hits">429</span>
           
           <code class="ruby">    @axe_count = AxeMaster.find(:all, :conditions =&gt; {:confirmed =&gt; false}).count</code>
         </li>
       
-        <li class="covered" data-hits="431" data-linenumber="14">
-          <span class="hits">431</span>
+        <li class="covered" data-hits="429" data-linenumber="14">
+          <span class="hits">429</span>
           
           <code class="ruby">    @pic_count = Picture.find(:all, :conditions =&gt; {:confirmed =&gt; false}).count</code>
         </li>
       
-        <li class="covered" data-hits="431" data-linenumber="15">
-          <span class="hits">431</span>
+        <li class="covered" data-hits="429" data-linenumber="15">
+          <span class="hits">429</span>
           
           <code class="ruby">    @user_count = User.find(:all, :conditions =&gt; {:confirmed =&gt; false}).count</code>
         </li>
       
-        <li class="covered" data-hits="431" data-linenumber="16">
-          <span class="hits">431</span>
+        <li class="covered" data-hits="429" data-linenumber="16">
+          <span class="hits">429</span>
           
           <code class="ruby">    @count = @axe_count + @pic_count + @user_count</code>
         </li>
       
-        <li class="covered" data-hits="431" data-linenumber="17">
-          <span class="hits">431</span>
+        <li class="covered" data-hits="429" data-linenumber="17">
+          <span class="hits">429</span>
           
           <code class="ruby">    return @count</code>
         </li>
@@ -10237,20 +10237,20 @@
           <code class="ruby">       #user ||= User.new # guest user (not logged in)</code>
         </li>
       
-        <li class="covered" data-hits="670" data-linenumber="8">
-          <span class="hits">670</span>
+        <li class="covered" data-hits="667" data-linenumber="8">
+          <span class="hits">667</span>
           
           <code class="ruby">       if user  </code>
         </li>
       
-        <li class="covered" data-hits="607" data-linenumber="9">
-          <span class="hits">607</span>
+        <li class="covered" data-hits="604" data-linenumber="9">
+          <span class="hits">604</span>
           
           <code class="ruby">         if user.admin || user.researcher</code>
         </li>
       
-        <li class="covered" data-hits="505" data-linenumber="10">
-          <span class="hits">505</span>
+        <li class="covered" data-hits="502" data-linenumber="10">
+          <span class="hits">502</span>
           
           <code class="ruby">           can :manage, :all</code>
         </li>
@@ -11689,8 +11689,8 @@
           <code class="ruby">    def default_values</code>
         </li>
       
-        <li class="covered" data-hits="248" data-linenumber="189">
-          <span class="hits">248</span>
+        <li class="covered" data-hits="227" data-linenumber="189">
+          <span class="hits">227</span>
           
           <code class="ruby">      self.confirmed ||= false</code>
         </li>
@@ -13243,20 +13243,20 @@
           <code class="ruby">    def default_values</code>
         </li>
       
-        <li class="covered" data-hits="1335" data-linenumber="24">
-          <span class="hits">1335</span>
+        <li class="covered" data-hits="1332" data-linenumber="24">
+          <span class="hits">1332</span>
           
           <code class="ruby">      self.admin ||= false</code>
         </li>
       
-        <li class="covered" data-hits="1335" data-linenumber="25">
-          <span class="hits">1335</span>
+        <li class="covered" data-hits="1332" data-linenumber="25">
+          <span class="hits">1332</span>
           
           <code class="ruby">      self.researcher ||= false</code>
         </li>
       
-        <li class="covered" data-hits="1335" data-linenumber="26">
-          <span class="hits">1335</span>
+        <li class="covered" data-hits="1332" data-linenumber="26">
+          <span class="hits">1332</span>
           
           <code class="ruby">      self.confirmed ||= false</code>
         </li>
