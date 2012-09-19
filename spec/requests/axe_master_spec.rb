@@ -123,12 +123,12 @@ require 'spec_helper'
       fill_in :townland, :with => "portlaoise"
       fill_in :area, :with => "laois"
       click_button "Submit Record"
-      AxeMaster.last.seq_no.should eq(435) 
+      AxeMaster.last.seq_no.should eq("435") 
       visit new_axe_master_path
       fill_in :townland, :with => "portlaoise"
       fill_in :area, :with => "laois"
       click_button "Submit Record" 
-      AxeMaster.last.seq_no.should eq(436)           
+      AxeMaster.last.seq_no.should eq("436")           
     end
 
    
