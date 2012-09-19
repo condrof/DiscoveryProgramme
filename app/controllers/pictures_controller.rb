@@ -38,4 +38,5 @@ class PicturesController < ApplicationController
     flash[:success] = "Picture successfully deleted"
     redirect_to axe_master_path(@axe)
   end
+
 end
