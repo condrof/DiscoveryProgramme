@@ -17,7 +17,7 @@
   <dt><strong><%= model_class.human_attribute_name(:document_type) %>:</strong></dt>
   <dd><%= @picture.document_type %></dd>
   <dt><strong>Download</strong></dt>
-  <dd><%= send_data @picture %></dt>
+  <dd><%= send_data @picture.image %></dt>
 </dl>
 
 <%= image_tag @picture.image.to_s %>
