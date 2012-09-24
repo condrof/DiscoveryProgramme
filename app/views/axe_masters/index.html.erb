@@ -12,15 +12,12 @@
 	<thead>
 		<tr>
 			<th><%= sort_link @q, :name, "Seq No" %></th>
-			<th><%= sort_link @q, :name, "museam_ref" %></th>
-			<th class="hidden-phone"><%= sort_link @q, :name, "collections_id" %></th>
-			<% if current_user && (current_user.admin || current_user.researcher) %>
-				<th class="hidden-phone"><%= sort_link @q, :name, "current_location" %></th>
-			<% end %>
-			<th class="hidden-phone"><%= sort_link @q, :name, "townland" %></th>
-			<th class="hidden-phone"><%= sort_link @q, :name, "area" %></th>
-			<th class="hidden-phone"><%= sort_link @q, :name, "county" %></th>
-			<th class="hidden-phone"><%= sort_link @q, :name, "discovery_circumstances" %></th>
+			<th><%= sort_link @q, :name, "Museum Reference" %></th>
+			<th class="hidden-phone"><%= sort_link @q, :name, "Collection" %></th>
+			<th class="hidden-phone"><%= sort_link @q, :name, "Townland" %></th>
+			<th class="hidden-phone"><%= sort_link @q, :name, "County" %></th>
+			<th class="hidden-phone"><%= sort_link @q, :name, "Object Type" %></th>
+			<th class="hidden-phone"><%= sort_link @q, :name, "Macro" %></th>
 			<% if can? :update, AxeMaster %>
 			<th><%= t '.actions', :default => t("helpers.actions") %></th>
 			<% end %>
@@ -31,15 +28,12 @@
 		<tr>
 			<% if axe_master.confirmed %>
 				<td><%= link_to axe_master.seq_no, axe_master_path(axe_master) %></td>
-				<td><%= axe_master.museam_ref %></td>
-				<td class="hidden-phone"><%= axe_master.collections_id%></td>
-				<% if current_user && (current_user.admin || current_user.researcher) %>
-					<td class="hidden-phone"><%= axe_master.current_location %></td>
-				<% end %>
+				<td><%= link_to axe_master.museum_ref, axe_master_path(axe_master) %></td>
+				<td class="hidden-phone"><%= axe_master.collections_id %></td>
 				<td class="hidden-phone"><%= axe_master.townland %></td>
-				<td class="hidden-phone"><%= axe_master.area %></td>
 				<td class="hidden-phone"><%= axe_master.county %></td>
-				<td class="hidden-phone"><%= axe_master.discovery_circumstances %></td>
+				<td class="hidden-phone"><%= axe_master.object_type %></td>
+				<td class="hidden-phone"><%= axe_master.macro_id %></td>
 				<% if can? :update, axe_master %>
 					<td> <%= link_to t('.edit', :default => t("helpers.links.edit")),
 					edit_axe_master_path(axe_master), :class => 'btn btn-mini' %>

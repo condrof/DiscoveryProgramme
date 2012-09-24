@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120908143139) do
+ActiveRecord::Schema.define(:version => 20120924200204) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20120908143139) do
 
   create_table "axe_masters", :force => true do |t|
     t.string   "seq_no"
-    t.string   "museam_ref"
+    t.string   "museum_ref"
     t.string   "collections_id"
     t.string   "current_location"
     t.string   "townland"
@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20120908143139) do
     t.string   "barony"
     t.string   "parish"
     t.string   "hoard"
-    t.string   "new_museam_ref"
+    t.string   "new_museum_ref"
     t.string   "catalogue_ref"
     t.string   "site_type"
     t.string   "secure_context"
@@ -308,6 +308,7 @@ ActiveRecord::Schema.define(:version => 20120908143139) do
     t.string   "institution"
     t.string   "phone"
     t.string   "purpose_of_use"
+    t.boolean  "receive_emails"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

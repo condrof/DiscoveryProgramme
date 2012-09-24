@@ -10,7 +10,7 @@
 	    <%= f.input :context_id, :as => :select, :collection => Hash[::Context.all.collect{|b| [b.description,b.id]}] %>
 	   	<%= f.input :site_type %>
 		<%= f.input :discovery_circumstances, :class => 'text_block' %>
-		<%= f.input :museam_ref %>	
+		<%= f.input :museum_ref %>	
 	</fieldset>
 	
 	<% if can? :destroy, AxeMaster %>
@@ -102,7 +102,7 @@
 		<%= f.input :photographed, :as => :radio_buttons %>
 		<%= f.input :axe_cored, :as => :radio_buttons %>
 	
-		<%= f.input :new_museam_ref %>
+		<%= f.input :new_museum_ref %>
 		<%= f.input :catalogue_ref %>
 		<%= f.input :secure_context %>
 		<%= f.input :feature_context_details %>

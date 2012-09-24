@@ -2,6 +2,19 @@ class BibliographiesController < ApplicationController
   load_and_authorize_resource
 
   def index
+    @axe_master = AxeMaster.find_by_seq_no(params[:seq_no])
+    @linkage = Linkage.new
+
+    respond_to do |format|
+      format.html
+      format.xml {
+        send_data @bibliographies.to_xml, :filename => "bibliographies.xml"
+      }
+      format.csv {
+        send_data @bibliographies.to_comma, :col_sep => ',', :filename => "bibliographies.csv"
+      }
+    end
+
   end
 
   def show
@@ -38,7 +51,7 @@ class BibliographiesController < ApplicationController
   
   def destroy
     @bibliography.destroy
-    flash[:alert] = "Bibliography deleted!"
+    flash[:error] = "Bibliography deleted!"
     redirect_to bibliographies_path
   end  
 end

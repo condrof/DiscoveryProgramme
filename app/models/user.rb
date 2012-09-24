@@ -6,8 +6,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :name, :address, :institution, :phone, :purpose_of_use
-  # attr_accessible :title, :body
+  attr_accessible :email, :password, :password_confirmation, :receive_emails, :remember_me, :name, :address, :institution, :phone, :purpose_of_use
   
   has_many :axe_masters, :foreign_key => "user_id", :primary_key => "id"
   
@@ -24,5 +23,6 @@ private
       self.admin ||= false
       self.researcher ||= false
       self.confirmed ||= false
+      #self.receive_emails ||= true
     end
 end

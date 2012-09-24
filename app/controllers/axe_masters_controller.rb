@@ -72,6 +72,7 @@ class AxeMastersController < ApplicationController
     @axe_master[:seq_no] = get_seq_no((AxeMaster.order("seq_no desc").first.seq_no).to_i+1)
     if @axe_master.save
       flash[:success] = "Your record has been submited for approval."
+      UserMailer.signupConfirmation(current_user, "Axe", @axe_master).deliver
       redirect_to axe_masters_path
     else
       flash[:error] = "Record did not save"

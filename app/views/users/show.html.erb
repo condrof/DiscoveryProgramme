@@ -1,6 +1,6 @@
 <%- model_class = User -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+  <h1><%= "#{current_user.name.capitalize}" %></h1>
 </div>
 
 <dl class="dl-horizontal">
@@ -16,6 +16,7 @@
   <dd><%= @user.phone %></dd>
   <dt><strong><%= model_class.human_attribute_name(:purpose_of_use) %>:</strong></dt>
   <dd><%= @user.purpose_of_use %></dd>
+  <%= current_user.receive_emails %>
 
   <% unless @user.axe_masters.empty? %>
   	<div class="well">
