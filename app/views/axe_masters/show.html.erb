@@ -42,7 +42,7 @@
 <div class ="well">
 	<% if @axe_master.bibliographies.count>0 %>
 		<fieldset>
-			<legend>Bibliography</legend>
+			<legend>Bibliography <small><%= link_to "Help", help_path + '#Bibliography' %></small></legend>
 			<table class="table ">
 				<thead>
 					<tr>
@@ -80,7 +80,7 @@
 	<dl class="dl-horizontal">
 		<% unless @axe_master.pictures.empty? %>
 			<fieldset>
-				<legend>Media</legend>
+				<legend>Media <small><%= link_to "Help", help_path + '#Media' %></small></legend>
 				<% @axe_master.pictures.each do |pic| %>
 					<% if pic.confirmed %>
 					  <dt><strong><%= pic.document_type %>:</strong></dt>
@@ -91,8 +91,8 @@
 		<% end %>
 
 		
-		<fieldset>
-			<legend>Archival & Contextual Data</legend>
+		<fieldset class="spacer">
+			<legend>Archival & Contextual Data <small><%= link_to "Help", help_path + '#Archival_&_Contextual_Data' %></small></legend>
 			  <dt><strong><%= model_class.human_attribute_name(:seq_no) %>:</strong></dt>
 			  <dd><%= @axe_master.seq_no %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:museum_ref) %>:</strong></dt>
@@ -155,7 +155,7 @@
 		<br />
 		
 		<% if current_user && (current_user.admin || current_user.researcher) %>
-			<fieldset>
+			<fieldset class="spacer">
 				<legend>Admin Values</legend>
 				  <dt><strong><%= model_class.human_attribute_name(:current_location) %>:</strong></dt>
 				  <dd><%= @axe_master.current_location  %></dd>		
@@ -164,8 +164,8 @@
 			</fieldset><br />
 		<% end %>
 		
-		<fieldset>
-			<legend>Physical Characteristics</legend>
+		<fieldset class="spacer">
+			<legend>Physical Characteristics <small><%= link_to "Help", help_path + '#Physical_Characteristics' %></small></legend>
 			  <dt><strong><%= model_class.human_attribute_name(:object_type) %>:</strong></dt>
 			  <dd><%= @axe_master.object_type %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:minature) %>:</strong></dt>
@@ -254,8 +254,8 @@
 		</fieldset>
 		<br />
 
-		<fieldset>
-			<legend>Petrology</legend>
+		<fieldset class="spacer">
+			<legend>Petrology <small><%= link_to "Help", help_path + '#Petrology' %></small></legend>
 			  <dt><strong><%= model_class.human_attribute_name(:macro) %>:</strong></dt>
 			  <dd><%= @axe_master.macro_id %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:micro) %>:</strong></dt>
@@ -273,8 +273,8 @@
 		</fieldset>
 		<br />
 
-		<fieldset>
-			<legend>Archaeological Excavation</legend>
+		<fieldset class="spacer">
+			<legend>Archaeological Excavation <small><%= link_to "Help", help_path + '#Archaeological_Excavation' %></small></legend>
 			  <dt><strong><%= model_class.human_attribute_name(:site_type) %>:</strong></dt>
 			  <dd><%= @axe_master.site_type %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:secure_context) %>:</strong></dt>

@@ -13,6 +13,7 @@ DiscoveryProgramme::Application.routes.draw do
   end
   
   match '/list' => 'pages#list'
+  match '/help' => 'pages#help'
 
   get "axe_masters/search"
   # The priority is based upon order of creation:

@@ -2,12 +2,13 @@ ActiveAdmin::Dashboards.build do
   
   section "Confirm Users" do
     ul do
-      User.find_by_confirmed("false" || nil) do |user|
-        if !user.nil?
-          li link_to "Confirm #{user.email}", confirm_user_admin_user_path(user) 
-        else
-          li "All current users have been confirmed"
-        end
+      @users = User.find(:all, :conditions => { confirmed: "false"})
+      if !@users.empty?
+        @users.each do |user|
+          li link_to "Confirm #{user.email}", confirm_user_admin_user_path(user)
+        end 
+      else
+        li "All current users have been confirmed"
       end
     end
   end

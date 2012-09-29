@@ -17,12 +17,17 @@ class User < ActiveRecord::Base
   
   after_initialize :default_values
 
+  after_create :send_admin_mail
+  def send_admin_mail
+      UserMailer.newUserConfirmation.deliver
+  end
+
   
 private
     def default_values
       self.admin ||= false
       self.researcher ||= false
       self.confirmed ||= false
-      #self.receive_emails ||= true
+      self.receive_emails ||= true
     end
 end
