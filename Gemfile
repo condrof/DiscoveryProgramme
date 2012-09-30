@@ -19,6 +19,8 @@ gem 'carrierwave'
 gem "comma", "~> 3.0"
 gem 'kaminari'
 gem 'prawn'
+gem "rmagick"
+
 
 
 # Gems used only for assets and not required

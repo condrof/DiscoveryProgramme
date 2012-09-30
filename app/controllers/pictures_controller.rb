@@ -18,11 +18,11 @@ class PicturesController < ApplicationController
     @picture = Picture.new(params[:picture])
       if @picture.save
         flash[:success] = "Picture successfully uploaded. Note: Picture must be confirmed by researcher before you can see it"
-        UserMailer.signupConfirmation(current_user, "Document", @axe_master).deliver
+        UserMailer.signupConfirmation(current_user, "Document", @picture.axe_master).deliver
         redirect_to :back
       else
         flash[:alert] = "Error uploading picture"
-        redirect_to :back
+        redirect_to axe_master_path(@picture.axe_master)
       end
   end
   
@@ -39,5 +39,10 @@ class PicturesController < ApplicationController
     flash[:success] = "Picture successfully deleted"
     redirect_to axe_master_path(@axe)
   end
+
+
+  def download
+    send_file @picture.image, :type=>"pdf"
+  end 
 
 end

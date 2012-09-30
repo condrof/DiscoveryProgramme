@@ -18,7 +18,7 @@ ActiveAdmin::Dashboards.build do
       @axes=AxeMaster.find(:all, :conditions => { :confirmed => "false" })
       if !@axes.empty?
         @axes.each do |axe|
-          li link_to "New axe record from #{axe.user.try(:email)}", axe_master_path(axe) 
+          li link_to "New axe record: #{axe.seq_no}", axe_master_path(axe) 
         end
       else
           li "All current records have been confirmed"

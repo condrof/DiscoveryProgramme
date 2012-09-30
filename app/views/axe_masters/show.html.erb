@@ -19,7 +19,7 @@
 			  <%= f.hidden_field :user_id, :value => current_user.id %>
 			  <%= f.input :document_name %>
 			  <%= f.input :description %>
-			  <%= f.input :document_type %>
+			  <%= f.input :document_type, collection: ['LUT', 'Image', 'PDF', 'Word Document', 'Excel'] %>
 			  <%= f.label :image %>
 			  <%= f.file_field :image %> <br />
 			<div class = "form-actions">
@@ -81,12 +81,22 @@
 		<% unless @axe_master.pictures.empty? %>
 			<fieldset>
 				<legend>Media <small><%= link_to "Help", help_path + '#Media' %></small></legend>
-				<% @axe_master.pictures.each do |pic| %>
+				<div class="row-fluid">
+				  <% @axe_master.pictures.each do |pic| %>
 					<% if pic.confirmed %>
-					  <dt><strong><%= pic.document_type %>:</strong></dt>
-					  <dd><%= link_to pic.try(:description), picture_path(pic) %></dd>
-				  	<% end %>	
-				<% end %><fieldset>
+					  <div class="span2">
+					  	<div class="placeHolder"><%= link_to image_tag(pic.image_url(:thumb).to_s, :size => "100x100"), pic.image_url, :rel => "lightbox" %><br />
+					  	</div>
+					  	<% if pic.document_type == "Image" %>
+					  		<p><strong><%= pic.document_type %>:</strong> <%= link_to pic.try(:description), picture_path(pic) %></p>
+					  	<% else %>
+					  		<p><strong><%= pic.document_type %>:</strong> <%= pic.description %></p>
+					  	 	<p><%= link_to "Download", pic.image.to_s %></p>
+					  	<% end %>
+					  </div>
+				  	<% end %>
+				  <% end %>
+				</div>
 			</fieldset>
 		<% end %>
 

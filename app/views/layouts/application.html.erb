@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %> 
+  <script src="js/jquery-1.7.2.min.js"></script>
+  <script src="js/lightbox.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"</head>
 <body>
@@ -33,12 +35,12 @@
                 <li><%= link_to "New Axe", new_axe_master_path %></li>
           		<li><%= link_to "Settings", edit_user_registration_path %></li>                
               <% end %>
-          		<li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
 	          	<% if current_user.admin || current_user.researcher %>
 	          		<li><%= link_to "Miscellaneous", list_path %></li>
-	         		<li><%= link_to "All Users", users_path %></li>
+	         	   	<li><%= link_to "All Users", users_path %></li>
 	          		<li><%= link_to "Admin Dashboard (#{layout_count})", admin_dashboard_path %></li>
 	          	<% end %>
+              <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
           	<% end %>
         </ul>
       </div>

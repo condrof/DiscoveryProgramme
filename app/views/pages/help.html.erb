@@ -7,7 +7,7 @@
 		<div class="row-fluid spacer" id=<%= help.title.gsub(" ","_") %> >
 			<div class="span12">
 				<h3><%= help.title %></h3>
-				<p class="center"><%= help.content %></p>
+				<p class="center"><%= simple_format(help.content).html_safe %></p>
 			</div>
 		</div>
 	<% end %>

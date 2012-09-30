@@ -3,6 +3,9 @@
   <h1><%=t '.title', :default => model_class.model_name.human %>
   	<% if current_user && (current_user.researcher || current_user.admin) && !@picture.confirmed %>
 		<%= link_to "Confirm Picture", confirm_admin_picture_path(@picture), :class => 'btn btn-success btn-large' %>
+    <%= link_to t('.destroy', :default => t("helpers.links.destroy")), picture_path(@picture), :method => 'delete',
+          :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger btn-large' %> 
 	<% end %>
   </h1>
 </div>
@@ -18,8 +21,11 @@
   <dd><%= @picture.document_type %></dd>
 </dl>
 
-<%= image_tag @picture.image.to_s %>
-<% open("public/" + @picture.image.to_s) %>
+<% if @picture.document_type == "Image" %>
+  <%= image_tag @picture.image.to_s %>
+<% else %>
+  <%= link_to "Download", @picture.image.to_s %>
+<% end %>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
