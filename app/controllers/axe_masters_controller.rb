@@ -3,15 +3,9 @@ class AxeMastersController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
   
   def index
-    @q = AxeMaster.ransack(params[:q])
-    @axes = @q.result
-    @axe_masters = []
-    @axes.each do |axe| 
-      if axe.confirmed
-        @axe_masters << axe
-      end
-    end
-    @axe_masters_show = Kaminari.paginate_array(@axe_masters).page(params[:page]).per(20)
+    @q = AxeMaster.ransack(params[:q], :confirmed => true)
+    @axe_masters = Kaminari.paginate_array(@q.result).page(params[:page]).per(100)
+
     @q.build_condition if @q.conditions.empty?
     @q.build_sort if @q.sorts.empty?   
   

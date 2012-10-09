@@ -6,7 +6,7 @@
 </div>
 
 
-<%= paginate @axe_masters_show %>
+<%= paginate @axe_masters %>
 
 <table class="table table-striped">
 	<thead>
@@ -24,7 +24,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<% @axe_masters_show.each do |axe_master| %>
+		<% @axe_masters.each do |axe_master| %>
 		<tr>
 			<% if axe_master.confirmed %>
 				<td><%= link_to axe_master.seq_no, axe_master_path(axe_master) %></td>
@@ -51,7 +51,7 @@
 	</tbody>
 </table>
 
-<%= paginate @axe_masters_show %>
+<%= paginate @axe_masters %>
 
 
 <% if can? :create, AxeMaster %>

@@ -11,7 +11,7 @@
 </div>
 
 <% if can? :update, @axe_master %>	
-	<div class = "form-horizontal well">
+	<div class = "form-horizontal well hidden-print" id="document">
 		<fieldset>
 			<legend>Add a document to this record</legend>
 			<%= simple_form_for @picture, :html => {:multipart => true} do |f| %>
@@ -33,16 +33,17 @@
 
 
 <% if current_user && current_user.confirmed %>
-	<div class = "pull-left">
-		Export: <%= link_to "CSV", axe_master_path(@axe_master, format: "csv") %> | <%= link_to "XML", axe_master_path(@axe_master, format: "xml") %>
+	<div class = "pull-right hidden-print">
+		Export: <%= link_to "CSV", axe_master_path(@axe_master, format: "csv"), :class => 'btn-info' %> | <%= link_to "XML", axe_master_path(@axe_master, format: "xml"), :class => 'btn-info' %>
 	</div>
 <% end %>
 
 <br /><br />
-<div class ="well">
-	<% if @axe_master.bibliographies.count>0 %>
+
+<% if @axe_master.bibliographies.count>0 %>
+	<div class ="well">
 		<fieldset>
-			<legend>Bibliography <small><%= link_to "Help", help_path + '#Bibliography' %></small></legend>
+			<legend>Bibliography <small class="hidden-print"><%= link_to "Help", help_path + '#Bibliography' %></small></legend>
 			<table class="table ">
 				<thead>
 					<tr>
@@ -50,7 +51,9 @@
 						<th class ="hidden-phone">Year</th>
 						<th>Title</th>
 						<th class ="hidden-phone">Publication</th>
-						<th>Link Key</th>
+						<% if can? :destroy, AxeMaster %>
+							<th></th>
+						<% end %>
 					</tr>
 				</thead>
 				<tbody>	
@@ -60,49 +63,61 @@
 						<td class ="hidden-phone"><%= bibliography.year %></td>
 						<td><%= bibliography.title %></td>
 						<td class ="hidden-phone"><%= bibliography.publication %></td>
-						<td><%= bibliography.linkage_id %></td>
 						<% if can? :destroy, AxeMaster %>
 							<% @l = Linkage.find(:all, :conditions => {:bibliography_id => bibliography.linkage_id, :sequence_no => @axe_master.seq_no } )%>
-							<td><%= link_to "Delete", linkage_path(@l), method: :delete, :confirm => "Are you sure?", class: "btn btn-danger"  %></td>	
+							<td class= "hidden-print"><%= link_to "Delete", linkage_path(@l), method: :delete, :confirm => "Are you sure?", class: "btn btn-danger"  %></td>	
 						<% end %>
 					</tr>
 					<% end %>
 				</tbody>
 			</table>
 		</fieldset>
+	</div>
+<% end %>
+
+	<% if can? :create, Linkage %>
+		<div class="row-fluid hidden-print">
+			<div class="span4"></div><div class="span4"><%= link_to "Add Bibliography to Axe Record", bibliographies_path(:seq_no => @axe_master.seq_no), :target => '_blank', class: "btn btn-primary" %></div><div class="span4"></div>
+		</div>
 	<% end %>
 
-	<div class="row-fluid">
-		<div class="span4"></div><div class="span4"><%= link_to "Add Bibliography to Axe Record", bibliographies_path(:seq_no => @axe_master.seq_no), :target => '_blank', class: "btn btn-primary" %></div><div class="span4"></div>
-	</div>
-
-
-	<dl class="dl-horizontal">
-		<% unless @axe_master.pictures.empty? %>
+<div class="spacer"></div>
+<dl class="dl-horizontal">
+	<% unless @axe_master.pictures.empty? %>
+		<div class="well">
 			<fieldset>
-				<legend>Media <small><%= link_to "Help", help_path + '#Media' %></small></legend>
+				<legend>Media <small class="hidden-print"><%= link_to "Help", help_path + '#Media' %></small></legend>
 				<div class="row-fluid">
 				  <% @axe_master.pictures.each do |pic| %>
 					<% if pic.confirmed %>
 					  <div class="span2">
-					  	<div class="placeHolder"><%= link_to image_tag(pic.image_url(:thumb).to_s, :size => "100x100"), pic.image_url, :rel => "lightbox" %><br />
+					  	<div class="placeHolder">
+					  		<% if pic.document_type == "Image" %>
+					  			<%= link_to image_tag(pic.image_url(:thumb).to_s, :size => "100x100"), pic.image_url, :rel => "lightbox" %>
+					  		<% elsif pic.document_type == "PDF" %>
+					  			<%= image_tag "pdfIcon.png" %>					  		
+					  		<% elsif pic.document_type == "Word Document" %>
+					  			<%= image_tag "wordIcon.png" %>
+					  		<% end %>
+					  		<br />
 					  	</div>
 					  	<% if pic.document_type == "Image" %>
-					  		<p><strong><%= pic.document_type %>:</strong> <%= link_to pic.try(:description), picture_path(pic) %></p>
+					  		<p><strong class="hidden-print"><%= pic.document_type %>:</strong> <%= link_to pic.try(:document_name), picture_path(pic) %></p>
 					  	<% else %>
 					  		<p><strong><%= pic.document_type %>:</strong> <%= pic.description %></p>
-					  	 	<p><%= link_to "Download", pic.image.to_s %></p>
+					  	 	<p class="hidden-print"><%= link_to "Download", pic.image.to_s %></p>
 					  	<% end %>
 					  </div>
 				  	<% end %>
 				  <% end %>
 				</div>
 			</fieldset>
-		<% end %>
+		</div>
+	<% end %>
 
-		
-		<fieldset class="spacer">
-			<legend>Archival & Contextual Data <small><%= link_to "Help", help_path + '#Archival_&_Contextual_Data' %></small></legend>
+	<div class="well spacer">	
+		<fieldset>
+			<legend>Archival & Contextual Data <small class="hidden-print"><%= link_to "Help", help_path + '#Archival_&_Contextual_Data' %></small></legend>
 			  <dt><strong><%= model_class.human_attribute_name(:seq_no) %>:</strong></dt>
 			  <dd><%= @axe_master.seq_no %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:museum_ref) %>:</strong></dt>
@@ -151,8 +166,6 @@
 			  <dd><%= @axe_master.archival_complete %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:drawn) %>:</strong></dt>
 			  <dd><%= @axe_master.drawn %></dd>
-			  <dt><strong><%= model_class.human_attribute_name(:drawn) %>:</strong></dt>
-			  <dd><%= @axe_master.drawn %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:object_comp) %>:</strong></dt>
 			  <dd><%= @axe_master.object_comp %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:petrology_comp) %>:</strong></dt>
@@ -162,20 +175,24 @@
 			  <dt><strong><%= model_class.human_attribute_name(:submitted_by) %>:</strong></dt>
 			  <dd><%= @axe_master.user.try(:name) %></dd>		
 		</fieldset>
-		<br />
-		
-		<% if current_user && (current_user.admin || current_user.researcher) %>
-			<fieldset class="spacer">
+	</div>
+
+	<% if current_user && (current_user.admin || current_user.researcher) %>
+		<div class="well spacer">	
+			<fieldset>
 				<legend>Admin Values</legend>
 				  <dt><strong><%= model_class.human_attribute_name(:current_location) %>:</strong></dt>
 				  <dd><%= @axe_master.current_location  %></dd>		
 				  <dt><strong><%= model_class.human_attribute_name(:comments) %>:</strong></dt>
 				  <dd><%= @axe_master.comments %></dd>	
-			</fieldset><br />
-		<% end %>
-		
-		<fieldset class="spacer">
-			<legend>Physical Characteristics <small><%= link_to "Help", help_path + '#Physical_Characteristics' %></small></legend>
+			</fieldset>
+		</div>
+	<% end %>
+
+
+	<div class="well spacer">		
+		<fieldset>
+			<legend>Physical Characteristics <small class="hidden-print"><%= link_to "Help", help_path + '#Physical_Characteristics' %></small></legend>
 			  <dt><strong><%= model_class.human_attribute_name(:object_type) %>:</strong></dt>
 			  <dd><%= @axe_master.object_type %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:minature) %>:</strong></dt>
@@ -262,10 +279,11 @@
 			  <dd><%= @axe_master.description %></dd>		
 			  <br />		
 		</fieldset>
-		<br />
+	</div>
 
-		<fieldset class="spacer">
-			<legend>Petrology <small><%= link_to "Help", help_path + '#Petrology' %></small></legend>
+	<div class="well spacer">	
+		<fieldset>
+			<legend>Petrology <small class="hidden-print"><%= link_to "Help", help_path + '#Petrology' %></small></legend>
 			  <dt><strong><%= model_class.human_attribute_name(:macro) %>:</strong></dt>
 			  <dd><%= @axe_master.macro_id %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:micro) %>:</strong></dt>
@@ -281,10 +299,11 @@
 			  <dt><strong><%= model_class.human_attribute_name(:chemical_composition_method) %>:</strong></dt>
 			  <dd><%= @axe_master.chemical_composition_method %></dd> 
 		</fieldset>
-		<br />
+	</div>
 
-		<fieldset class="spacer">
-			<legend>Archaeological Excavation <small><%= link_to "Help", help_path + '#Archaeological_Excavation' %></small></legend>
+	<div class="well spacer">	
+		<fieldset>
+			<legend>Archaeological Excavation <small class="hidden-print"><%= link_to "Help", help_path + '#Archaeological_Excavation' %></small></legend>
 			  <dt><strong><%= model_class.human_attribute_name(:site_type) %>:</strong></dt>
 			  <dd><%= @axe_master.site_type %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:secure_context) %>:</strong></dt>
@@ -298,10 +317,9 @@
 			  <dt><strong><%= model_class.human_attribute_name(:dating_information) %>:</strong></dt>
 			  <dd><%= @axe_master.dating_information %></dd>
 		</fieldset>
-		<br />
-	</dl>
-</div>
-<div class="form-actions">
+	</div>
+</dl>
+<div class="form-actions hidden-print">
 	  <%= link_to t('.back', :default => t("helpers.links.back")),
 	              axe_masters_path, :class => 'btn'  %>
 	<% if can? :update, @axe_master %>		              
@@ -315,5 +333,4 @@
 	              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
 	              :class => 'btn btn-danger' %>
 	<% end %>
-
 </div>

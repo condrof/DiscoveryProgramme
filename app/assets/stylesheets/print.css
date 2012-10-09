@@ -1,0 +1,44 @@
+.container{
+	display: none;	
+}
+
+
+
+.hidden-print{
+	display: none;
+}
+
+.span2 {
+	display: inline-block;
+	margin: 20px;
+}
+
+A:link {text-decoration: none}
+A:visited {text-decoration: none}
+A:active {text-decoration: none}
+
+legend {
+	font-size: 20px;
+	font-weight: strong;
+}
+
+fieldset {
+	margin-bottom: 40px;
+}
+
+dt {
+    clear: left;
+    float: left;
+    overflow: hidden;
+    padding-right: 20px;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 300px;
+    min-height:20px;
+}
+
+dd {
+    margin-left: 320px;
+    min-height:20px;
+}

@@ -48,8 +48,8 @@ lightbox = new Lightbox options
   LightboxOptions = (function() {
 
     function LightboxOptions() {
-      this.fileLoadingImage = 'images/loading.gif';
-      this.fileCloseImage = 'images/close.png';
+      this.fileLoadingImage = 'assets/loading.gif';
+      this.fileCloseImage = 'assets/close.png';
       this.resizeDuration = 700;
       this.fadeDuration = 500;
       this.labelImage = "Image";
@@ -85,7 +85,7 @@ lightbox = new Lightbox options
     Lightbox.prototype.build = function() {
       var $lightbox,
         _this = this;
-      $("<div>", {
+      $("<div class='hidden-print'>", {
         id: 'lightboxOverlay'
       }).after($('<div/>', {
         id: 'lightbox'

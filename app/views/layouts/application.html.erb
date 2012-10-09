@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>Irish Stone Axe Project</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "application", :media => "screen" %>
+  <%= stylesheet_link_tag    "print", :media => "print" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %> 
   <script src="js/jquery-1.7.2.min.js"></script>
@@ -50,7 +51,7 @@
 	
     <div class="body">
 	  <% flash.each do |name, msg| %>
-	    <div class="alert alert-<%= name %>">
+	    <div class="alert alert-<%= name %> hidden-print">
 	      <%= msg  %>
 	    </div>
 	  <% end %>
