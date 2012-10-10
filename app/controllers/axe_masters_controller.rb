@@ -4,11 +4,11 @@ class AxeMastersController < ApplicationController
   
   def index
     @q = AxeMaster.ransack(params[:q], :confirmed => true)
-    @axe_masters = Kaminari.paginate_array(@q.result).page(params[:page]).per(100)
-
+    @axe_masters = @q.result.paginate(:page => params[:page], :per_page => 100)
+    
     @q.build_condition if @q.conditions.empty?
     @q.build_sort if @q.sorts.empty?   
-  
+
     if params[:search].eql?("xml")
       if current_user.admin || current_user.researcher
         send_data @axe_masters.to_xml, :filename => "admin-axe.xml"       

@@ -5,8 +5,7 @@
 	<h1>Axe Records</h1>
 </div>
 
-
-<%= paginate @axe_masters %>
+<%= will_paginate @axe_masters %>
 
 <table class="table table-striped">
 	<thead>
@@ -51,8 +50,7 @@
 	</tbody>
 </table>
 
-<%= paginate @axe_masters %>
-
+<%= will_paginate @axe_masters %>
 
 <% if can? :create, AxeMaster %>
 	<%= link_to t('.new', :default => t("helpers.links.new")),

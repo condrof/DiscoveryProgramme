@@ -23,7 +23,6 @@ ActiveAdmin::Dashboards.build do
       else
           li "All current records have been confirmed"
       end
-     #end
     end
   end
   

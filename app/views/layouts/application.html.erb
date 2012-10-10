@@ -5,9 +5,8 @@
   <%= stylesheet_link_tag    "application", :media => "screen" %>
   <%= stylesheet_link_tag    "print", :media => "print" %>
   <%= javascript_include_tag "application" %>
+
   <%= csrf_meta_tags %> 
-  <script src="js/jquery-1.7.2.min.js"></script>
-  <script src="js/lightbox.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"</head>
 <body>
@@ -25,7 +24,7 @@
       <div class="nav-collapse">
         <ul class="nav pull-right">
         		<li><%= link_to "Home", root_path %></li>
-        		<li><%= link_to "Axe Records", axe_masters_path %></li>
+        		<li><%= link_to "Axe Records", axe_masters_path, :params => { :q => ""} %></li>
             <li><%= link_to "Help", help_path %></li>
         	<% if !current_user %>
           		<li><%= link_to "Register", new_user_registration_path %></li>

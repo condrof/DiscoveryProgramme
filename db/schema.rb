@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120929112708) do
+ActiveRecord::Schema.define(:version => 20121010172728) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -112,6 +112,8 @@ ActiveRecord::Schema.define(:version => 20120929112708) do
     t.boolean  "confirmed"
   end
 
+  add_index "axe_masters", ["id"], :name => "index_axe_masters_on_id"
+  add_index "axe_masters", ["museum_ref"], :name => "index_axe_masters_on_museum_ref"
   add_index "axe_masters", ["seq_no"], :name => "index_axe_masters_on_seq_no", :unique => true
 
   create_table "bibliographies", :force => true do |t|

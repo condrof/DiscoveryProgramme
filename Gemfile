@@ -20,6 +20,12 @@ gem "comma", "~> 3.0"
 gem 'kaminari'
 gem 'prawn'
 gem "rmagick"
+gem 'bootstrap-will_paginate'
+
+
+
+#gem 'rack-mini-profiler' # miniprofiler for testing
+gem 'newrelic_rpm' #monitor the app
 
 
 

@@ -10,6 +10,7 @@
   </h1>
 </div>
 
+
 <% if can? :update, @axe_master %>	
 	<div class = "form-horizontal well hidden-print" id="document">
 		<fieldset>
@@ -93,7 +94,7 @@
 					  <div class="span2">
 					  	<div class="placeHolder">
 					  		<% if pic.document_type == "Image" %>
-					  			<%= link_to image_tag(pic.image_url(:thumb).to_s, :size => "100x100"), pic.image_url, :rel => "lightbox" %>
+					  			<%= link_to image_tag(pic.image_url(:thumb).to_s, :size => "100x100"), pic.image_url, :rel => "lightbox[photo]" %>
 					  		<% elsif pic.document_type == "PDF" %>
 					  			<%= image_tag "pdfIcon.png" %>					  		
 					  		<% elsif pic.document_type == "Word Document" %>
