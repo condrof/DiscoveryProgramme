@@ -1,0 +1,11 @@
+# Required
+scheme: ftp
+host: web20.hosting365.ie
+username: emap08
+password: xo2Sopaq
+
+# Optional
+exclude:
+    - .gitignore
+    - dandelion.yml
+revision_file: .revision
