@@ -1,56 +1,77 @@
 <%- model_class = AxeMaster -%>
 
 <%= render 'search_form' %>
+<div class="spacer"></div>
 <div class="page-header">
 	<h1>Axe Records</h1>
 </div>
 
-<%= will_paginate @axe_masters %>
+<div class="row-fluid">
+	<div class="span12">
+		<div class="pagination pagination-centered">
+			<%= will_paginate @axe_masters %>
+		</div>
+	</div>
+</div>
+<div class="spacer hidden-desktop"></div>
 
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th><%= sort_link @q, :name, "Seq No" %></th>
-			<th><%= sort_link @q, :name, "Museum Reference" %></th>
-			<th class="hidden-phone"><%= sort_link @q, :name, "Collection" %></th>
-			<th class="hidden-phone"><%= sort_link @q, :name, "Townland" %></th>
-			<th class="hidden-phone"><%= sort_link @q, :name, "County" %></th>
-			<th class="hidden-phone"><%= sort_link @q, :name, "Object Type" %></th>
-			<th class="hidden-phone"><%= sort_link @q, :name, "Macro" %></th>
-			<% if can? :update, AxeMaster %>
-			<th><%= t '.actions', :default => t("helpers.actions") %></th>
-			<% end %>
-		</tr>
-	</thead>
-	<tbody>
-		<% @axe_masters.each do |axe_master| %>
-		<tr>
-			<% if axe_master.confirmed %>
-				<td><%= link_to axe_master.seq_no, axe_master_path(axe_master) %></td>
-				<td><%= link_to axe_master.museum_ref, axe_master_path(axe_master) %></td>
-				<td class="hidden-phone"><%= axe_master.collections_id %></td>
-				<td class="hidden-phone"><%= axe_master.townland %></td>
-				<td class="hidden-phone"><%= axe_master.county %></td>
-				<td class="hidden-phone"><%= axe_master.object_type %></td>
-				<td class="hidden-phone"><%= axe_master.macro_id %></td>
-				<% if can? :update, axe_master %>
-					<td> <%= link_to t('.edit', :default => t("helpers.links.edit")),
-					edit_axe_master_path(axe_master), :class => 'btn btn-mini' %>
-				<% end %>
-				<% if can? :destroy, axe_master %>
-					<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-					axe_master_path(axe_master),
-					:method => :delete,
-					:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-					:class => 'btn btn-mini btn-danger' %> </td>
-				<% end %>
-			<% end %>
-		</tr>
-		<% end %>
-	</tbody>
-</table>
+<div class="row-fluid">
+	<div class="span12">
+		<div class="well">
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th><%= sort_link @q, :seq_no, "Seq No" %></th>
+						<th><%= sort_link @q, :museum_ref, "Museum Reference" %></th>
+						<th class="hidden-phone"><%= sort_link @q, :collection, "Collection" %></th>
+						<th class="hidden-phone"><%= sort_link @q, :townland, "Townland" %></th>
+						<th class="hidden-phone"><%= sort_link @q, :county, "County" %></th>
+						<th class="hidden-phone"><%= sort_link @q, :object_type, "Object Type" %></th>
+						<th class="hidden-phone"><%= sort_link @q, :macro_id, "Macro" %></th>
+						<% if can? :destroy, AxeMaster %>
+						<th><%= t '.actions', :default => t("helpers.actions") %></th>
+						<% end %>
+					</tr>
+				</thead>
+				<tbody>
+					<% @axe_masters.each do |axe_master| %>
+					<tr>
+						<% if axe_master.confirmed %>
+							<td><%= link_to axe_master.seq_no, axe_master_path(axe_master) %></td>
+							<td><%= link_to axe_master.museum_ref, axe_master_path(axe_master) %></td>
+							<td class="hidden-phone"><%= axe_master.collections_id %></td>
+							<td class="hidden-phone"><%= axe_master.townland %></td>
+							<td class="hidden-phone"><%= axe_master.county %></td>
+							<td class="hidden-phone"><%= axe_master.object_type %></td>
+							<td class="hidden-phone"><%= axe_master.macro_id %></td>
+							<% if can? :update, axe_master %>
+								<td> <%= link_to t('.edit', :default => t("helpers.links.edit")),
+								edit_axe_master_path(axe_master), :class => 'btn btn-mini' %>
+							<% end %>
+							<% if can? :destroy, axe_master %>
+								<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+								axe_master_path(axe_master),
+								:method => :delete,
+								:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+								:class => 'btn btn-mini btn-danger' %> </td>
+							<% end %>
+						<% end %>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
 
-<%= will_paginate @axe_masters %>
+		</div>
+	</div>
+</div>
+
+<div class="row-fluid">
+	<div class="span12">
+		<div class="pagination pagination-centered">
+			<%= will_paginate @axe_masters %>
+		</div>
+	</div>
+</div>
 
 <% if can? :create, AxeMaster %>
 	<%= link_to t('.new', :default => t("helpers.links.new")),

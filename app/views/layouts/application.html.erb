@@ -27,6 +27,7 @@
         		<li><%= link_to "Axe Records", axe_masters_path, :params => { :q => ""} %></li>
             <li><%= link_to "Help", help_path %></li>
         	<% if !current_user %>
+              <li class="divider-vertical"></li>
           		<li><%= link_to "Register", new_user_registration_path %></li>
           		<li><%= link_to "Sign in", new_user_session_path %></li>
           	<% else %>
@@ -38,8 +39,10 @@
 	          	<% if current_user.admin || current_user.researcher %>
 	          		<li><%= link_to "Miscellaneous", list_path %></li>
 	         	   	<li><%= link_to "All Users", users_path %></li>
+                <li class="divider-vertical"></li>
 	          		<li><%= link_to "Admin Dashboard (#{layout_count})", admin_dashboard_path %></li>
 	          	<% end %>
+              <li class="divider-vertical"></li>
               <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
           	<% end %>
         </ul>

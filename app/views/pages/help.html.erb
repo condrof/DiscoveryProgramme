@@ -2,13 +2,14 @@
   <h1><%= "Help Page" %></h1>
 </div>
 
-<div class="well">
-	<% @help.each do |help| %>
-		<div class="row-fluid spacer" id=<%= help.title.gsub(" ","_") %> >
+<% @help.each do |help| %>
+	<div class="well">
+		<div class="row-fluid" id=<%= help.title.gsub(" ","_") %> >
 			<div class="span12">
 				<h3><%= help.title %></h3>
 				<p class="center"><%= simple_format(help.content).html_safe %></p>
 			</div>
 		</div>
-	<% end %>
-</div>
+	</div>
+	<div class = "spacer"></div>
+<% end %>
