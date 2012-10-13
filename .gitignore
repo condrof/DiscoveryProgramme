@@ -20,3 +20,7 @@
 
 # Ignore file uploads
 /public/uploads/*
+
+/config/deploy.rb
+/config/database.yml
+/coverage/*
