@@ -221,7 +221,7 @@ ActiveRecord::Schema.define(:version => 20121010172728) do
   end
 
   create_table "linkages", :force => true do |t|
-    t.integer  "sequence_no"
+    t.string   "sequence_no"
     t.string   "bibliography_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false

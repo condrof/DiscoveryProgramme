@@ -167,7 +167,6 @@ GEM
       Ascii85 (~> 1.0.0)
       hashery (~> 2.0)
       ruby-rc4
-    pg (0.14.0)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -296,7 +295,6 @@ DEPENDENCIES
   mysql2
   newrelic_rpm
   passenger
-  pg
   prawn
   rails (= 3.2.8)
   ransack

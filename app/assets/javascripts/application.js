@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require axe_masters
 //= require twitter/bootstrap
 //= require bootstrap
-//= require axe_masters
-//= require_tree .

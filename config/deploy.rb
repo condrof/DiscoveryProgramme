@@ -2,14 +2,14 @@ require "bundler/capistrano"
 
 server "78.153.210.158", :web, :app, :db, primary: true
 
-set :application, "IrishStoneAxeProject"
-set :user, "stoneaxeproject"
+set :application, "DiscoveryProgramme"
+set :user, "root"
 set :deploy_to, "/var/www/stoneaxe"
 set :deploy_via, :remote_cache
 set :use_sudo, true
 
 set :scm, "git"
-set :repository, "git@github.com:condrof/DiscoveryProgramme.git"
+set :repository, "https://github.com/condrof/DiscoveryProgramme.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
