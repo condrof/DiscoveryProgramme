@@ -20,7 +20,7 @@ gem 'kaminari'
 gem 'prawn'
 gem "rmagick"
 gem 'bootstrap-will_paginate'
-gem 'delayed_tasks', git: 'git://github.com/opsb/delayed_task.git'
+gem 'delayed_task'
 
 
 #gem 'rack-mini-profiler' # miniprofiler for testing
