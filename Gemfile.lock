@@ -78,6 +78,11 @@ GEM
     commonjs (0.2.6)
     daemon_controller (1.0.0)
     daemons (1.1.8)
+    delayed_job (3.0.4)
+      activesupport (~> 3.0)
+    delayed_job_active_record (0.3.3)
+      activerecord (>= 2.1.0, < 4)
+      delayed_job (~> 3.0)
     delayed_task (0.2.0)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
@@ -287,6 +292,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 3.2.1)
   comma (~> 3.0)
+  delayed_job_active_record
   delayed_task
   devise
   factory_girl_rails

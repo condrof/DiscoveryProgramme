@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121010172728) do
+ActiveRecord::Schema.define(:version => 20121116214348) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(:version => 20121010172728) do
   add_index "active_admin_comments", ["author_type", "author_id"], :name => "index_active_admin_comments_on_author_type_and_author_id"
   add_index "active_admin_comments", ["namespace"], :name => "index_active_admin_comments_on_namespace"
   add_index "active_admin_comments", ["resource_type", "resource_id"], :name => "index_admin_notes_on_resource_type_and_resource_id"
+
+  create_table "assets", :force => true do |t|
+    t.string   "storage"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "dimensions"
+  end
 
   create_table "axe_masters", :force => true do |t|
     t.string   "seq_no"
@@ -177,6 +185,22 @@ ActiveRecord::Schema.define(:version => 20121010172728) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
+
   create_table "edge_forms", :force => true do |t|
     t.string   "code"
     t.text     "description"
@@ -221,7 +245,7 @@ ActiveRecord::Schema.define(:version => 20121010172728) do
   end
 
   create_table "linkages", :force => true do |t|
-    t.string   "sequence_no"
+    t.integer  "sequence_no"
     t.string   "bibliography_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
@@ -275,6 +299,18 @@ ActiveRecord::Schema.define(:version => 20121010172728) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "rich_rich_images", :force => true do |t|
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "owner_type"
+    t.integer  "owner_id"
+    t.text     "uri_cache"
   end
 
   create_table "stray_axes", :force => true do |t|

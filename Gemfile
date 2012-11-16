@@ -21,6 +21,7 @@ gem 'prawn'
 gem "rmagick"
 gem 'bootstrap-will_paginate'
 gem 'delayed_task'
+gem 'delayed_job_active_record'
 
 
 #gem 'rack-mini-profiler' # miniprofiler for testing

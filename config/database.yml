@@ -17,7 +17,7 @@ development:
   database: DiscoveryProgramme_development
   pool: 5
   username: root
-  password: builder666
+  password: fergal
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -42,7 +42,7 @@ test:
   database: DiscoveryProgramme_test
   pool: 5
   username: root
-  password: builder666
+  password: fergal
 
 production:
   adapter: mysql2
