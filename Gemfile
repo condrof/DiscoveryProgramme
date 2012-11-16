@@ -20,7 +20,7 @@ gem 'kaminari'
 gem 'prawn'
 gem "rmagick"
 gem 'bootstrap-will_paginate'
-
+gem 'delayed_tasks'
 
 
 #gem 'rack-mini-profiler' # miniprofiler for testing
