@@ -24,8 +24,7 @@ gem 'delayed_task'
 gem 'delayed_job_active_record'
 
 
-#gem 'rack-mini-profiler' # miniprofiler for testing
-gem 'newrelic_rpm' #monitor the app
+gem 'rack-mini-profiler' # miniprofiler for testing
 gem 'capistrano'
 gem 'passenger'
 
