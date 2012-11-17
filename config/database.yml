@@ -49,4 +49,4 @@ production:
   database: DiscoveryProgramme_production
   pool: 5
   username: root
-  password: fergal
+  password: builder666
