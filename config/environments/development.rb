@@ -19,12 +19,12 @@ DiscoveryProgramme::Application.configure do
   # Change mail delvery to either :smtp, :sendmail, :file, :test
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-   :address => 'smtp.gmail.com',
-   :port => 587,
-   :domain => 'gmail.com',
-   :user_name => 'notavirus.spam7@gmail.com',
-   :password => 'notavirus',
-   :authentication  => :plain
+                        :address => 'smtp.gmail.com',
+                       :port => 587,
+                       :domain => 'gmail.com',
+                       :user_name => 'irishstoneaxeproject@gmail.com',
+                       :password => 'stoneaxe88',
+                       :authentication  => :plain
   }
 
   # Specify what domain to use for mailer URLs

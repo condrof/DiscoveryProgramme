@@ -14,6 +14,8 @@ DiscoveryProgramme::Application.configure do
   # Compress JavaScripts and CSS
   config.assets.compress = true
 
+  config.assets.precompile += ['active_admin.css', 'active_admin.js']
+
   # Don't fallback to assets pipeline if a precompiled asset is missed
   config.assets.compile = true
 
@@ -50,6 +52,15 @@ DiscoveryProgramme::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+                        :address => 'smtp.gmail.com',
+                       :port => 587,
+                       :domain => 'gmail.com',
+                       :user_name => 'irishstoneaxeproject@gmail.com',
+                       :password => 'stoneaxe88',
+                       :authentication  => :plain
+  }
 
   # Enable threaded mode
   # config.threadsafe!
