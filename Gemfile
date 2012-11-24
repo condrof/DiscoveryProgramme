@@ -17,16 +17,16 @@ gem 'ransack'
 gem 'carrierwave'
 gem "comma", "~> 3.0"
 gem 'kaminari'
-gem 'prawn'
 gem "rmagick"
 gem 'bootstrap-will_paginate'
-gem 'delayed_task'
-gem 'delayed_job_active_record'
 
 
-gem 'rack-mini-profiler' # miniprofiler for testing
 gem 'capistrano'
 gem 'passenger'
+
+group :development do
+  gem 'rack-mini-profiler' # miniprofiler for testing
+end
 
 
 
@@ -37,6 +37,8 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   
   gem "rspec-rails", :group => [:test, :development]
+end
+
 group :test do
   gem 'simplecov', :require => false, :group => :test
   gem "factory_girl_rails"
@@ -46,10 +48,10 @@ group :test do
 end
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-end
+
 
 gem 'jquery-rails'
 
