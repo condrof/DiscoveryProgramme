@@ -41,7 +41,7 @@
 
 <br /><br />
 
-<% if @axe_master.bibliographies.count>0 %>
+<% if @axe_master.bibliographies.size > 0 %>
 	<div class ="well">
 		<fieldset>
 			<legend>Bibliography <small class="hidden-print"><%= link_to "Help", help_path + '#Bibliography' %></small></legend>
@@ -94,7 +94,7 @@
 					  <div class="span2">
 					  	<div class="placeHolder">
 					  		<% if pic.document_type == "Image" %>
-					  			<%= link_to image_tag(pic.image_url(:thumb).to_s, :size => "100x100"), pic.image_url, :rel => "lightbox[photo]" %>
+					  			<%= image_tag(pic.image_url(:thumb).to_s, :size => "100x100" %>
 					  		<% elsif pic.document_type == "PDF" %>
 					  			<%= image_tag "pdfIcon.png" %>					  		
 					  		<% elsif pic.document_type == "Word Document" %>

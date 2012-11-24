@@ -25,7 +25,7 @@ gem 'capistrano'
 gem 'passenger'
 
 group :development do
-  gem 'rack-mini-profiler' # miniprofiler for testing
+#  gem 'rack-mini-profiler' # miniprofiler for testing
 end
 
 

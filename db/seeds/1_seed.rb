@@ -1,1546 +1,3 @@
-# encoding: utf-8
-
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-puts "Hello. Yes this is seed"
-
-Context.create!(
-:code => "CD02" ,
-:description => "Axe quarry site"  )
-
-Context.create!(
-:code => "CD03" ,
-:description => "Bog"  )
-
-Context.create!(
-:code => "CD04" ,
-:description => "Cave"  )
-
-Context.create!(
-:code => "CD05" ,
-:description => "Disturbed"  )
-
-Context.create!(
-:code => "CD06" ,
-:description => "Garden"  )
-
-Context.create!(
-:code => "CD07" ,
-:description => "Island"  )
-
-Context.create!(
-:code => "CD08" ,
-:description => "Lakeshore"  )
-
-Context.create!(
-:code => "CD09" ,
-:description => "Marshy ground"  )
-
-Context.create!(
-:code => "CD10" ,
-:description => "Riverbank"  )
-
-Context.create!(
-:code => "CD11" ,
-:description => "Riverbed"  )
-
-Context.create!(
-:code => "CD12" ,
-:description => "Rough pasture"  )
-
-Context.create!(
-:code => "CD13" ,
-:description => "Seashore"  )
-
-Context.create!(
-:code => "CD14" ,
-:description => "Unknown"  )
-
-Context.create!(
-:code => "CD15" ,
-:description => "Archaeological Site"  )
-
-Context.create!(
-:code => "CD17" ,
-:description => "Gravel quarry site"  )
-
-Context.create!(
-:code => "CD16" ,
-:description => "Monument or feature"  )
-
-Context.create!(
-:code => "CD18" ,
-:description => "Seabed"  )
-
-Context.create!(
-:code => "CD19" ,
-:description => "Lake"  )
-
-Context.create!(
-:code => "CD01" ,
-:description => "Agricultural land"  )
-
-Context.create!(
-:code => "CD20" ,
-:description => "Test"  )
-
-BladeProfile.create!(
-:code => "BP01" ,
-:description => "Asymmetrical: junction face 1"  )
-
-BladeProfile.create!(
-:code => "BP02" ,
-:description => "Asymmetrical: junction face 1 / 2"  )
-
-BladeProfile.create!(
-:code => "BP03" ,
-:description => "Asymmetrical: junction face 2"  )
-
-BladeProfile.create!(
-:code => "BP04" ,
-:description => "Asymmetrical: no junction"  )
-
-BladeProfile.create!(
-:code => "BP05" ,
-:description => "Markedly asymmetrical: junction face 1"  )
-
-BladeProfile.create!(
-:code => "BP06" ,
-:description => "Markedly asymmetrical: junction face 1/2"  )
-
-BladeProfile.create!(
-:code => "BP07" ,
-:description => "Markedly asymmetrical: junction face 2"  )
-
-BladeProfile.create!(
-:code => "BP08" ,
-:description => "Markedly asymmetrical: no junction"  )
-
-BladeProfile.create!(
-:code => "BP09" ,
-:description => "Symmetrical: junction face 1/2"  )
-
-BladeProfile.create!(
-:code => "BP10" ,
-:description => "Symmetrical: no junction"  )
-
-BladeProfile.create!(
-:code => "BP11" ,
-:description => "Unknown"  )
-
-ButtShape.create!(
-:code => "BU01" ,
-:description => "Irregular"  )
-
-ButtShape.create!(
-:code => "BU02" ,
-:description => "Damaged/Unknown"  )
-
-ButtShape.create!(
-:code => "BU03" ,
-:description => "Double facetted"  )
-
-ButtShape.create!(
-:code => "BU04" ,
-:description => "Flat:flat"  )
-
-ButtShape.create!(
-:code => "BU05" ,
-:description => "Flat:pointed"  )
-
-ButtShape.create!(
-:code => "BU06" ,
-:description => "Flat:rounded"  )
-
-ButtShape.create!(
-:code => "BU07" ,
-:description => "Oblique"  )
-
-ButtShape.create!(
-:code => "BU08" ,
-:description => "Pointed"  )
-
-ButtShape.create!(
-:code => "BU09" ,
-:description => "Rounded:flat"  )
-
-ButtShape.create!(
-:code => "BU10" ,
-:description => "Rounded:pointed"  )
-
-ButtShape.create!(
-:code => "BU11" ,
-:description => "Rounded:rounded"  )
-
-ButtShape.create!(
-:code => "BU12" ,
-:description => "Sloped"  )
-
-ButtShape.create!(
-:code => "BU13" ,
-:description => "Flat: Oblique"  )
-
-CrossSection.create!(
-:code => "CS01" ,
-:description => "Full oval"  )
-
-CrossSection.create!(
-:code => "CS02" ,
-:description => "Full oval, flattened sides"  )
-
-CrossSection.create!(
-:code => "CS03" ,
-:description => "Full oval, flat sides"  )
-
-CrossSection.create!(
-:code => "CS04" ,
-:description => "Full oval, faceted sides"  )
-
-CrossSection.create!(
-:code => "CS05" ,
-:description => "Oval"  )
-
-CrossSection.create!(
-:code => "CS06" ,
-:description => "Oval, flattened sides"  )
-
-CrossSection.create!(
-:code => "CS07" ,
-:description => "Oval, flat sides"  )
-
-CrossSection.create!(
-:code => "CS08" ,
-:description => "Oval, faceted sides"  )
-
-CrossSection.create!(
-:code => "CS09" ,
-:description => "Narrow oval"  )
-
-CrossSection.create!(
-:code => "CS10" ,
-:description => "Narrow oval, flattened sides"  )
-
-CrossSection.create!(
-:code => "CS11" ,
-:description => "Narrow oval, flat sides"  )
-
-CrossSection.create!(
-:code => "CS12" ,
-:description => "Narrow oval, faceted sides"  )
-
-CrossSection.create!(
-:code => "CS13" ,
-:description => "Pointed oval"  )
-
-CrossSection.create!(
-:code => "CS14" ,
-:description => "Narrow pointed oval"  )
-
-CrossSection.create!(
-:code => "CS15" ,
-:description => "Irregular oval"  )
-
-CrossSection.create!(
-:code => "CS16" ,
-:description => "Plano-convex"  )
-
-CrossSection.create!(
-:code => "CS17" ,
-:description => "Flattened faces"  )
-
-CrossSection.create!(
-:code => "CS18" ,
-:description => "Sub-rectangular"  )
-
-CrossSection.create!(
-:code => "CS19" ,
-:description => "Unknown"  )
-
-EdgeForm.create!(
-:code => "EF01" ,
-:description => "Straight"  )
-
-EdgeForm.create!(
-:code => "EF02" ,
-:description => "C-shaped"  )
-
-EdgeForm.create!(
-:code => "EF03" ,
-:description => "S-shaped"  )
-
-EdgeForm.create!(
-:code => "EF04" ,
-:description => "Unknown/missing"  )
-
-EdgeShape.create!(
-:code => "ES01" ,
-:description => "Flat"  )
-
-EdgeShape.create!(
-:code => "ES02" ,
-:description => "Gently curved:symmetrical"  )
-
-EdgeShape.create!(
-:code => "ES03" ,
-:description => "Gently curved:asymmetrical"  )
-
-EdgeShape.create!(
-:code => "ES04" ,
-:description => "Curved:asymmetrical"  )
-
-EdgeShape.create!(
-:code => "ES05" ,
-:description => "Curved:symmetrical"  )
-
-EdgeShape.create!(
-:code => "ES06" ,
-:description => "Gently curved:markedly asymmtrical"  )
-
-EdgeShape.create!(
-:code => "ES07" ,
-:description => "Curved:markedly asymmtrical"  )
-
-EdgeShape.create!(
-:code => "ES08" ,
-:description => "Convex"  )
-
-EdgeShape.create!(
-:code => "ES09" ,
-:description => "Unknown/Damaged"  )
-
-FaceShape.create!(
-:code => "FS01" ,
-:description => "Ovate symmetrical"  )
-
-FaceShape.create!(
-:code => "FS02" ,
-:description => "Asymmetrical"  )
-
-FaceShape.create!(
-:code => "FS03" ,
-:description => "Straight splayed sides"  )
-
-FaceShape.create!(
-:code => "FS04" ,
-:description => "Straight sided parallel"  )
-
-FaceShape.create!(
-:code => "FS05" ,
-:description => "Oblique butt"  )
-
-FaceShape.create!(
-:code => "FS06" ,
-:description => "Any other"  )
-
-Hafting.create!(
-:code => "HA01" ,
-:description => "No evidence"  )
-
-Hafting.create!(
-:code => "HA02" ,
-:description => "Band of pecking"  )
-
-Hafting.create!(
-:code => "HA03" ,
-:description => "Band of pecking UP"  )
-
-Hafting.create!(
-:code => "HA04" ,
-:description => "Band of pecking LP"  )
-
-Hafting.create!(
-:code => "HA05" ,
-:description => "Band of pecking central portion"  )
-
-Hafting.create!(
-:code => "HA06" ,
-:description => "Pecking UP"  )
-
-Hafting.create!(
-:code => "HA07" ,
-:description => "Pecking LP"  )
-
-Hafting.create!(
-:code => "HA08" ,
-:description => "Pecking both faces"  )
-
-Hafting.create!(
-:code => "HA09" ,
-:description => "Pecking one face"  )
-
-Hafting.create!(
-:code => "HA10" ,
-:description => "Pecking faces and sides"  )
-
-Hafting.create!(
-:code => "HA11" ,
-:description => "Pecking sides"  )
-
-Hafting.create!(
-:code => "HA12" ,
-:description => "Pecking sides and butt"  )
-
-Hafting.create!(
-:code => "HA13" ,
-:description => "Pecking butt"  )
-
-Hafting.create!(
-:code => "HA14" ,
-:description => "Pecking all over"  )
-
-Hafting.create!(
-:code => "HA15" ,
-:description => "Pecking - irregular"  )
-
-Hafting.create!(
-:code => "HA16" ,
-:description => "Irregular areas"  )
-
-Hafting.create!(
-:code => "HA17" ,
-:description => "Waisting"  )
-
-Hafting.create!(
-:code => "HA18" ,
-:description => "Perforation"  )
-
-Hafting.create!(
-:code => "HA19" ,
-:description => "Partial perforation"  )
-
-Hafting.create!(
-:code => "HA20" ,
-:description => "Flaking/grinding on sides"  )
-
-Hafting.create!(
-:code => "HA21" ,
-:description => "UP roughened"  )
-
-Hafting.create!(
-:code => "HA22" ,
-:description => "Hafting band"  )
-
-Hafting.create!(
-:code => "HA23" ,
-:description => "Hafting shadow"  )
-
-Hafting.create!(
-:code => "HA24" ,
-:description => "Haft present"  )
-
-Hafting.create!(
-:code => "HA25" ,
-:description => "Resin present"  )
-
-Hafting.create!(
-:code => "HA26" ,
-:description => "Incisions"  )
-
-Hafting.create!(
-:code => "HA27" ,
-:description => "Polish from wear"  )
-
-Hafting.create!(
-:code => "HA28" ,
-:description => "Other"  )
-
-PrimeTreatment.create!(
-:code => "PT01" ,
-:description => "Flaked"  )
-
-PrimeTreatment.create!(
-:code => "PT02" ,
-:description => "Pecked"  )
-
-PrimeTreatment.create!(
-:code => "PT03" ,
-:description => "Cleaved"  )
-
-PrimeTreatment.create!(
-:code => "PT04" ,
-:description => "Unknown"  )
-
-Profile.create!(
-:code => "P 01" ,
-:description => "Symmetrical: thin"  )
-
-Profile.create!(
-:code => "P 02" ,
-:description => "Symmetrical: medium"  )
-
-Profile.create!(
-:code => "P 03" ,
-:description => "Symmetrical: thick"  )
-
-Profile.create!(
-:code => "P 04" ,
-:description => "Asymmetrical: thin"  )
-
-Profile.create!(
-:code => "P 05" ,
-:description => "Asymmetrical: medium"  )
-
-Profile.create!(
-:code => "P 06" ,
-:description => "Asymmetrical: thick"  )
-
-Profile.create!(
-:code => "P 07" ,
-:description => "Unknown"  )
-
-ReUse.create!(
-:code => "RU01" ,
-:description => "None"  )
-
-ReUse.create!(
-:code => "RU02" ,
-:description => "Re-flaking (unground)"  )
-
-ReUse.create!(
-:code => "RU03" ,
-:description => "Re-grinding"  )
-
-ReUse.create!(
-:code => "RU04" ,
-:description => "Evidence from junction with faces"  )
-
-ReUse.create!(
-:code => "RU05" ,
-:description => "Evidence from junctions with sides"  )
-
-ReUse.create!(
-:code => "RU06" ,
-:description => "Other"  )
-
-ReUse.create!(
-:code => "RU07" ,
-:description => "Re-pecking"  )
-
-ReUse.create!(
-:code => "RU08" ,
-:description => "Re-polishing"  )
-
-UseWear.create!(
-:code => "UW01" ,
-:description => "No Evidence"  )
-
-UseWear.create!(
-:code => "UW02" ,
-:description => "Minor abrasion edge/blade"  )
-
-UseWear.create!(
-:code => "UW03" ,
-:description => "Minor chipping on edge"  )
-
-UseWear.create!(
-:code => "UW04" ,
-:description => "Some chipping on edge"  )
-
-UseWear.create!(
-:code => "UW05" ,
-:description => "Heavy chipping on edge"  )
-
-UseWear.create!(
-:code => "UW06" ,
-:description => "Edge broken beyond use"  )
-
-UseWear.create!(
-:code => "UW07" ,
-:description => "Edge missing"  )
-
-UseWear.create!(
-:code => "UW09" ,
-:description => "Other"  )
-
-Collection.create!(
-:collection_title => "Alnwick Castle" ,
-:address1 => "Alnwick Castle"  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => "Northumberland"  ,
-:country => "England"  ,
-:details => "Collection of the Duke of Northumberland.
-Collection of the Duke of Northumberland."  )
-
-Collection.create!(
-:collection_title => "Anketell" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Begley" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Begley Collection, see File NMI 1941:1046.
-Begley Collection, see File NMI 1941:1046."  )
-
-Collection.create!(
-:collection_title => "Bell" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Benn" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Berwick" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Biggar" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Check spelling, Biggar or er?
-Check spelling, Biggar or er?"  )
-
-Collection.create!(
-:collection_title => "Brackstone" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Burney" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Carroll" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Charles O'Neill" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Large collection including flint. Don't know how many below are axes, or are all?
-Large collection including flint. Don't know how many below are axes, or are all?"  )
-
-Collection.create!(
-:collection_title => "Christie" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Costello" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "D'Arcy" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "D'Evelyn" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Day" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Dunraven" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "All axes registered as NMI Dunraven Collection are originally from the Herbert Collection. Information from EG's thesis. Whether this was the same Herbert as John Herbert, High Street, I do not know.
-All axes registered as NMI Dunraven Collection are originally from the Herbert Collection. Information from EG's thesis. Whether this was the same Herbert as John Herbert, High Street, I do not know."  )
-
-Collection.create!(
-:collection_title => "Evans" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Falkiner" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Fawcett" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Bristol Museum.
-Bristol Museum."  )
-
-Collection.create!(
-:collection_title => "Featherstonhaugh" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Flanagan" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Frank" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Frazer" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Glen" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Grainger" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Greenwell" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Hasse" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Hendy" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Herbert" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Hewson" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "1933:269 - 565 Hewson Collection.
-Hewson Collection VII 1937:210-2474.
-1933:269 - 565 Hewson Collection.
-Hewson Collection VII 1937:210-2474."  )
-
-Collection.create!(
-:collection_title => "Hobart" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Hunt" ,
-:address1 => "University of Limerick "  ,
-:address2 => "Plessey Park"  ,
-:address3 => "Limerick"  ,
-:county => "Limerick"  ,
-:country => "Ireland"  ,
-:details => "Collection of John Hunt housed in Limerick University, but not necerssarilythe complete collection which may have been traded on beforehand, or could have been divided, check.
-Collection of John Hunt housed in Limerick University, but not necerssarilythe complete collection which may have been traded on beforehand, or could have been divided, check."  )
-
-Collection.create!(
-:collection_title => "Isaacs" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Keiller/Knowles" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Material bought by Keiller from the Knowles Collection.
-Material bought by Keiller from the Knowles Collection."  )
-
-Collection.create!(
-:collection_title => "Kilkea Castle" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "King" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Kirk" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Knowles" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "WJ Knowles. Dates of Sotheby's sales:
-WJ Knowles. Dates of Sotheby's sales:"  )
-
-Collection.create!(
-:collection_title => "Lindsay" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Malahide" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Lord Talbot de Malahide
-Lord Talbot de Malahide"  )
-
-Collection.create!(
-:collection_title => "McGann" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Milligan" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Mitchell" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Morris" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Murphy" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Murray" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Murray collection listed as NMI 1866:2281-2355. NMI 1868:2736-8 arefrom the collection of Patrick Fagan of Bawn, Westmeath and procured from James Murray of the same place. I don't know if this is the same Murray, this would need to be checked. 
-
-Murray collection listed as NMI 1866:2281-2355. NMI 1868:2736-8 arefrom the collection of Patrick Fagan of Bawn, Westmeath and procured from James Murray of the same place. I don't know if this is the same Murray, this would need to be checked. 
-"  )
-
-Collection.create!(
-:collection_title => "None" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Used when the object was not part of any private collection.
-Used when the object was not part of any private collection."  )
-
-Collection.create!(
-:collection_title => "O'Neill" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Catherine O'Neill
-Catherine O'Neill"  )
-
-Collection.create!(
-:collection_title => "Perry" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Collection NMI 1881:414-429.
-Collection NMI 1881:414-429."  )
-
-Collection.create!(
-:collection_title => "Petrie" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Pitt Rivers" ,
-:address1 => "   "  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Plunkett" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Powell" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "FN Powell
-FN Powell"  )
-
-Collection.create!(
-:collection_title => "Power" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Purefoy" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "RD Purefoy
-RD Purefoy"  )
-
-Collection.create!(
-:collection_title => "RDS" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Objects in RDS collection then handed to Academy or Museum?
-Objects in RDS collection then handed to Academy or Museum?"  )
-
-Collection.create!(
-:collection_title => "Robb" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "FJ Robb. Northern?
-FJ Robb. Northern?"  )
-
-Collection.create!(
-:collection_title => "Robinson" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Rotherham (Kevin)" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Known as the Kevin Collection, but actually collected by Rotherham.
-Known as the Kevin Collection, but actually collected by Rotherham."  )
-
-Collection.create!(
-:collection_title => "Rothwell" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Saurin" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Shirley" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Major? Shirley, collected much of the material now provenanced to the Barony of Farney, Co. Monaghan.
-Major? Shirley, collected much of the material now provenanced to the Barony of Farney, Co. Monaghan."  )
-
-Collection.create!(
-:collection_title => "Stewart" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Sturge" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Swan" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Vandeleur" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Walsh" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Wellcome" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Wellcome corporation.  Is there material other than that held in the UM?
-Wellcome corporation.  Is there material other than that held in the UM?"  )
-
-Collection.create!(
-:collection_title => "Westropp" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Whelan" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Wilde" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Catalogue references of William Wilde.
-Catalogue references of William Wilde."  )
-
-Collection.create!(
-:collection_title => "Woodhouse" ,
-:address1 => "Omeath Park House"  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Collection from Omeath Park House.
-Collection from Omeath Park House."  )
-
-Collection.create!(
-:collection_title => "Woodward" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Rhind" ,
-:address1 => "A H Rhind."  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Don't know if he was a collector based in Ireland or Scotland. Axes from his collection are now housed in the National Museum of Scotland, Edinburgh. Whether these are all the Irish axes he collected is not yet known.
-Don't know if he was a collector based in Ireland or Scotland. Axes from his collection are now housed in the National Museum of Scotland, Edinburgh. Whether these are all the Irish axes he collected is not yet known."  )
-
-Collection.create!(
-:collection_title => "Unknown" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "For axes where it is likely or is the case that they have come from collections, but which one is not known.
-For axes where it is likely or is the case that they have come from collections, but which one is not known."  )
-
-Collection.create!(
-:collection_title => "Maxwell" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Sir Herbert? Maxwell, axes in NMS Edinburgh.
-Sir Herbert? Maxwell, axes in NMS Edinburgh."  )
-
-Collection.create!(
-:collection_title => "Bishop" ,
-:address1 => "Hunterian Museum"  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Collection of A.Henderson Bishop. Was it all donated to or acquired by the Hunterian?
-Collection of A.Henderson Bishop. Was it all donated to or acquired by the Hunterian?"  )
-
-Collection.create!(
-:collection_title => "Stacpoole" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Worked collecting material in North County Dublin, collection now in NMI and has been looked at by Bernard Guinan. Check out tie-in with Mitchell Collection.
-Worked collecting material in North County Dublin, collection now in NMI and has been looked at by Bernard Guinan. Check out tie-in with Mitchell Collection."  )
-
-Collection.create!(
-:collection_title => "Pease" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Axes from this person, ER Pease, in Bristol Museum. With date 1893, date of donation?
-Axes from this person, ER Pease, in Bristol Museum. With date 1893, date of donation?"  )
-
-Collection.create!(
-:collection_title => "Hardman" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Lt. Col. Hardman, collection donated? to the Bristol Mus. 1923.
-Lt. Col. Hardman, collection donated? to the Bristol Mus. 1923."  )
-
-Collection.create!(
-:collection_title => "Ducie" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Ducie Collection, Bristol mus. 1925.
-Ducie Collection, Bristol mus. 1925."  )
-
-Collection.create!(
-:collection_title => "O'Grady" ,
-:address1 => "O'Grady Knockainy"  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => "Limerick"  ,
-:country => ""  ,
-:details => "See EG's thesis stuff.
-See EG's thesis stuff."  )
-
-Collection.create!(
-:collection_title => "Clarina" ,
-:address1 => "Lord Clarina"  ,
-:address2 => "Vigo Cottage"  ,
-:address3 => ""  ,
-:county => "Clare"  ,
-:country => "Ireland"  ,
-:details => "Clarina is known to have collected a quantity of axes from the shores of Lake Inchiquin in an area called by him 'Vigo Bay'. This is not a known local name but the area is readily identified and is below the cottage belonging to the Beaky family. Mrs. Mary Beaky remembers Clarina and her father was his general factotum.
-Clarina is known to have collected a quantity of axes from the shores of Lake Inchiquin in an area called by him 'Vigo Bay'. This is not a known local name but the area is readily identified and is below the cottage belonging to the Beaky family. Mrs. Mary Beaky remembers Clarina and her father was his general factotum."  )
-
-Collection.create!(
-:collection_title => "Belfast N.H. & P.S." ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Wakeman" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Campbell-Thompson" ,
-:address1 => "Unknown. Recorded in Ashmolean"  ,
-:address2 => "Museum, Oxford."  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Adams" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Downshire" ,
-:address1 => "Unknown"  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Called Downshire Donation. Represents a number of axes which were donated to the Ulster Museum c. 1924."  )
-
-Collection.create!(
-:collection_title => "Baillie" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Cochrane" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Collection named in the Ulster Museum Anquities Register for the year 1977."  )
-
-Collection.create!(
-:collection_title => "Ritchie" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Collection mentioned in the Ulster Museum Antiquities Collection."  )
-
-Collection.create!(
-:collection_title => "Raphael" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Morrow" ,
-:address1 => "Andrew Morrow,"  ,
-:address2 => "Windsor Hill,"  ,
-:address3 => "Knockdene Park,"  ,
-:county => "Down,"  ,
-:country => "Northern Ireland."  ,
-:details => "Collection named in UM Registers. Presented November 1922. EB."  )
-
-Collection.create!(
-:collection_title => "Tenison" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "A collection of materail now in the Armagh County Musuem but previously in the Armagh Natural History and Philosoophical Society Collection."  )
-
-Collection.create!(
-:collection_title => "Lowry" ,
-:address1 => "Andrew Lowry,"  ,
-:address2 => "Argery,"  ,
-:address3 => "Ballindrait,"  ,
-:county => "Donegal,"  ,
-:country => "Ireland."  ,
-:details => "A collection, mostly of local material assembled by Mr. Andrew Lowry between the years 1906 and 1955. "  )
-
-Collection.create!(
-:collection_title => "Enniskillen" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Mungret College" ,
-:address1 => "Mungret College"  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => "Limerick"  ,
-:country => "Ireland"  ,
-:details => "A small collection of stone axes (and presumably other artefacts) held my Limerick (Civic) Museum."  )
-
-Collection.create!(
-:collection_title => "Aitken" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Aitken collection. Mostly seem to be from Antrim. Held in the Museum of Anthropology and Archaeology, University of Cambridge, Englad."  )
-
-Collection.create!(
-:collection_title => "Buick" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => "Dr. Buick collection. Cambridge University Museum of Anthropology and Archaeology."  )
-
-Collection.create!(
-:collection_title => "Stokes" ,
-:address1 => "Dept. of Archaeology"  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => "Dublin"  ,
-:country => "Ireland"  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "O'Dubhghaill" ,
-:address1 => "10 Gartan Avenue"  ,
-:address2 => "Phibsborough"  ,
-:address3 => ""  ,
-:county => "Dublin"  ,
-:country => "Ireland"  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Tritton" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "Abbot" ,
-:address1 => "Somerset"  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => "United Kingdom"  ,
-:details => ""  )
-
-Collection.create!(
-:collection_title => "May" ,
-:address1 => ""  ,
-:address2 => ""  ,
-:address3 => ""  ,
-:county => ""  ,
-:country => ""  ,
-:details => ""  )
-
 Bibliography.create!(
 :author => "Cooney, G." ,
 :year => "1985" ,
@@ -4989,6 +3446,1435 @@ Bibliography.create!(
 :where_published => "Wordwell: Bray" ,
 :published_reference_in_year => "b" ,
 :linkage_id => "Phelan, S. in Bennett, I. (ed)2004b" )
+
+BladeProfile.create!(
+:code => "BP01" ,
+:description => "Asymmetrical: junction face 1"  )
+
+BladeProfile.create!(
+:code => "BP02" ,
+:description => "Asymmetrical: junction face 1 / 2"  )
+
+BladeProfile.create!(
+:code => "BP03" ,
+:description => "Asymmetrical: junction face 2"  )
+
+BladeProfile.create!(
+:code => "BP04" ,
+:description => "Asymmetrical: no junction"  )
+
+BladeProfile.create!(
+:code => "BP05" ,
+:description => "Markedly asymmetrical: junction face 1"  )
+
+BladeProfile.create!(
+:code => "BP06" ,
+:description => "Markedly asymmetrical: junction face 1/2"  )
+
+BladeProfile.create!(
+:code => "BP07" ,
+:description => "Markedly asymmetrical: junction face 2"  )
+
+BladeProfile.create!(
+:code => "BP08" ,
+:description => "Markedly asymmetrical: no junction"  )
+
+BladeProfile.create!(
+:code => "BP09" ,
+:description => "Symmetrical: junction face 1/2"  )
+
+BladeProfile.create!(
+:code => "BP10" ,
+:description => "Symmetrical: no junction"  )
+
+BladeProfile.create!(
+:code => "BP11" ,
+:description => "Unknown"  )
+
+Butt_Shape.create!(
+:code => "BU01" ,
+:description => "Irregular"  )
+
+Butt_Shape.create!(
+:code => "BU02" ,
+:description => "Damaged/Unknown"  )
+
+Butt_Shape.create!(
+:code => "BU03" ,
+:description => "Double facetted"  )
+
+Butt_Shape.create!(
+:code => "BU04" ,
+:description => "Flat:flat"  )
+
+Butt_Shape.create!(
+:code => "BU05" ,
+:description => "Flat:pointed"  )
+
+Butt_Shape.create!(
+:code => "BU06" ,
+:description => "Flat:rounded"  )
+
+Butt_Shape.create!(
+:code => "BU07" ,
+:description => "Oblique"  )
+
+Butt_Shape.create!(
+:code => "BU08" ,
+:description => "Pointed"  )
+
+Butt_Shape.create!(
+:code => "BU09" ,
+:description => "Rounded:flat"  )
+
+Butt_Shape.create!(
+:code => "BU10" ,
+:description => "Rounded:pointed"  )
+
+Butt_Shape.create!(
+:code => "BU11" ,
+:description => "Rounded:rounded"  )
+
+Butt_Shape.create!(
+:code => "BU12" ,
+:description => "Sloped"  )
+
+Butt_Shape.create!(
+:code => "BU13" ,
+:description => "Flat: Oblique"  )
+
+ChemicalComposition.create!(
+:seq_no => "8586" ,
+:chemical => "" ,
+:parts_per_million => "0" 
+)
+
+Collection.create!(
+:collection_title => "Alnwick Castle" ,
+:address1 => "Alnwick Castle"  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => "Northumberland"  ,
+:country => "England"  ,
+:details => "Collection of the Duke of Northumberland.
+Collection of the Duke of Northumberland."  )
+
+Collection.create!(
+:collection_title => "Anketell" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Begley" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Begley Collection, see File NMI 1941:1046.
+Begley Collection, see File NMI 1941:1046."  )
+
+Collection.create!(
+:collection_title => "Bell" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Benn" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Berwick" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Biggar" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Check spelling, Biggar or er?
+Check spelling, Biggar or er?"  )
+
+Collection.create!(
+:collection_title => "Brackstone" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Burney" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Carroll" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Charles O'Neill" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Large collection including flint. Don't know how many below are axes, or are all?
+Large collection including flint. Don't know how many below are axes, or are all?"  )
+
+Collection.create!(
+:collection_title => "Christie" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Costello" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "D'Arcy" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "D'Evelyn" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Day" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Dunraven" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "All axes registered as NMI Dunraven Collection are originally from the Herbert Collection. Information from EG's thesis. Whether this was the same Herbert as John Herbert, High Street, I do not know.
+All axes registered as NMI Dunraven Collection are originally from the Herbert Collection. Information from EG's thesis. Whether this was the same Herbert as John Herbert, High Street, I do not know."  )
+
+Collection.create!(
+:collection_title => "Evans" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Falkiner" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Fawcett" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Bristol Museum.
+Bristol Museum."  )
+
+Collection.create!(
+:collection_title => "Featherstonhaugh" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Flanagan" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Frank" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Frazer" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Glen" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Grainger" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Greenwell" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Hasse" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Hendy" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Herbert" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Hewson" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "1933:269 - 565 Hewson Collection.
+Hewson Collection VII 1937:210-2474.
+1933:269 - 565 Hewson Collection.
+Hewson Collection VII 1937:210-2474."  )
+
+Collection.create!(
+:collection_title => "Hobart" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Hunt" ,
+:address1 => "University of Limerick "  ,
+:address2 => "Plessey Park"  ,
+:address3 => "Limerick"  ,
+:county => "Limerick"  ,
+:country => "Ireland"  ,
+:details => "Collection of John Hunt housed in Limerick University, but not necerssarilythe complete collection which may have been traded on beforehand, or could have been divided, check.
+Collection of John Hunt housed in Limerick University, but not necerssarilythe complete collection which may have been traded on beforehand, or could have been divided, check."  )
+
+Collection.create!(
+:collection_title => "Isaacs" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Keiller/Knowles" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Material bought by Keiller from the Knowles Collection.
+Material bought by Keiller from the Knowles Collection."  )
+
+Collection.create!(
+:collection_title => "Kilkea Castle" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "King" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Kirk" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Knowles" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "WJ Knowles. Dates of Sotheby's sales:
+WJ Knowles. Dates of Sotheby's sales:"  )
+
+Collection.create!(
+:collection_title => "Lindsay" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Malahide" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Lord Talbot de Malahide
+Lord Talbot de Malahide"  )
+
+Collection.create!(
+:collection_title => "McGann" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Milligan" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Mitchell" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Morris" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Murphy" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Murray" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Murray collection listed as NMI 1866:2281-2355. NMI 1868:2736-8 arefrom the collection of Patrick Fagan of Bawn, Westmeath and procured from James Murray of the same place. I don't know if this is the same Murray, this would need to be checked. 
+
+Murray collection listed as NMI 1866:2281-2355. NMI 1868:2736-8 arefrom the collection of Patrick Fagan of Bawn, Westmeath and procured from James Murray of the same place. I don't know if this is the same Murray, this would need to be checked. 
+"  )
+
+Collection.create!(
+:collection_title => "None" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Used when the object was not part of any private collection.
+Used when the object was not part of any private collection."  )
+
+Collection.create!(
+:collection_title => "O'Neill" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Catherine O'Neill
+Catherine O'Neill"  )
+
+Collection.create!(
+:collection_title => "Perry" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Collection NMI 1881:414-429.
+Collection NMI 1881:414-429."  )
+
+Collection.create!(
+:collection_title => "Petrie" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Pitt Rivers" ,
+:address1 => "   "  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Plunkett" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Powell" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "FN Powell
+FN Powell"  )
+
+Collection.create!(
+:collection_title => "Power" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Purefoy" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "RD Purefoy
+RD Purefoy"  )
+
+Collection.create!(
+:collection_title => "RDS" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Objects in RDS collection then handed to Academy or Museum?
+Objects in RDS collection then handed to Academy or Museum?"  )
+
+Collection.create!(
+:collection_title => "Robb" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "FJ Robb. Northern?
+FJ Robb. Northern?"  )
+
+Collection.create!(
+:collection_title => "Robinson" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Rotherham (Kevin)" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Known as the Kevin Collection, but actually collected by Rotherham.
+Known as the Kevin Collection, but actually collected by Rotherham."  )
+
+Collection.create!(
+:collection_title => "Rothwell" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Saurin" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Shirley" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Major? Shirley, collected much of the material now provenanced to the Barony of Farney, Co. Monaghan.
+Major? Shirley, collected much of the material now provenanced to the Barony of Farney, Co. Monaghan."  )
+
+Collection.create!(
+:collection_title => "Stewart" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Sturge" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Swan" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Vandeleur" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Walsh" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Wellcome" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Wellcome corporation.  Is there material other than that held in the UM?
+Wellcome corporation.  Is there material other than that held in the UM?"  )
+
+Collection.create!(
+:collection_title => "Westropp" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Whelan" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Wilde" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Catalogue references of William Wilde.
+Catalogue references of William Wilde."  )
+
+Collection.create!(
+:collection_title => "Woodhouse" ,
+:address1 => "Omeath Park House"  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Collection from Omeath Park House.
+Collection from Omeath Park House."  )
+
+Collection.create!(
+:collection_title => "Woodward" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Rhind" ,
+:address1 => "A H Rhind."  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Don't know if he was a collector based in Ireland or Scotland. Axes from his collection are now housed in the National Museum of Scotland, Edinburgh. Whether these are all the Irish axes he collected is not yet known.
+Don't know if he was a collector based in Ireland or Scotland. Axes from his collection are now housed in the National Museum of Scotland, Edinburgh. Whether these are all the Irish axes he collected is not yet known."  )
+
+Collection.create!(
+:collection_title => "Unknown" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "For axes where it is likely or is the case that they have come from collections, but which one is not known.
+For axes where it is likely or is the case that they have come from collections, but which one is not known."  )
+
+Collection.create!(
+:collection_title => "Maxwell" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Sir Herbert? Maxwell, axes in NMS Edinburgh.
+Sir Herbert? Maxwell, axes in NMS Edinburgh."  )
+
+Collection.create!(
+:collection_title => "Bishop" ,
+:address1 => "Hunterian Museum"  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Collection of A.Henderson Bishop. Was it all donated to or acquired by the Hunterian?
+Collection of A.Henderson Bishop. Was it all donated to or acquired by the Hunterian?"  )
+
+Collection.create!(
+:collection_title => "Stacpoole" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Worked collecting material in North County Dublin, collection now in NMI and has been looked at by Bernard Guinan. Check out tie-in with Mitchell Collection.
+Worked collecting material in North County Dublin, collection now in NMI and has been looked at by Bernard Guinan. Check out tie-in with Mitchell Collection."  )
+
+Collection.create!(
+:collection_title => "Pease" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Axes from this person, ER Pease, in Bristol Museum. With date 1893, date of donation?
+Axes from this person, ER Pease, in Bristol Museum. With date 1893, date of donation?"  )
+
+Collection.create!(
+:collection_title => "Hardman" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Lt. Col. Hardman, collection donated? to the Bristol Mus. 1923.
+Lt. Col. Hardman, collection donated? to the Bristol Mus. 1923."  )
+
+Collection.create!(
+:collection_title => "Ducie" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Ducie Collection, Bristol mus. 1925.
+Ducie Collection, Bristol mus. 1925."  )
+
+Collection.create!(
+:collection_title => "O'Grady" ,
+:address1 => "O'Grady Knockainy"  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => "Limerick"  ,
+:country => ""  ,
+:details => "See EG's thesis stuff.
+See EG's thesis stuff."  )
+
+Collection.create!(
+:collection_title => "Clarina" ,
+:address1 => "Lord Clarina"  ,
+:address2 => "Vigo Cottage"  ,
+:address3 => ""  ,
+:county => "Clare"  ,
+:country => "Ireland"  ,
+:details => "Clarina is known to have collected a quantity of axes from the shores of Lake Inchiquin in an area called by him 'Vigo Bay'. This is not a known local name but the area is readily identified and is below the cottage belonging to the Beaky family. Mrs. Mary Beaky remembers Clarina and her father was his general factotum.
+Clarina is known to have collected a quantity of axes from the shores of Lake Inchiquin in an area called by him 'Vigo Bay'. This is not a known local name but the area is readily identified and is below the cottage belonging to the Beaky family. Mrs. Mary Beaky remembers Clarina and her father was his general factotum."  )
+
+Collection.create!(
+:collection_title => "Belfast N.H. & P.S." ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Wakeman" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Campbell-Thompson" ,
+:address1 => "Unknown. Recorded in Ashmolean"  ,
+:address2 => "Museum, Oxford."  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Adams" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Downshire" ,
+:address1 => "Unknown"  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Called Downshire Donation. Represents a number of axes which were donated to the Ulster Museum c. 1924."  )
+
+Collection.create!(
+:collection_title => "Baillie" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Cochrane" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Collection named in the Ulster Museum Anquities Register for the year 1977."  )
+
+Collection.create!(
+:collection_title => "Ritchie" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Collection mentioned in the Ulster Museum Antiquities Collection."  )
+
+Collection.create!(
+:collection_title => "Raphael" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Morrow" ,
+:address1 => "Andrew Morrow,"  ,
+:address2 => "Windsor Hill,"  ,
+:address3 => "Knockdene Park,"  ,
+:county => "Down,"  ,
+:country => "Northern Ireland."  ,
+:details => "Collection named in UM Registers. Presented November 1922. EB."  )
+
+Collection.create!(
+:collection_title => "Tenison" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "A collection of materail now in the Armagh County Musuem but previously in the Armagh Natural History and Philosoophical Society Collection."  )
+
+Collection.create!(
+:collection_title => "Lowry" ,
+:address1 => "Andrew Lowry,"  ,
+:address2 => "Argery,"  ,
+:address3 => "Ballindrait,"  ,
+:county => "Donegal,"  ,
+:country => "Ireland."  ,
+:details => "A collection, mostly of local material assembled by Mr. Andrew Lowry between the years 1906 and 1955. "  )
+
+Collection.create!(
+:collection_title => "Enniskillen" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Mungret College" ,
+:address1 => "Mungret College"  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => "Limerick"  ,
+:country => "Ireland"  ,
+:details => "A small collection of stone axes (and presumably other artefacts) held my Limerick (Civic) Museum."  )
+
+Collection.create!(
+:collection_title => "Aitken" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Aitken collection. Mostly seem to be from Antrim. Held in the Museum of Anthropology and Archaeology, University of Cambridge, Englad."  )
+
+Collection.create!(
+:collection_title => "Buick" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => "Dr. Buick collection. Cambridge University Museum of Anthropology and Archaeology."  )
+
+Collection.create!(
+:collection_title => "Stokes" ,
+:address1 => "Dept. of Archaeology"  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => "Dublin"  ,
+:country => "Ireland"  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "O'Dubhghaill" ,
+:address1 => "10 Gartan Avenue"  ,
+:address2 => "Phibsborough"  ,
+:address3 => ""  ,
+:county => "Dublin"  ,
+:country => "Ireland"  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Tritton" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "Abbot" ,
+:address1 => "Somerset"  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => "United Kingdom"  ,
+:details => ""  )
+
+Collection.create!(
+:collection_title => "May" ,
+:address1 => ""  ,
+:address2 => ""  ,
+:address3 => ""  ,
+:county => ""  ,
+:country => ""  ,
+:details => ""  )
+
+Context.create!(
+:code => "CD02" ,
+:description => "Axe quarry site"  )
+
+Context.create!(
+:code => "CD03" ,
+:description => "Bog"  )
+
+Context.create!(
+:code => "CD04" ,
+:description => "Cave"  )
+
+Context.create!(
+:code => "CD05" ,
+:description => "Disturbed"  )
+
+Context.create!(
+:code => "CD06" ,
+:description => "Garden"  )
+
+Context.create!(
+:code => "CD07" ,
+:description => "Island"  )
+
+Context.create!(
+:code => "CD08" ,
+:description => "Lakeshore"  )
+
+Context.create!(
+:code => "CD09" ,
+:description => "Marshy ground"  )
+
+Context.create!(
+:code => "CD10" ,
+:description => "Riverbank"  )
+
+Context.create!(
+:code => "CD11" ,
+:description => "Riverbed"  )
+
+Context.create!(
+:code => "CD12" ,
+:description => "Rough pasture"  )
+
+Context.create!(
+:code => "CD13" ,
+:description => "Seashore"  )
+
+Context.create!(
+:code => "CD14" ,
+:description => "Unknown"  )
+
+Context.create!(
+:code => "CD15" ,
+:description => "Archaeological Site"  )
+
+Context.create!(
+:code => "CD17" ,
+:description => "Gravel quarry site"  )
+
+Context.create!(
+:code => "CD16" ,
+:description => "Monument or feature"  )
+
+Context.create!(
+:code => "CD18" ,
+:description => "Seabed"  )
+
+Context.create!(
+:code => "CD19" ,
+:description => "Lake"  )
+
+Context.create!(
+:code => "CD01" ,
+:description => "Agricultural land"  )
+
+Context.create!(
+:code => "CD20" ,
+:description => "Test"  )
+
+Cross_Section.create!(
+:code => "CS01" ,
+:description => "Full oval"  )
+
+Cross_Section.create!(
+:code => "CS02" ,
+:description => "Full oval, flattened sides"  )
+
+Cross_Section.create!(
+:code => "CS03" ,
+:description => "Full oval, flat sides"  )
+
+Cross_Section.create!(
+:code => "CS04" ,
+:description => "Full oval, faceted sides"  )
+
+Cross_Section.create!(
+:code => "CS05" ,
+:description => "Oval"  )
+
+Cross_Section.create!(
+:code => "CS06" ,
+:description => "Oval, flattened sides"  )
+
+Cross_Section.create!(
+:code => "CS07" ,
+:description => "Oval, flat sides"  )
+
+Cross_Section.create!(
+:code => "CS08" ,
+:description => "Oval, faceted sides"  )
+
+Cross_Section.create!(
+:code => "CS09" ,
+:description => "Narrow oval"  )
+
+Cross_Section.create!(
+:code => "CS10" ,
+:description => "Narrow oval, flattened sides"  )
+
+Cross_Section.create!(
+:code => "CS11" ,
+:description => "Narrow oval, flat sides"  )
+
+Cross_Section.create!(
+:code => "CS12" ,
+:description => "Narrow oval, faceted sides"  )
+
+Cross_Section.create!(
+:code => "CS13" ,
+:description => "Pointed oval"  )
+
+Cross_Section.create!(
+:code => "CS14" ,
+:description => "Narrow pointed oval"  )
+
+Cross_Section.create!(
+:code => "CS15" ,
+:description => "Irregular oval"  )
+
+Cross_Section.create!(
+:code => "CS16" ,
+:description => "Plano-convex"  )
+
+Cross_Section.create!(
+:code => "CS17" ,
+:description => "Flattened faces"  )
+
+Cross_Section.create!(
+:code => "CS18" ,
+:description => "Sub-rectangular"  )
+
+Cross_Section.create!(
+:code => "CS19" ,
+:description => "Unknown"  )
+
+Edge_Form.create!(
+:code => "EF01" ,
+:description => "Straight"  )
+
+Edge_Form.create!(
+:code => "EF02" ,
+:description => "C-shaped"  )
+
+Edge_Form.create!(
+:code => "EF03" ,
+:description => "S-shaped"  )
+
+Edge_Form.create!(
+:code => "EF04" ,
+:description => "Unknown/missing"  )
+
+Edge_Shape.create!(
+:code => "ES01" ,
+:description => "Flat"  )
+
+Edge_Shape.create!(
+:code => "ES02" ,
+:description => "Gently curved:symmetrical"  )
+
+Edge_Shape.create!(
+:code => "ES03" ,
+:description => "Gently curved:asymmetrical"  )
+
+Edge_Shape.create!(
+:code => "ES04" ,
+:description => "Curved:asymmetrical"  )
+
+Edge_Shape.create!(
+:code => "ES05" ,
+:description => "Curved:symmetrical"  )
+
+Edge_Shape.create!(
+:code => "ES06" ,
+:description => "Gently curved:markedly asymmtrical"  )
+
+Edge_Shape.create!(
+:code => "ES07" ,
+:description => "Curved:markedly asymmtrical"  )
+
+Edge_Shape.create!(
+:code => "ES08" ,
+:description => "Convex"  )
+
+Edge_Shape.create!(
+:code => "ES09" ,
+:description => "Unknown/Damaged"  )
+
+Face_Shape.create!(
+:code => "FS01" ,
+:description => "Ovate symmetrical"  )
+
+Face_Shape.create!(
+:code => "FS02" ,
+:description => "Asymmetrical"  )
+
+Face_Shape.create!(
+:code => "FS03" ,
+:description => "Straight splayed sides"  )
+
+Face_Shape.create!(
+:code => "FS04" ,
+:description => "Straight sided parallel"  )
+
+Face_Shape.create!(
+:code => "FS05" ,
+:description => "Oblique butt"  )
+
+Face_Shape.create!(
+:code => "FS06" ,
+:description => "Any other"  )
+
+Hafting.create!(
+:code => "HA01" ,
+:description => "No evidence"  )
+
+Hafting.create!(
+:code => "HA02" ,
+:description => "Band of pecking"  )
+
+Hafting.create!(
+:code => "HA03" ,
+:description => "Band of pecking UP"  )
+
+Hafting.create!(
+:code => "HA04" ,
+:description => "Band of pecking LP"  )
+
+Hafting.create!(
+:code => "HA05" ,
+:description => "Band of pecking central portion"  )
+
+Hafting.create!(
+:code => "HA06" ,
+:description => "Pecking UP"  )
+
+Hafting.create!(
+:code => "HA07" ,
+:description => "Pecking LP"  )
+
+Hafting.create!(
+:code => "HA08" ,
+:description => "Pecking both faces"  )
+
+Hafting.create!(
+:code => "HA09" ,
+:description => "Pecking one face"  )
+
+Hafting.create!(
+:code => "HA10" ,
+:description => "Pecking faces and sides"  )
+
+Hafting.create!(
+:code => "HA11" ,
+:description => "Pecking sides"  )
+
+Hafting.create!(
+:code => "HA12" ,
+:description => "Pecking sides and butt"  )
+
+Hafting.create!(
+:code => "HA13" ,
+:description => "Pecking butt"  )
+
+Hafting.create!(
+:code => "HA14" ,
+:description => "Pecking all over"  )
+
+Hafting.create!(
+:code => "HA15" ,
+:description => "Pecking - irregular"  )
+
+Hafting.create!(
+:code => "HA16" ,
+:description => "Irregular areas"  )
+
+Hafting.create!(
+:code => "HA17" ,
+:description => "Waisting"  )
+
+Hafting.create!(
+:code => "HA18" ,
+:description => "Perforation"  )
+
+Hafting.create!(
+:code => "HA19" ,
+:description => "Partial perforation"  )
+
+Hafting.create!(
+:code => "HA20" ,
+:description => "Flaking/grinding on sides"  )
+
+Hafting.create!(
+:code => "HA21" ,
+:description => "UP roughened"  )
+
+Hafting.create!(
+:code => "HA22" ,
+:description => "Hafting band"  )
+
+Hafting.create!(
+:code => "HA23" ,
+:description => "Hafting shadow"  )
+
+Hafting.create!(
+:code => "HA24" ,
+:description => "Haft present"  )
+
+Hafting.create!(
+:code => "HA25" ,
+:description => "Resin present"  )
+
+Hafting.create!(
+:code => "HA26" ,
+:description => "Incisions"  )
+
+Hafting.create!(
+:code => "HA27" ,
+:description => "Polish from wear"  )
+
+Hafting.create!(
+:code => "HA28" ,
+:description => "Other"  )
 
 Linkage.create!(
 :sequence_no => "6167" ,
@@ -15313,328 +15199,3 @@ Linkage.create!(
 Linkage.create!(
 :sequence_no => "20705" ,
 :bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20717" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20718" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20719" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20720" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20721" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20722" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20723" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20724" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20725" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20729" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20727" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20728" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20730" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20731" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20732" ,
-:bibliography_id => "Williams, B. and Gormley, S.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20745" ,
-:bibliography_id => "Lynn, C.J.1983a"  )
-
-Linkage.create!(
-:sequence_no => "20773" ,
-:bibliography_id => "ApSimon, A.1976a"  )
-
-Linkage.create!(
-:sequence_no => "4130" ,
-:bibliography_id => "Dowd, M. and Corlett, C.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20777" ,
-:bibliography_id => "Dowd, M. and Corlett, C.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20779" ,
-:bibliography_id => "Dowd, M. and Corlett, C.2002a"  )
-
-Linkage.create!(
-:sequence_no => "20780" ,
-:bibliography_id => "Tratman, E.K.1929a"  )
-
-Linkage.create!(
-:sequence_no => "20785" ,
-:bibliography_id => "Stanley, M.2000a"  )
-
-Linkage.create!(
-:sequence_no => "15500" ,
-:bibliography_id => "Liversage, G.D.1968a"  )
-
-Linkage.create!(
-:sequence_no => "15508" ,
-:bibliography_id => "Liversage, G.D.1968a"  )
-
-Linkage.create!(
-:sequence_no => "16274" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "15499" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "15498" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "15500" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "16275" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "16278" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "16279" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "15506" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "15509" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "15510" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "15505" ,
-:bibliography_id => "Francis, E.L., Francis, P.J. and Preston, J.1988a"  )
-
-Linkage.create!(
-:sequence_no => "16274" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15492" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15496" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15499" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15498" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15493" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15495" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15488" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15491" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15489" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15497" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15490" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15494" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15500" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16275" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16277" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16278" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16279" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16276" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15507" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15506" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15502" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15509" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15503" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15508" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15510" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15505" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15504" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "15501" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16281" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16280" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16282" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16283" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16284" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16285" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "21526" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16287" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "21526" ,
-:bibliography_id => "Liversage, G.D.1968a"  )
-
-Linkage.create!(
-:sequence_no => "16288" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "16289" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "21527" ,
-:bibliography_id => "Leon, B.C.2001a"  )
-
-Linkage.create!(
-:sequence_no => "21548" ,
-:bibliography_id => "Stevens, P. in Bennett (ed.)2003a"  )
-
-Linkage.create!(
-:sequence_no => "21552" ,
-:bibliography_id => "Phelan, S. in Bennet, I (ed)2004a"  )
-
-Linkage.create!(
-:sequence_no => "21552" ,
-:bibliography_id => "Phelan, S. in Bennett, I (ed)2004a"  )
-
-Linkage.create!(
-:sequence_no => "21551" ,
-:bibliography_id => "Phelan, S. in Bennett, I. (ed)2004b"  )
-
-Linkage.create!(
-:sequence_no => "20660" ,
-:bibliography_id => "Ffrench, J.F.M.1890a"  )
-

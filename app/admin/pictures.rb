@@ -1,5 +1,6 @@
 ActiveAdmin.register Picture do
-    actions :all, :except => [:new, :edit]
+   menu false
+   actions :all, :except => [:new, :edit]
 
     member_action :confirm, :method => :get do
       axe = Picture.find(params[:id])
@@ -12,7 +13,9 @@ ActiveAdmin.register Picture do
       column :description
       column :document_name
       column :document_type
-      column :image
+      column :image do 
+        image_tag image(image.url)
+      end
       column "Uploaded by" do |id|
         user = id.user_id ? User.find(id.user_id) : nil
         link_to user.name, user_path(user) if user
