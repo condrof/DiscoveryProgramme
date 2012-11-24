@@ -2,29 +2,46 @@
 <%= search_form_for @q, :html => { :class => 'well form-search' }, url: search_axe_masters_path, method: :post do |f| %>
   <fieldset>
 	<legend>Condition fields</legend>
-	  <%= f.condition_fields do |c| %>
-		<%= render "condition_fields", f: c %>
-	  <% end %>
-    <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>  </fieldset>
-  <div class="field">
-  <fieldset>
-    <legend>Sorting</legend>
-    <%= f.sort_fields do |s| %>
-      <%= render 'sort_fields', f: s %>
+    <%= f.condition_fields do |c| %>
+      <div class="field">
+        <div class="row-fluid">
+          <%= c.attribute_fields do |a| %>
+            <span class="span4"><%= a.attribute_select associations: [:seq_no] %></span>
+          <% end %>
+          <span class="span2"><%= c.predicate_select(:only => [:matches, :lt, :gt, :cont, :start, :end, :null, :not_null]) %></span>
+          <%= c.value_fields do |v| %>
+            <span class="span4"><%= v.text_field :value %></span>
+          <% end %>
+          <span class="span2"><%= link_to "remove", '#', class: "remove_fields" %></span>
+        </div>
+      </div>
     <% end %>
-    <%= link_to_add_fields "Add Sort", f, :sort %>
+    <p><%= link_to_add_fields "Add Conditions", f, :condition %></p> 
   </fieldset>
-    
+
+  <div class="field">
+    <fieldset>
+      <legend>Sorting</legend>
+      <%= f.sort_fields do |s| %>
+        <div class="row-fluid">
+          <span class="field">
+            <div class="span8"><%= s.sort_select associations: [:seq_no] %></div><div class="span4"> <%= link_to "remove", '#', class: "remove_fields" %></div><br />
+          </span>
+        </div>
+        <% end %>
+      <%= link_to_add_fields "Add Sort", f, :sort %>
+    </fieldset>    
   </div>
+
   <div class="form-actions">
     <%= f.button :search, :class => 'btn-primary', :name => "search", :id => "search", :value => "html" %>
     <div class="pull-right">
-    <% if current_user && current_user.confirmed %>
-	    <strong>Export to: </strong>
-	    	<%= f.button :xml, :class => 'btn-info', :name => "search", :id => "search", :value => "xml" %>
-	   		<%= f.button :csv, :class => 'btn-info', :name => "search", :id => "search", :value => "csv" %>
-	 	<% end %>
- 	</div>
+      <% if current_user && current_user.confirmed %>
+  	    <strong>Export to: </strong>
+  	    	<%= f.button :xml, :class => 'btn-info', :name => "search", :id => "search", :value => "xml" %>
+  	   		<%= f.button :csv, :class => 'btn-info', :name => "search", :id => "search", :value => "csv" %>
+      <% end %>
+ 	  </div>
   </div>
 <% end %>
 

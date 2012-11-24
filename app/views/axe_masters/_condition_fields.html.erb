@@ -1,7 +1,7 @@
 <div class="field">
 	<div class="row-fluid">
 		<%= f.attribute_fields do |a| %>
-			<span class="span4"><%= a.attribute_select associations: [:seq_no] %></span>
+			<span class="span4"><%= a.attribute_select%></span>
 		<% end %>
 		<span class="span2"><%= f.predicate_select(:only => [:matches, :lt, :gt, :cont, :start, :end, :null, :not_null]) %></span>
 		<%= f.value_fields do |v| %>

@@ -1,6 +1,9 @@
 <div class="row-fluid">
-	<span class="field" data-object-name="<%= f.object_name %>">
-	  <div class="span8"><%= f.sort_select associations: [:seq_no] %></div><div class="span4"> <%= link_to "remove", '#', class: "remove_fields" %></div><br />
+	<span class="field">
+		<div class="span8">
+			<%= f.sort_select associations: [:seq_no] %></div><div class="span4"> <%= link_to "remove", '#', class: "remove_fields" %>
+		</div>
+		<br />
 	</span>
 </div>
 
