@@ -1,3 +1,5 @@
+#!/bin/env ruby
+# encoding: utf-8
 
 Linkage.create!(
 :sequence_no => "20717" ,
@@ -19076,19 +19078,19 @@ Picture.create!(
 :confirmed => true
 )
 
-Prime_Treatment.create!(
+PrimeTreatment.create!(
 :code => "PT01" ,
 :description => "Flaked"  )
 
-Prime_Treatment.create!(
+PrimeTreatment.create!(
 :code => "PT02" ,
 :description => "Pecked"  )
 
-Prime_Treatment.create!(
+PrimeTreatment.create!(
 :code => "PT03" ,
 :description => "Cleaved"  )
 
-Prime_Treatment.create!(
+PrimeTreatment.create!(
 :code => "PT04" ,
 :description => "Unknown"  )
 
@@ -19790,35 +19792,35 @@ Info via B. Guinan, acquired Socially!"  ,
 :current_location => "" )
 
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW01" ,
 :description => "No Evidence"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW02" ,
 :description => "Minor abrasion edge/blade"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW03" ,
 :description => "Minor chipping on edge"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW04" ,
 :description => "Some chipping on edge"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW05" ,
 :description => "Heavy chipping on edge"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW06" ,
 :description => "Edge broken beyond use"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW07" ,
 :description => "Edge missing"  )
 
-Use_Wear.create!(
+UseWear.create!(
 :code => "UW09" ,
 :description => "Other"  )
 
