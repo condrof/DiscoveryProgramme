@@ -1,7 +1,8 @@
 ActiveAdmin.register AxeMaster do
-    actions :all, :except => [:new, :edit]
+  menu false
+  actions :all, :except => [:new, :edit]
 
-    member_action :confirm_record, :method => :get do
+  member_action :confirm_record, :method => :get do
     axe = AxeMaster.find(params[:id])
     axe.toggle!(:confirmed)
     redirect_to admin_dashboard_path, :notice => "Axe Record has been confirmed"

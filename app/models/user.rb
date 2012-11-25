@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :receive_emails, :remember_me, :name, :address, :institution, :phone, :purpose_of_use
   
   has_many :axe_masters, :foreign_key => "user_id", :primary_key => "id"
+  has_many :pictures
   
   validates :email, :uniqueness => true, :presence => true
   validates :name, :presence => true

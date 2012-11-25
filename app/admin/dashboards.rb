@@ -5,7 +5,7 @@ ActiveAdmin::Dashboards.build do
       @users = User.find(:all, :conditions => { confirmed: "false"})
       if !@users.empty?
         @users.each do |user|
-          li link_to "Confirm #{user.email}", confirm_user_admin_user_path(user)
+          li link_to "Confirm #{user.email}", user_path(user)
         end 
       else
         li "All current users have been confirmed"
@@ -31,7 +31,7 @@ ActiveAdmin::Dashboards.build do
       @pics=Picture.find(:all, :conditions => { :confirmed => "false" })
       if !@pics.empty?
         @pics.each do |pic|
-          li link_to "New picture for #{pic.axe_master}", picture_path(pic) 
+          li link_to "New picture for Axe Record #{pic.axe_master.try(:seq_no)}, submitted by #{pic.user.try(:name)}", picture_path(pic) 
         end
       else
           li "All current pictures have been confirmed"

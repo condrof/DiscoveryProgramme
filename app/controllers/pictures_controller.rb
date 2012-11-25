@@ -17,11 +17,11 @@ class PicturesController < ApplicationController
   def create
     @picture = Picture.new(params[:picture])
       if @picture.save
-        flash[:success] = "Picture successfully uploaded. Note: Picture must be confirmed by researcher before you can see it"
+        flash[:success] = "Document successfully uploaded. Note: Document must be confirmed by researcher before you can see it"
         UserMailer.signupConfirmation(current_user, "Document", @picture.axe_master).deliver
         redirect_to :back
       else
-        flash[:alert] = "Error uploading picture"
+        flash[:alert] = "Error uploading document"
         redirect_to axe_master_path(@picture.axe_master)
       end
   end

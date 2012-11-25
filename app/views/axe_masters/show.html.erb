@@ -11,7 +11,7 @@
 </div>
 
 
-<% if can? :update, @axe_master %>	
+<% if can? :create, Picture %>	
 	<div class = "form-horizontal well hidden-print" id="document">
 		<fieldset>
 			<legend>Add a document to this record</legend>
@@ -35,9 +35,15 @@
 
 <% if current_user && current_user.confirmed %>
 	<div class = "pull-right hidden-print">
-		Export: <%= link_to "CSV", axe_master_path(@axe_master, format: "csv"), :class => 'btn-info' %> | <%= link_to "XML", axe_master_path(@axe_master, format: "xml"), :class => 'btn-info' %>
+		Export: <%= link_to "CSV", axe_master_path(@axe_master, format: "csv"), :class => 'btn btn-info' %> | <%= link_to "XML", axe_master_path(@axe_master, format: "xml"), :class => 'btn btn-info' %>
 	</div>
 <% end %>
+
+<div class="pull-left hidden-print">
+	<form>
+		<input type="button" class = "btn btn-info", value="Print This Page" onClick="window.print()" />
+	</form>
+</div>
 
 <br /><br />
 
@@ -93,20 +99,25 @@
 					<% if pic.confirmed %>
 					  <div class="span2">
 					  	<div class="placeHolder">
-					  		<% if pic.document_type == "Image" %>
-					  			<%= image_tag(pic.image_url(:thumb).to_s, :size => "100x100" %>
-					  		<% elsif pic.document_type == "PDF" %>
+					  		<% if pic.ext_type == "image" %>
+					  			<%= image_tag(pic.image_url.to_s, :size => "100x100") %>
+					  		<% elsif pic.ext_type == "pdf" %>
 					  			<%= image_tag "pdfIcon.png" %>					  		
-					  		<% elsif pic.document_type == "Word Document" %>
+					  		<% elsif pic.ext_type == "document" %>
 					  			<%= image_tag "wordIcon.png" %>
 					  		<% end %>
 					  		<br />
 					  	</div>
-					  	<% if pic.document_type == "Image" %>
-					  		<p><strong class="hidden-print"><%= pic.document_type %>:</strong> <%= link_to pic.try(:document_name), picture_path(pic) %></p>
+					  	<% if pic.ext_type == "image" %>
+					  		<% if can? :read, pic %>
+					  			<p><strong class="hidden-print"><%= pic.document_type %>:</strong> 
+					  			<%= link_to pic.try(:document_name), picture_path(pic) %></p>
+					  		<% end %>
 					  	<% else %>
-					  		<p><strong><%= pic.document_type %>:</strong> <%= pic.description %></p>
-					  	 	<p class="hidden-print"><%= link_to "Download", pic.image.to_s %></p>
+					  		<% if can? :read, pic %>
+						  		<p><strong><%= pic.document_type %>:</strong> <%= pic.description %></p>
+						  	 	<p class="hidden-print"><%= link_to "Download", pic.image.to_s %></p>
+					  	 	<% end %>
 					  	<% end %>
 					  </div>
 				  	<% end %>

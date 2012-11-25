@@ -32,6 +32,9 @@ ActiveAdmin.register User do
     column :researcher
     column :confirmed
     column :receive_emails
+    column :view_profile, :id do |id|
+      link_to "View Profile", user_path(id)
+    end
     column "Toggle Admin", :id do |id|
       link_to "Make Admin", set_admin_admin_user_path(id), data: { confirm: "You sure?" }
     end
