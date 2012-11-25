@@ -19122,35 +19122,35 @@ Profile.create!(
 :code => "P 07" ,
 :description => "Unknown"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU01" ,
 :description => "None"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU02" ,
 :description => "Re-flaking (unground)"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU03" ,
 :description => "Re-grinding"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU04" ,
 :description => "Evidence from junction with faces"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU05" ,
 :description => "Evidence from junctions with sides"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU06" ,
 :description => "Other"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU07" ,
 :description => "Re-pecking"  )
 
-Re_Use.create!(
+ReUse.create!(
 :code => "RU08" ,
 :description => "Re-polishing"  )
 
