@@ -3,7 +3,7 @@
 	  <legend>Archival & Contextual Data</legend>
 		<%= f.input :museum_ref %>
 		<%= f.input :new_museum_ref %>
-		<%= f.input :collections_id, :as => :select, :collection => Hash[Collection.all.map{|b| [b.collection_title,b.id]}]  %>		<%= f.input :area %>
+		<%= f.input :collections_id, :as => :select, :collection => Hash[Collection.all.map{|b| [b.collection_title,b.id]}]  %>
 		<%= f.input :townland %>
 		<%= f.input :area %>
 	    <%= f.input :barony %>

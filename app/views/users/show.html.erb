@@ -1,6 +1,6 @@
 <%- model_class = User -%>
 <div class="page-header">
-  <h1><%= "#{current_user.name.capitalize}" %><br />
+  <h1><%= "#{@user.name.capitalize}" %><br />
   <% if !@user.confirmed && (can? :destroy, User) %>
   <%= link_to "Confirm User", confirm_user_admin_user_path(@user), :class => 'btn btn-success btn-large' %>
     <%= link_to t('.destroy', :default => "Delete User"), root_path, :method => 'delete',

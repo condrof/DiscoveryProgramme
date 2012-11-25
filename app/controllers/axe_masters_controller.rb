@@ -67,7 +67,7 @@ class AxeMastersController < ApplicationController
     if @axe_master.save
       flash[:success] = "Your record has been submited for approval."
       UserMailer.signupConfirmation(current_user, "Axe", @axe_master).deliver
-      redirect_to axe_masters_path
+      redirect_to root_path
     else
       flash[:error] = "Record did not save"
       redirect_to :back

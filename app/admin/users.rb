@@ -1,4 +1,5 @@
 ActiveAdmin.register User do
+  actions :all, :except => [:new, :edit]
   
   member_action :set_admin, :method => :get do
     user = User.find(params[:id])
