@@ -13,7 +13,12 @@ class Picture < ActiveRecord::Base
   after_initialize :default_values
 
   def ext_name
-      return self.image_url.split(".").last
+    @ext_name = self.image_url.split(".")
+    if @ext_name.last
+      return @ext_name.last
+    else
+      return ""
+    end
   end
 
   def ext_type

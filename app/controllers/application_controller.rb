@@ -22,4 +22,11 @@ class ApplicationController < ActionController::Base
     current_user
   end
 
+  before_filter :miniprofiler
+  
+private
+  def miniprofiler
+    Rack::MiniProfiler.authorize_request
+  end
+
 end
