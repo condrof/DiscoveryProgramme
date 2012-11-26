@@ -1,6 +1,217 @@
 <%- model_class = AxeMaster -%>
 
-<%= render 'search_form' %>
+<h2>Search Form</h2>
+<form accept-charset="UTF-8" action="/axe_masters/search" class="well form-search" id="axe_master_search" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="HxtDSfSMTV2USWZZcFHCONvGCRVtxgd9K3Rt/IIi91s=" /></div>
+  <fieldset>
+	<legend>Condition fields</legend>
+    
+      <div class="field">
+        <div class="row-fluid">
+          
+            <span class="span4"><select id="q_c_0_a_0_name" name="q[c][0][a][0][name]"><option value=""></option>
+<optgroup label="Axe master"><option value="museum_ref">Museum ref</option>
+<option value="collections_id">Collections</option>
+<option value="townland">Townland</option>
+<option value="area">Area</option>
+<option value="county">County</option>
+<option value="discovery_circumstances">Discovery circumstances</option>
+<option value="context_id">Context</option>
+<option value="from_year">From year</option>
+<option value="to_year">To year</option>
+<option value="map_reference">Map reference</option>
+<option value="temp_map_reference">Temp map reference</option>
+<option value="ordinance_datum">Ordinance datum</option>
+<option value="object_type">Object type</option>
+<option value="length">Length</option>
+<option value="width">Width</option>
+<option value="thickness">Thickness</option>
+<option value="weight">Weight</option>
+<option value="face_shape_id">Face shape</option>
+<option value="cross_section_id">Cross section</option>
+<option value="edge_shape_id">Edge shape</option>
+<option value="profile_id">Profile</option>
+<option value="blade_profile_id">Blade profile</option>
+<option value="butt_shape_id">Butt shape</option>
+<option value="facet_1_right">Facet 1 right</option>
+<option value="facet_2_right">Facet 2 right</option>
+<option value="facet_1_left">Facet 1 left</option>
+<option value="facet_2_left">Facet 2 left</option>
+<option value="prime_treatment_id">Prime treatment</option>
+<option value="blade_ground">Blade ground</option>
+<option value="sides_ground">Sides ground</option>
+<option value="faces_ground">Faces ground</option>
+<option value="butt_ground">Butt ground</option>
+<option value="blade_polished">Blade polished</option>
+<option value="sides_polished">Sides polished</option>
+<option value="faces_polished">Faces polished</option>
+<option value="butt_polished">Butt polished</option>
+<option value="hafting_id">Hafting</option>
+<option value="description">Description</option>
+<option value="macro_id">Macro</option>
+<option value="micro_id">Micro</option>
+<option value="specific_gravity">Specific gravity</option>
+<option value="petrology">Petrology</option>
+<option value="drawn">Drawn</option>
+<option value="archival_complete">Archival complete</option>
+<option value="object_comp">Object comp</option>
+<option value="petrology_comp">Petrology comp</option>
+<option value="mapping_comp">Mapping comp</option>
+<option value="photographed">Photographed</option>
+<option value="axe_cored">Axe cored</option>
+<option value="barony">Barony</option>
+<option value="parish">Parish</option>
+<option value="hoard">Hoard</option>
+<option value="new_museum_ref">New museum ref</option>
+<option value="catalogue_ref">Catalogue ref</option>
+<option value="site_type">Site type</option>
+<option value="secure_context">Secure context</option>
+<option value="feature_context_details">Feature context details</option>
+<option value="associated_artifacts">Associated artifacts</option>
+<option value="associated_features">Associated features</option>
+<option value="dating_information">Dating information</option>
+<option value="use_wear_id">Use wear</option>
+<option value="deliberate_breaking">Deliberate breaking</option>
+<option value="re_use_id">Re use</option>
+<option value="edge_form_id">Edge form</option>
+<option value="mineral_identification_method">Mineral identification method</option>
+<option value="chemical_composition_method">Chemical composition method</option>
+<option value="object_status">Object status</option>
+<option value="incomplete_description">Incomplete description</option>
+<option value="roughout_description">Roughout description</option>
+<option value="incomplete_details">Incomplete details</option>
+<option value="roughout_details">Roughout details</option>
+<option value="minature">Minature</option>
+<option value="sequence_no" selected="selected">Sequence no</option></optgroup></select></span>
+          <span class="span2"><select id="q_c_0_p" name="q[c][0][p]"><option value="matches">matches</option>
+<option value="matches_any">matches_any</option>
+<option value="matches_all">matches all</option>
+<option value="lt" selected="selected">less than</option>
+<option value="lt_any">less than any</option>
+<option value="lt_all">less than all</option>
+<option value="gt">greater than</option>
+<option value="gt_any">greater than any</option>
+<option value="gt_all">greater than all</option>
+<option value="cont">contains</option>
+<option value="cont_any">contains any</option>
+<option value="cont_all">contains all</option>
+<option value="start">starts with</option>
+<option value="start_any">starts with any</option>
+<option value="start_all">starts with all</option>
+<option value="end">ends with</option>
+<option value="end_any">ends with any</option>
+<option value="end_all">ends with all</option>
+<option value="null">is null</option>
+<option value="not_null">is not null</option></select></span>
+          
+            <span class="span4"><input id="q_c_0_v_0_value" name="q[c][0][v][0][value]" size="30" type="text" value="8" /></span>
+          <span class="span2"><a href="#" class="remove_fields">remove</a></span>
+        </div>
+      </div>
+    <p><a href="#" class="add_fields" data-fields="&lt;div class=&quot;field&quot;&gt;	&lt;div class=&quot;row-fluid&quot;&gt;					&lt;span class=&quot;span4&quot;&gt;&lt;select id=&quot;q_c_new_condition_a_0_name&quot; name=&quot;q[c][new_condition][a][0][name]&quot;&gt;&lt;option value=&quot;&quot;&gt;&lt;/option&gt;&lt;option value=&quot;museum_ref&quot;&gt;Museum ref&lt;/option&gt;&lt;option value=&quot;collections_id&quot;&gt;Collections&lt;/option&gt;&lt;option value=&quot;townland&quot;&gt;Townland&lt;/option&gt;&lt;option value=&quot;area&quot;&gt;Area&lt;/option&gt;&lt;option value=&quot;county&quot;&gt;County&lt;/option&gt;&lt;option value=&quot;discovery_circumstances&quot;&gt;Discovery circumstances&lt;/option&gt;&lt;option value=&quot;context_id&quot;&gt;Context&lt;/option&gt;&lt;option value=&quot;from_year&quot;&gt;From year&lt;/option&gt;&lt;option value=&quot;to_year&quot;&gt;To year&lt;/option&gt;&lt;option value=&quot;map_reference&quot;&gt;Map reference&lt;/option&gt;&lt;option value=&quot;temp_map_reference&quot;&gt;Temp map reference&lt;/option&gt;&lt;option value=&quot;ordinance_datum&quot;&gt;Ordinance datum&lt;/option&gt;&lt;option value=&quot;object_type&quot;&gt;Object type&lt;/option&gt;&lt;option value=&quot;length&quot;&gt;Length&lt;/option&gt;&lt;option value=&quot;width&quot;&gt;Width&lt;/option&gt;&lt;option value=&quot;thickness&quot;&gt;Thickness&lt;/option&gt;&lt;option value=&quot;weight&quot;&gt;Weight&lt;/option&gt;&lt;option value=&quot;face_shape_id&quot;&gt;Face shape&lt;/option&gt;&lt;option value=&quot;cross_section_id&quot;&gt;Cross section&lt;/option&gt;&lt;option value=&quot;edge_shape_id&quot;&gt;Edge shape&lt;/option&gt;&lt;option value=&quot;profile_id&quot;&gt;Profile&lt;/option&gt;&lt;option value=&quot;blade_profile_id&quot;&gt;Blade profile&lt;/option&gt;&lt;option value=&quot;butt_shape_id&quot;&gt;Butt shape&lt;/option&gt;&lt;option value=&quot;facet_1_right&quot;&gt;Facet 1 right&lt;/option&gt;&lt;option value=&quot;facet_2_right&quot;&gt;Facet 2 right&lt;/option&gt;&lt;option value=&quot;facet_1_left&quot;&gt;Facet 1 left&lt;/option&gt;&lt;option value=&quot;facet_2_left&quot;&gt;Facet 2 left&lt;/option&gt;&lt;option value=&quot;prime_treatment_id&quot;&gt;Prime treatment&lt;/option&gt;&lt;option value=&quot;blade_ground&quot;&gt;Blade ground&lt;/option&gt;&lt;option value=&quot;sides_ground&quot;&gt;Sides ground&lt;/option&gt;&lt;option value=&quot;faces_ground&quot;&gt;Faces ground&lt;/option&gt;&lt;option value=&quot;butt_ground&quot;&gt;Butt ground&lt;/option&gt;&lt;option value=&quot;blade_polished&quot;&gt;Blade polished&lt;/option&gt;&lt;option value=&quot;sides_polished&quot;&gt;Sides polished&lt;/option&gt;&lt;option value=&quot;faces_polished&quot;&gt;Faces polished&lt;/option&gt;&lt;option value=&quot;butt_polished&quot;&gt;Butt polished&lt;/option&gt;&lt;option value=&quot;hafting_id&quot;&gt;Hafting&lt;/option&gt;&lt;option value=&quot;description&quot;&gt;Description&lt;/option&gt;&lt;option value=&quot;macro_id&quot;&gt;Macro&lt;/option&gt;&lt;option value=&quot;micro_id&quot;&gt;Micro&lt;/option&gt;&lt;option value=&quot;specific_gravity&quot;&gt;Specific gravity&lt;/option&gt;&lt;option value=&quot;petrology&quot;&gt;Petrology&lt;/option&gt;&lt;option value=&quot;drawn&quot;&gt;Drawn&lt;/option&gt;&lt;option value=&quot;archival_complete&quot;&gt;Archival complete&lt;/option&gt;&lt;option value=&quot;object_comp&quot;&gt;Object comp&lt;/option&gt;&lt;option value=&quot;petrology_comp&quot;&gt;Petrology comp&lt;/option&gt;&lt;option value=&quot;mapping_comp&quot;&gt;Mapping comp&lt;/option&gt;&lt;option value=&quot;photographed&quot;&gt;Photographed&lt;/option&gt;&lt;option value=&quot;axe_cored&quot;&gt;Axe cored&lt;/option&gt;&lt;option value=&quot;barony&quot;&gt;Barony&lt;/option&gt;&lt;option value=&quot;parish&quot;&gt;Parish&lt;/option&gt;&lt;option value=&quot;hoard&quot;&gt;Hoard&lt;/option&gt;&lt;option value=&quot;new_museum_ref&quot;&gt;New museum ref&lt;/option&gt;&lt;option value=&quot;catalogue_ref&quot;&gt;Catalogue ref&lt;/option&gt;&lt;option value=&quot;site_type&quot;&gt;Site type&lt;/option&gt;&lt;option value=&quot;secure_context&quot;&gt;Secure context&lt;/option&gt;&lt;option value=&quot;feature_context_details&quot;&gt;Feature context details&lt;/option&gt;&lt;option value=&quot;associated_artifacts&quot;&gt;Associated artifacts&lt;/option&gt;&lt;option value=&quot;associated_features&quot;&gt;Associated features&lt;/option&gt;&lt;option value=&quot;dating_information&quot;&gt;Dating information&lt;/option&gt;&lt;option value=&quot;use_wear_id&quot;&gt;Use wear&lt;/option&gt;&lt;option value=&quot;deliberate_breaking&quot;&gt;Deliberate breaking&lt;/option&gt;&lt;option value=&quot;re_use_id&quot;&gt;Re use&lt;/option&gt;&lt;option value=&quot;edge_form_id&quot;&gt;Edge form&lt;/option&gt;&lt;option value=&quot;mineral_identification_method&quot;&gt;Mineral identification method&lt;/option&gt;&lt;option value=&quot;chemical_composition_method&quot;&gt;Chemical composition method&lt;/option&gt;&lt;option value=&quot;object_status&quot;&gt;Object status&lt;/option&gt;&lt;option value=&quot;incomplete_description&quot;&gt;Incomplete description&lt;/option&gt;&lt;option value=&quot;roughout_description&quot;&gt;Roughout description&lt;/option&gt;&lt;option value=&quot;incomplete_details&quot;&gt;Incomplete details&lt;/option&gt;&lt;option value=&quot;roughout_details&quot;&gt;Roughout details&lt;/option&gt;&lt;option value=&quot;minature&quot;&gt;Minature&lt;/option&gt;&lt;option value=&quot;sequence_no&quot;&gt;Sequence no&lt;/option&gt;&lt;/select&gt;&lt;/span&gt;		&lt;span class=&quot;span2&quot;&gt;&lt;select id=&quot;q_c_new_condition_p&quot; name=&quot;q[c][new_condition][p]&quot;&gt;&lt;option value=&quot;matches&quot;&gt;matches&lt;/option&gt;&lt;option value=&quot;matches_any&quot;&gt;matches_any&lt;/option&gt;&lt;option value=&quot;matches_all&quot;&gt;matches all&lt;/option&gt;&lt;option value=&quot;lt&quot;&gt;less than&lt;/option&gt;&lt;option value=&quot;lt_any&quot;&gt;less than any&lt;/option&gt;&lt;option value=&quot;lt_all&quot;&gt;less than all&lt;/option&gt;&lt;option value=&quot;gt&quot;&gt;greater than&lt;/option&gt;&lt;option value=&quot;gt_any&quot;&gt;greater than any&lt;/option&gt;&lt;option value=&quot;gt_all&quot;&gt;greater than all&lt;/option&gt;&lt;option value=&quot;cont&quot;&gt;contains&lt;/option&gt;&lt;option value=&quot;cont_any&quot;&gt;contains any&lt;/option&gt;&lt;option value=&quot;cont_all&quot;&gt;contains all&lt;/option&gt;&lt;option value=&quot;start&quot;&gt;starts with&lt;/option&gt;&lt;option value=&quot;start_any&quot;&gt;starts with any&lt;/option&gt;&lt;option value=&quot;start_all&quot;&gt;starts with all&lt;/option&gt;&lt;option value=&quot;end&quot;&gt;ends with&lt;/option&gt;&lt;option value=&quot;end_any&quot;&gt;ends with any&lt;/option&gt;&lt;option value=&quot;end_all&quot;&gt;ends with all&lt;/option&gt;&lt;option value=&quot;null&quot;&gt;is null&lt;/option&gt;&lt;option value=&quot;not_null&quot;&gt;is not null&lt;/option&gt;&lt;/select&gt;&lt;/span&gt;					&lt;span class=&quot;span4&quot;&gt;&lt;input id=&quot;q_c_new_condition_v_0_value&quot; name=&quot;q[c][new_condition][v][0][value]&quot; size=&quot;30&quot; type=&quot;text&quot; /&gt;&lt;/span&gt;		&lt;span class=&quot;span2&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;remove_fields&quot;&gt;remove&lt;/a&gt;&lt;/span&gt;	&lt;/div&gt;&lt;/div&gt;" data-id="new_condition">Add Conditions</a></p> 
+  </fieldset>
+
+  <div class="field">
+    <fieldset>
+      <legend>Sorting</legend>
+      
+        <div class="row-fluid">
+          <span class="field">
+            <div class="span8"><select id="q_s_0_name" name="q[s][0][name]"><option value=""></option>
+<optgroup label="Axe master"><option value="museum_ref">Museum ref</option>
+<option value="collections_id">Collections</option>
+<option value="townland">Townland</option>
+<option value="area">Area</option>
+<option value="county">County</option>
+<option value="discovery_circumstances">Discovery circumstances</option>
+<option value="context_id">Context</option>
+<option value="from_year">From year</option>
+<option value="to_year">To year</option>
+<option value="map_reference">Map reference</option>
+<option value="temp_map_reference">Temp map reference</option>
+<option value="ordinance_datum">Ordinance datum</option>
+<option value="object_type">Object type</option>
+<option value="length">Length</option>
+<option value="width">Width</option>
+<option value="thickness">Thickness</option>
+<option value="weight">Weight</option>
+<option value="face_shape_id">Face shape</option>
+<option value="cross_section_id">Cross section</option>
+<option value="edge_shape_id">Edge shape</option>
+<option value="profile_id">Profile</option>
+<option value="blade_profile_id">Blade profile</option>
+<option value="butt_shape_id">Butt shape</option>
+<option value="facet_1_right">Facet 1 right</option>
+<option value="facet_2_right">Facet 2 right</option>
+<option value="facet_1_left">Facet 1 left</option>
+<option value="facet_2_left">Facet 2 left</option>
+<option value="prime_treatment_id">Prime treatment</option>
+<option value="blade_ground">Blade ground</option>
+<option value="sides_ground">Sides ground</option>
+<option value="faces_ground">Faces ground</option>
+<option value="butt_ground">Butt ground</option>
+<option value="blade_polished">Blade polished</option>
+<option value="sides_polished">Sides polished</option>
+<option value="faces_polished">Faces polished</option>
+<option value="butt_polished">Butt polished</option>
+<option value="hafting_id">Hafting</option>
+<option value="description">Description</option>
+<option value="macro_id">Macro</option>
+<option value="micro_id">Micro</option>
+<option value="specific_gravity">Specific gravity</option>
+<option value="petrology">Petrology</option>
+<option value="drawn">Drawn</option>
+<option value="archival_complete">Archival complete</option>
+<option value="object_comp">Object comp</option>
+<option value="petrology_comp">Petrology comp</option>
+<option value="mapping_comp">Mapping comp</option>
+<option value="photographed">Photographed</option>
+<option value="axe_cored">Axe cored</option>
+<option value="barony">Barony</option>
+<option value="parish">Parish</option>
+<option value="hoard">Hoard</option>
+<option value="new_museum_ref">New museum ref</option>
+<option value="catalogue_ref">Catalogue ref</option>
+<option value="site_type">Site type</option>
+<option value="secure_context">Secure context</option>
+<option value="feature_context_details">Feature context details</option>
+<option value="associated_artifacts">Associated artifacts</option>
+<option value="associated_features">Associated features</option>
+<option value="dating_information">Dating information</option>
+<option value="use_wear_id">Use wear</option>
+<option value="deliberate_breaking">Deliberate breaking</option>
+<option value="re_use_id">Re use</option>
+<option value="edge_form_id">Edge form</option>
+<option value="mineral_identification_method">Mineral identification method</option>
+<option value="chemical_composition_method">Chemical composition method</option>
+<option value="object_status">Object status</option>
+<option value="incomplete_description">Incomplete description</option>
+<option value="roughout_description">Roughout description</option>
+<option value="incomplete_details">Incomplete details</option>
+<option value="roughout_details">Roughout details</option>
+<option value="minature">Minature</option>
+<option value="sequence_no">Sequence no</option></optgroup></select><select id="q_s_0_dir" name="q[s][0][dir]"><option value=""></option>
+<option value="asc" selected="selected">ascending</option>
+<option value="desc">descending</option></select></div><div class="span4"> <a href="#" class="remove_fields">remove</a></div><br />
+          </span>
+        </div>
+      <a href="#" class="add_fields" data-fields="&lt;div class=&quot;row-fluid&quot;&gt;	&lt;span class=&quot;field&quot;&gt;		&lt;div class=&quot;span8&quot;&gt;			&lt;select id=&quot;q_s_new_sort_name&quot; name=&quot;q[s][new_sort][name]&quot;&gt;&lt;option value=&quot;&quot;&gt;&lt;/option&gt;&lt;optgroup label=&quot;Axe master&quot;&gt;&lt;option value=&quot;museum_ref&quot;&gt;Museum ref&lt;/option&gt;&lt;option value=&quot;collections_id&quot;&gt;Collections&lt;/option&gt;&lt;option value=&quot;townland&quot;&gt;Townland&lt;/option&gt;&lt;option value=&quot;area&quot;&gt;Area&lt;/option&gt;&lt;option value=&quot;county&quot;&gt;County&lt;/option&gt;&lt;option value=&quot;discovery_circumstances&quot;&gt;Discovery circumstances&lt;/option&gt;&lt;option value=&quot;context_id&quot;&gt;Context&lt;/option&gt;&lt;option value=&quot;from_year&quot;&gt;From year&lt;/option&gt;&lt;option value=&quot;to_year&quot;&gt;To year&lt;/option&gt;&lt;option value=&quot;map_reference&quot;&gt;Map reference&lt;/option&gt;&lt;option value=&quot;temp_map_reference&quot;&gt;Temp map reference&lt;/option&gt;&lt;option value=&quot;ordinance_datum&quot;&gt;Ordinance datum&lt;/option&gt;&lt;option value=&quot;object_type&quot;&gt;Object type&lt;/option&gt;&lt;option value=&quot;length&quot;&gt;Length&lt;/option&gt;&lt;option value=&quot;width&quot;&gt;Width&lt;/option&gt;&lt;option value=&quot;thickness&quot;&gt;Thickness&lt;/option&gt;&lt;option value=&quot;weight&quot;&gt;Weight&lt;/option&gt;&lt;option value=&quot;face_shape_id&quot;&gt;Face shape&lt;/option&gt;&lt;option value=&quot;cross_section_id&quot;&gt;Cross section&lt;/option&gt;&lt;option value=&quot;edge_shape_id&quot;&gt;Edge shape&lt;/option&gt;&lt;option value=&quot;profile_id&quot;&gt;Profile&lt;/option&gt;&lt;option value=&quot;blade_profile_id&quot;&gt;Blade profile&lt;/option&gt;&lt;option value=&quot;butt_shape_id&quot;&gt;Butt shape&lt;/option&gt;&lt;option value=&quot;facet_1_right&quot;&gt;Facet 1 right&lt;/option&gt;&lt;option value=&quot;facet_2_right&quot;&gt;Facet 2 right&lt;/option&gt;&lt;option value=&quot;facet_1_left&quot;&gt;Facet 1 left&lt;/option&gt;&lt;option value=&quot;facet_2_left&quot;&gt;Facet 2 left&lt;/option&gt;&lt;option value=&quot;prime_treatment_id&quot;&gt;Prime treatment&lt;/option&gt;&lt;option value=&quot;blade_ground&quot;&gt;Blade ground&lt;/option&gt;&lt;option value=&quot;sides_ground&quot;&gt;Sides ground&lt;/option&gt;&lt;option value=&quot;faces_ground&quot;&gt;Faces ground&lt;/option&gt;&lt;option value=&quot;butt_ground&quot;&gt;Butt ground&lt;/option&gt;&lt;option value=&quot;blade_polished&quot;&gt;Blade polished&lt;/option&gt;&lt;option value=&quot;sides_polished&quot;&gt;Sides polished&lt;/option&gt;&lt;option value=&quot;faces_polished&quot;&gt;Faces polished&lt;/option&gt;&lt;option value=&quot;butt_polished&quot;&gt;Butt polished&lt;/option&gt;&lt;option value=&quot;hafting_id&quot;&gt;Hafting&lt;/option&gt;&lt;option value=&quot;description&quot;&gt;Description&lt;/option&gt;&lt;option value=&quot;macro_id&quot;&gt;Macro&lt;/option&gt;&lt;option value=&quot;micro_id&quot;&gt;Micro&lt;/option&gt;&lt;option value=&quot;specific_gravity&quot;&gt;Specific gravity&lt;/option&gt;&lt;option value=&quot;petrology&quot;&gt;Petrology&lt;/option&gt;&lt;option value=&quot;drawn&quot;&gt;Drawn&lt;/option&gt;&lt;option value=&quot;archival_complete&quot;&gt;Archival complete&lt;/option&gt;&lt;option value=&quot;object_comp&quot;&gt;Object comp&lt;/option&gt;&lt;option value=&quot;petrology_comp&quot;&gt;Petrology comp&lt;/option&gt;&lt;option value=&quot;mapping_comp&quot;&gt;Mapping comp&lt;/option&gt;&lt;option value=&quot;photographed&quot;&gt;Photographed&lt;/option&gt;&lt;option value=&quot;axe_cored&quot;&gt;Axe cored&lt;/option&gt;&lt;option value=&quot;barony&quot;&gt;Barony&lt;/option&gt;&lt;option value=&quot;parish&quot;&gt;Parish&lt;/option&gt;&lt;option value=&quot;hoard&quot;&gt;Hoard&lt;/option&gt;&lt;option value=&quot;new_museum_ref&quot;&gt;New museum ref&lt;/option&gt;&lt;option value=&quot;catalogue_ref&quot;&gt;Catalogue ref&lt;/option&gt;&lt;option value=&quot;site_type&quot;&gt;Site type&lt;/option&gt;&lt;option value=&quot;secure_context&quot;&gt;Secure context&lt;/option&gt;&lt;option value=&quot;feature_context_details&quot;&gt;Feature context details&lt;/option&gt;&lt;option value=&quot;associated_artifacts&quot;&gt;Associated artifacts&lt;/option&gt;&lt;option value=&quot;associated_features&quot;&gt;Associated features&lt;/option&gt;&lt;option value=&quot;dating_information&quot;&gt;Dating information&lt;/option&gt;&lt;option value=&quot;use_wear_id&quot;&gt;Use wear&lt;/option&gt;&lt;option value=&quot;deliberate_breaking&quot;&gt;Deliberate breaking&lt;/option&gt;&lt;option value=&quot;re_use_id&quot;&gt;Re use&lt;/option&gt;&lt;option value=&quot;edge_form_id&quot;&gt;Edge form&lt;/option&gt;&lt;option value=&quot;mineral_identification_method&quot;&gt;Mineral identification method&lt;/option&gt;&lt;option value=&quot;chemical_composition_method&quot;&gt;Chemical composition method&lt;/option&gt;&lt;option value=&quot;object_status&quot;&gt;Object status&lt;/option&gt;&lt;option value=&quot;incomplete_description&quot;&gt;Incomplete description&lt;/option&gt;&lt;option value=&quot;roughout_description&quot;&gt;Roughout description&lt;/option&gt;&lt;option value=&quot;incomplete_details&quot;&gt;Incomplete details&lt;/option&gt;&lt;option value=&quot;roughout_details&quot;&gt;Roughout details&lt;/option&gt;&lt;option value=&quot;minature&quot;&gt;Minature&lt;/option&gt;&lt;option value=&quot;sequence_no&quot;&gt;Sequence no&lt;/option&gt;&lt;/optgroup&gt;&lt;/select&gt;&lt;select id=&quot;q_s_new_sort_dir&quot; name=&quot;q[s][new_sort][dir]&quot;&gt;&lt;option value=&quot;&quot;&gt;&lt;/option&gt;&lt;option value=&quot;asc&quot;&gt;ascending&lt;/option&gt;&lt;option value=&quot;desc&quot;&gt;descending&lt;/option&gt;&lt;/select&gt;&lt;/div&gt;&lt;div class=&quot;span4&quot;&gt; &lt;a href=&quot;#&quot; class=&quot;remove_fields&quot;&gt;remove&lt;/a&gt;		&lt;/div&gt;		&lt;br /&gt;	&lt;/span&gt;&lt;/div&gt;" data-id="new_sort">Add Sort</a>
+    </fieldset>    
+  </div>
+
+  <div class="form-actions">
+    <button class="btn-primary" id="search" name="search" type="submit" value="html">search</button>
+    <div class="pull-right">
+ 	  </div>
+  </div>
+</form>
+
+
+
+
+
+
+
+
 <div class="spacer"></div>
 <div class="page-header">
 	<h1>Axe Records</h1>
