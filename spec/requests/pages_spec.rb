@@ -78,11 +78,12 @@ ActiveSupport::Deprecation.silence do
         fill_in "Password", :with => user.password
         click_button "Sign In"
         visit edit_user_registration_path
-        fill_in "Name", :with => "newname"
+        fill_in "Phone", :with => "1234567890"
+        fill_in "Address", :with => "1234567890"
+        fill_in "Institution", :with => "1234567890"
         fill_in "Current password", :with => user.password
         click_button "Update"
         page.should have_content("You updated your account successfully.")
-        user.name = "newname"
       end
       
       it "should not allows users to edit information with incorrect password" do
@@ -92,7 +93,10 @@ ActiveSupport::Deprecation.silence do
         fill_in "Password", :with => user.password
         click_button "Sign In"
         visit edit_user_registration_path
-        fill_in "Name", :with => "new"
+        fill_in "Phone", :with => "1234567890"
+        fill_in "Address", :with => "1234567890"
+        fill_in "Institution", :with => "1234567890"
+        fill_in "Current password", :with => user.password
         fill_in "Current password", :with => "wrong password"
         click_button "Update"
         page.should have_content("Current password is invalid")

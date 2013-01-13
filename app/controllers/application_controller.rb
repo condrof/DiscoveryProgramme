@@ -1,8 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  
+  require 'active_admin_views_page_base.rb'
+ 
   include ApplicationHelper
-  
   helper_method :layout_count
   
   rescue_from CanCan::AccessDenied do |exception|
@@ -22,11 +22,11 @@ class ApplicationController < ActionController::Base
     current_user
   end
 
-  before_filter :miniprofiler
+ # before_filter :miniprofiler
   
 private
   def miniprofiler
-    Rack::MiniProfiler.authorize_request
+    #Rack::MiniProfiler.authorize_request
   end
 
 end

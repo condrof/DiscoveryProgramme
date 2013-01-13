@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126200533) do
+ActiveRecord::Schema.define(:version => 20130106123426) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -125,6 +125,13 @@ ActiveRecord::Schema.define(:version => 20121126200533) do
   add_index "axe_masters", ["museum_ref"], :name => "index_axe_masters_on_museum_ref"
   add_index "axe_masters", ["seq_no"], :name => "index_axe_masters_on_seq_no", :unique => true
 
+  create_table "baronies", :force => true do |t|
+    t.string   "barony_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "bibliographies", :force => true do |t|
     t.string   "author"
     t.string   "year"
@@ -177,6 +184,13 @@ ActiveRecord::Schema.define(:version => 20121126200533) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "counties", :force => true do |t|
+    t.string   "county_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "cross_sections", :force => true do |t|
@@ -252,6 +266,13 @@ ActiveRecord::Schema.define(:version => 20121126200533) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "location_links", :force => true do |t|
+    t.string   "location_link_id"
+    t.string   "seq_no"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "macros", :force => true do |t|
     t.string   "macro_id"
     t.string   "total"
@@ -265,6 +286,13 @@ ActiveRecord::Schema.define(:version => 20121126200533) do
     t.string   "parts_per_million"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
+  end
+
+  create_table "parishes", :force => true do |t|
+    t.string   "parish_id"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "pictures", :force => true do |t|
@@ -324,6 +352,17 @@ ActiveRecord::Schema.define(:version => 20121126200533) do
     t.string   "current_location"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+  end
+
+  create_table "townlands", :force => true do |t|
+    t.string   "townland_id"
+    t.string   "name"
+    t.string   "townlandType"
+    t.string   "parish_id"
+    t.string   "barony_id"
+    t.string   "county_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "use_wears", :force => true do |t|

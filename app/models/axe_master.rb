@@ -5,7 +5,9 @@ class AxeMaster < ActiveRecord::Base
   has_many :linkages, :dependent => :destroy, :foreign_key => "sequence_no", :primary_key => "seq_no"
   has_many :bibliographies, :class_name => "Bibliography", :through => :linkages
   has_many :pictures, :dependent => :destroy, :foreign_key => "seq_no", :primary_key => "seq_no"
-  
+  has_many :location_links, foreign_key: "seq_no", primary_key: "seq_no"
+  has_many :townlands, class_name: "Townland", through: :location_links
+
   has_one :context, :foreign_key => :code, :primary_key => :context_id
   has_one :face_shape, :foreign_key => :code, :primary_key => :face_shape_id
   has_one :cross_section, :foreign_key => :code, :primary_key => :cross_section_id

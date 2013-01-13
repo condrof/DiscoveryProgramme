@@ -141,15 +141,15 @@
 			  <br />
 
 			  <dt><strong><%= model_class.human_attribute_name(:townland) %>:</strong></dt>
-			  <dd><%= @axe_master.townland  %></dd>		  
+			  <dd><%= "#{@axe_master.townlands.first.name} / #{@axe_master.townland}"  %></dd>		  
 			  <dt><strong><%= model_class.human_attribute_name(:area) %>:</strong></dt>
 			  <dd><%= @axe_master.area %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:barony) %>:</strong></dt>
-			  <dd><%= @axe_master.barony %></dd>
+			  <dd><%= "#{@axe_master.townlands.first.barony.name} / #{@axe_master.barony}" %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:parish) %>:</strong></dt>
-			  <dd><%= @axe_master.parish %></dd>
+			  <dd><%= "#{@axe_master.townlands.first.parish.name} / #{@axe_master.parish}" %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:county) %>:</strong></dt>
-			  <dd><%= @axe_master.county %></dd>
+			  <dd><%= "#{@axe_master.townlands.first.county.name} / #{@axe_master.county}" %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:map_reference) %>:</strong></dt>
 			  <dd><%= @axe_master.map_reference %></dd>
 			  <dt><strong><%= model_class.human_attribute_name(:temp_map_reference) %>:</strong></dt>
